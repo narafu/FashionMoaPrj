@@ -1,0 +1,75 @@
+
+@import url(/css/inc/reset.css);
+@import url(/css/inc/layout.css);
+@import url(/css/inc/style.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+body {
+    min-height: 100vh;
+}
+
+.container .card {
+    width: 300px;
+    height: 200px;
+    background: #e07768;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    color: white;
+    margin: 40px;
+}
+
+    .container .card:hover {
+        transition: 1s;
+        cursor: pointer;
+    }
+
+.title { 
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow:4px 4px 4px rgba(0,0,0,0.5);
+}
+
+    .title>div {
+        margin: 10px;
+    }
+
+    .title i {
+        color: #ff0000;
+    }
+
+    .container .card:hover i {
+        transition: 1s;
+        display: none;
+    }
+
+    .container .card span {
+        display: none;
+        font-size: 50px;
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .container .card:hover span {
+        display: inline-block;
+        color: white;
+    }
+
+.container div:last-child
+.card:nth-child(1) {
+    background: #e07768;
+}
+
+.container div:last-child
+    .card:nth-child(2) {
+    background: #6eadd4;
+}
+
+.container div:last-child
+    .card:nth-child(3) {
+    background: #4aada9;
+}
+
+/* .container div:last-child
+    .card:nth-child(2) {
+    background: #333;
+} */

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/video.css">
+    <script src="https://kit.fontawesome.com/49d3a7e676.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header id="header">
+        <h1 class="hidden">header</h1>
+        <div class="container flex-between">
+            <div class="title-main">
+                <a href="main.html">Moa</a>
+            </div>
+            <nav class="header-menu">
+                <h1 class="hidden">header-menu</h1>
+                <ul class="flex-center">
+                    <li class="hexagon-wrapper">
+                        <div class="hexagon flex-center">
+                            <a href="video.html">
+                                <div class="text">Video</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="hexagon-wrapper">
+                        <div class="hexagon flex-center">
+                            <a href="playlist.html">
+                                <div class="text">PlayList</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="hexagon-wrapper">
+                        <div class="hexagon flex-center">
+                            <a href="channel.html">
+                                <div class="text">Channel</div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="hexagon-wrapper">
+                        <div class="hexagon flex-center">
+                            <a href="ranking.html">
+                                <div class="text">List</div>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+                <!-- <ul class="header-main-menu">
+                    <li>
+                        <a href="">Video</a>
+                        <ul class="header-sub-menu">
+                            <li><a href="">ASMR</a></li>
+                            <li><a href="">게임</a></li>
+                            <li><a href="">먹방</a></li>
+                            <li><a href="">뷰티</a></li>
+                            <li><a href="">시사</a></li>
+                            <li><a href="">어린이</a></li>
+                            <li><a href="">연예</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">PlayList</a>
+                        <ul class="header-sub-menu">
+                            <li><a href="">ASMR</a></li>
+                            <li><a href="">게임</a></li>
+                            <li><a href="">먹방</a></li>
+                            <li><a href="">뷰티</a></li>
+                            <li><a href="">시사</a></li>
+                            <li><a href="">어린이</a></li>
+                            <li><a href="">연예</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Channel</a>
+                        <ul class="header-sub-menu">
+                            <li><a href="">ASMR</a></li>
+                            <li><a href="">게임</a></li>
+                            <li><a href="">먹방</a></li>
+                            <li><a href="">뷰티</a></li>
+                            <li><a href="">시사</a></li>
+                            <li><a href="">어린이</a></li>
+                            <li><a href="">연예</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">menu</a>
+                        <ul class="header-sub-menu">
+                            <li><a href="">ASMR</a></li>
+                            <li><a href="">게임</a></li>
+                            <li><a href="">먹방</a></li>
+                            <li><a href="">뷰티</a></li>
+                            <li><a href="">시사</a></li>
+                            <li><a href="">어린이</a></li>
+                            <li><a href="">연예</a></li>
+                        </ul>
+                    </li>
+                </ul> -->
+            </nav>
+            <nav class="member-menu">
+                <h1 class="hidden">member-menu</h1>
+                <ul class= "flex-center">
+                    <li><a href="mypage.html">My Page</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <h1 class="hidden">main</h1>
+        <div class="container">
+
+            <form action="list" method="get">
+                <div class="top-btn flex-center">
+                    <div>
+                        <!-- <div class="date-btn">
+                            <input type="date" name="sd" value="${param.sd}">
+                            <input type="date" name="ed" value="${param.ed}">
+                        </div> -->
+                        <div class="search-btn">
+                            <!-- <select name="f">
+                                <option>제목</option>
+                                <option>내용</option>
+                                <option>작성자</option>
+                            </select> -->
+                            <input type="text" name="s" value="">
+                            <input type="submit" value="&#xf002">
+                        </div>
+                    </div>
+                    <!-- <div class="reg-btn">
+                        <a href="reg">
+                            <button>작성</button>
+                        </a>
+                    </div> -->
+                </div>
+            </form>
+
+            <section class="board-container flex-between">
+                <h1 class="hidden">board</h1>
+
+                <div class="board-video">
+                    <div class="video-content flex-between">
+                        <div class="video-img">
+                            <a href="">
+                                <img src="/images/board/sample1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="video-info">
+                            <div>
+                                <span>추천인</span>
+                                <span>narafu</span>
+                            </div>
+                            <div>
+                                <span>조회수</span>
+                                <span>789</span>
+                            </div>
+                            <div>
+                                <i class="like far fa-thumbs-up"></i>
+                                <span>123</span>
+                                <i class="hate far fa-thumbs-down"></i>
+                                <span>456</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">
+                        <div class="channel-img">
+                            <a href=""><img src="../images/board/unnamed1.jpg" alt=""></a>
+                        </div>
+                        <a href="">
+                            [ENG] ※🐶고생 재입고 완료※ 장성규 간만에 고생각?! 1+3 일거리 묶음 상품에 피 땀 눈물💦 다 폭주했다는 마트 알바 리뷰 | 워크맨
+                            ep.53
+                        </a>
+                    </div>
+                </div>
+
+                <div class="board-video">
+                    <div class="video-content flex-between">
+                        <div class="video-img">
+                            <a href="">
+                                <img src="/images/board/sample2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="video-info">
+                            <div>
+                                <span>추천인</span>
+                                <span>narafu</span>
+                            </div>
+                            <div>
+                                <span>조회수</span>
+                                <span>789</span>
+                            </div>
+                            <div>
+                                <i class="like far fa-thumbs-up"></i>
+                                <span>123</span>
+                                <i class="hate far fa-thumbs-down"></i>
+                                <span>456</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">
+                        <div class="channel-img">
+                            <a href=""><img src="../images/board/unnamed2.jpg" alt=""></a>
+                        </div>
+                        <a href="">
+                            [ENG] ※🐶고생 재입고 완료※ 장성규 간만에 고생각?! 1+3 일거리 묶음 상품에 피 땀 눈물💦 다 폭주했다는 마트 알바 리뷰 | 워크맨
+                            ep.53
+                        </a>
+                    </div>
+                </div>
+
+                <div class="board-video">
+                    <div class="video-content flex-between">
+                        <div class="video-img">
+                            <a href="">
+                                <img src="/images/board/sample3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="video-info">
+                            <div>
+                                <span>추천인</span>
+                                <span>narafu</span>
+                            </div>
+                            <div>
+                                <span>조회수</span>
+                                <span>789</span>
+                            </div>
+                            <div>
+                                <i class="like far fa-thumbs-up"></i>
+                                <span>123</span>
+                                <i class="hate far fa-thumbs-down"></i>
+                                <span>456</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">
+                        <div class="channel-img">
+                            <a href=""><img src="../images/board/unnamed3.jpg" alt=""></a>
+                        </div>
+                        <a href="">
+                            [ENG] ※🐶고생 재입고 완료※ 장성규 간만에 고생각?! 1+3 일거리 묶음 상품에 피 땀 눈물💦 다 폭주했다는 마트 알바 리뷰 | 워크맨
+                            ep.53
+                        </a>
+                    </div>
+                </div>
+
+                <div class="board-video">
+                    <div class="video-content flex-between">
+                        <div class="video-img">
+                            <a href="">
+                                <img src="/images/board/sample4.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="video-info">
+                            <div>
+                                <span>추천인</span>
+                                <span>narafu</span>
+                            </div>
+                            <div>
+                                <span>조회수</span>
+                                <span>789</span>
+                            </div>
+                            <div>
+                                <i class="like far fa-thumbs-up"></i>
+                                <span>123</span>
+                                <i class="hate far fa-thumbs-down"></i>
+                                <span>456</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">
+                        <div class="channel-img">
+                            <a href=""><img src="../images/board/unnamed4.jpg" alt=""></a>
+                        </div>
+                        <a href="">
+                            [ENG] ※🐶고생 재입고 완료※ 장성규 간만에 고생각?! 1+3 일거리 묶음 상품에 피 땀 눈물💦 다 폭주했다는 마트 알바 리뷰 | 워크맨
+                            ep.53
+                        </a>
+                    </div>
+                </div>
+
+                <div class="board-video">
+                    <div class="video-content flex-between">
+                        <div class="video-img">
+                            <a href="">
+                                <img src="/images/board/sample1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="video-info">
+                            <div>
+                                <span>추천인</span>
+                                <span>narafu</span>
+                            </div>
+                            <div>
+                                <span>조회수</span>
+                                <span>789</span>
+                            </div>
+                            <div>
+                                <i class="like far fa-thumbs-up"></i>
+                                <span>123</span>
+                                <i class="hate far fa-thumbs-down"></i>
+                                <span>456</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">
+                        <div class="channel-img">
+                            <a href=""><img src="../images/board/unnamed1.jpg" alt=""></a>
+                        </div>
+                        <a href="">
+                            [ENG] ※🐶고생 재입고 완료※ 장성규 간만에 고생각?! 1+3 일거리 묶음 상품에 피 땀 눈물💦 다 폭주했다는 마트 알바 리뷰 | 워크맨
+                            ep.53
+                        </a>
+                    </div>
+                </div>
+
+                <div class="board-video">
+                    <div class="video-content flex-between">
+                        <div class="video-img">
+                            <a href="">
+                                <img src="/images/board/sample2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="video-info">
+                            <div>
+                                <span>추천인</span>
+                                <span>narafu</span>
+                            </div>
+                            <div>
+                                <span>조회수</span>
+                                <span>789</span>
+                            </div>
+                            <div>
+                                <i class="like far fa-thumbs-up"></i>
+                                <span>123</span>
+                                <i class="hate far fa-thumbs-down"></i>
+                                <span>456</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">
+                        <div class="channel-img">
+                            <a href=""><img src="../images/board/unnamed2.jpg" alt=""></a>
+                        </div>
+                        <a href="">
+                            [ENG] ※🐶고생 재입고 완료※ 장성규 간만에 고생각?! 1+3 일거리 묶음 상품에 피 땀 눈물💦 다 폭주했다는 마트 알바 리뷰 | 워크맨
+                            ep.53
+                        </a>
+                    </div>
+                </div>
+
+                <div class="board-video">
+                    <div class="video-content flex-between">
+                        <div class="video-img">
+                            <a href="">
+                                <img src="/images/board/sample3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="video-info">
+                            <div>
+                                <span>추천인</span>
+                                <span>narafu</span>
+                            </div>
+                            <div>
+                                <span>조회수</span>
+                                <span>789</span>
+                            </div>
+                            <div>
+                                <i class="like far fa-thumbs-up"></i>
+                                <span>123</span>
+                                <i class="hate far fa-thumbs-down"></i>
+                                <span>456</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">
+                        <div class="channel-img">
+                            <a href=""><img src="../images/board/unnamed3.jpg" alt=""></a>
+                        </div>
+                        <a href="">
+                            [ENG] ※🐶고생 재입고 완료※ 장성규 간만에 고생각?! 1+3 일거리 묶음 상품에 피 땀 눈물💦 다 폭주했다는 마트 알바 리뷰 | 워크맨
+                            ep.53
+                        </a>
+                    </div>
+                </div>
+
+                <div class="board-video">
+                    <div class="video-content flex-between">
+                        <div class="video-img">
+                            <a href="">
+                                <img src="/images/board/sample4.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="video-info">
+                            <div>
+                                <span>추천인</span>
+                                <span>narafu</span>
+                            </div>
+                            <div>
+                                <span>조회수</span>
+                                <span>789</span>
+                            </div>
+                            <div>
+                                <i class="like far fa-thumbs-up"></i>
+                                <span>123</span>
+                                <i class="hate far fa-thumbs-down"></i>
+                                <span>456</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-title">
+                        <div class="channel-img">
+                            <a href=""><img src="../images/board/unnamed4.jpg" alt=""></a>
+                        </div>
+                        <a href="">
+                            [ENG] ※🐶고생 재입고 완료※ 장성규 간만에 고생각?! 1+3 일거리 묶음 상품에 피 땀 눈물💦 다 폭주했다는 마트 알바 리뷰 | 워크맨
+                            ep.53
+                        </a>
+                    </div>
+                </div>
+
+
+            </section>
+
+            <div class="page-num">
+                <span class="current">1</span>
+                <span>/</span>
+                <span>1</span>
+                <span>pages</span>
+            </div>
+
+            <div class="pager">
+                <ul class="flex-evenly">
+                    <li>
+                        <a href="">
+                            <i class="fas fa-arrow-left" onclick="alert('이전 페이지가 없습니다.');"></i>
+                        </a>
+                    </li>
+                    <li><a class="" href="">1</a></li>
+                    <li><a class="" href="">2</a></li>
+                    <li><a class="" href="">3</a></li>
+                    <li><a class="" href="">4</a></li>
+                    <li><a class="" href="">5</a></li>
+                    <li><a class="" href="">6</a></li>
+                    <li><a class="" href="">7</a></li>
+                    <li><a class="" href="">8</a></li>
+                    <li><a class="" href="">9</a></li>
+                    <li><a class="" href="">10</a></li>
+                    <li>
+                        <a href="">
+                            <i class="fas fa-arrow-right" onclick="alert('다음 페이지가 없습니다.');"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="footer">
+        <h1 class="hidden">footer</h1>
+        <div class="flex-evenly">
+            <nav class="footer-menu">
+                <h1 class="hidden">footer-menu</h1>
+                <ul class="flex-evenly">
+                    <li><a href="">menu</a></li>
+                    <li><a href="">menu</a></li>
+                    <li><a href="">menu</a></li>
+                    <li><a href="">menu</a></li>
+                </ul>
+            </nav>
+            <nav class="sns-menu">
+                <h1 class="hidden">sns-menu</h1>
+                <ul class="flex-evenly">
+                    <li>
+                        <a href="">
+                            <i class="fab fa-facebook-square fa-3x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-instagram-square fa-3x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fab fa-youtube fa-3x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+
+</html>
