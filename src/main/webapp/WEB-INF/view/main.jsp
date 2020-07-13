@@ -58,7 +58,7 @@
 				<li class="hexagon-wrapper">
 					<div class="hexagon flex-center">
 						<a href="board/ranking/list"> <i class="fas fa-list-ol"></i>
-							<div class="text">List</div>
+							<div class="text">Ranking</div>
 						</a>
 					</div>
 				</li>

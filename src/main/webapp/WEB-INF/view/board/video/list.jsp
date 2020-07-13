@@ -47,7 +47,7 @@
 					</div>
 				</div>
 				<div class="video-title">
-					<div class="channel-img">
+					<div class="video-img">
 						<a href=""><img src="/images/unnamed1.jpg" alt=""></a>
 					</div>
 					<a href="detail.html"> [ENG] ※🐶고생 재입고 완료※ 장성규 간만에 고생각?! 1+3 일거리 묶음 상품에 피
