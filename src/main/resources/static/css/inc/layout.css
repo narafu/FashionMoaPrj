@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap');
 @font-face { font-family: '777Littlebear'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/777Littlebear.woff') format('woff'); font-weight: normal; font-style: normal; }
 
 body {
@@ -25,67 +25,71 @@ body {
         flex-grow: 1;
         align-self: flex-end;
     }
+    
+		.header-menu .hexagon-wrapper {
+		  display: flex;
+		  width: 200px;
+		  height: 50px;
+		  cursor: pointer;
+		}
+		  
+		 .header-menu .hexagon {
+			background: white;
+		    color: #282c34;
+		    position: relative;
+		    width: 80%;
+		    height: 80%;
+		    margin: auto;
+		    transition: 0.5s;
+		    z-index: 0;
+		    padding: 5px;
+		  }
+		
+		  .header-menu .hexagon .text {
+		      font-size: 20px;
+		      font-weight: bold;
+		    }
+		
+		   .header-menu .hexagon:hover {
+		          color: #292929;
+		          border-radius: 50px;
+		          transition: 0.5s;
+		          background: linear-gradient(-180deg, #fda3b2, #e37682);
+		        }
+    
 
-.hexagon-wrapper {
-  display: flex;
-  width: 200px;
-  height: 50px;
-  cursor: pointer;
-}
-  
-  .hexagon {
-	background: white;
-    color: #282c34;
-    position: relative;
-    width: 80%;
-    height: 80%;
-    margin: auto;
-    transition: 0.5s;
-    z-index: 0;
-    padding: 5px;
-  }
-
-    .hexagon .text {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .hexagon:hover {
-          color: #292929;
-          border-radius: 50px;
-          transition: 0.5s;
-          background: linear-gradient(-180deg, #fda3b2, #e37682);
-        }
+		.member-menu {
+		  align-self: flex-end;
+		}
+		
+		.member-menu li {
+		    color: white;
+		    font-size: 12px;
+		    display: block;
+		    padding: 7.5px 12.5px;
+		    margin: 2.5px;
+		}
+		
+		.member-menu li:hover {
+		    background: linear-gradient(-180deg, #fda3b2, #e37682);
+		    color: #292929;
+		    border-radius: 20px;
+		    transition: 0.5s;
+		}
+		
+		.member-menu li:hover a {
+		  font-weight: bold;
+		}
 
 
-.member-menu {
-  align-self: flex-end;
-}
-
-.member-menu li {
-    color: white;
-    font-size: 12px;
-    display: block;
-    padding: 7.5px 12.5px;
-    margin: 2.5px;
-}
-
-.member-menu li:hover {
-    background: linear-gradient(-180deg, #fda3b2, #e37682);
-    color: #292929;
-    border-radius: 20px;
-    transition: 0.5s;
-}
-
-.member-menu li:hover a {
-  font-weight: bold;
-}
 
 #main {
-	background: #282c34;
+	background: white;
     padding-top: 50px;
     color: white;
 }
+
+
 
 #footer {
 	background: #20232a;

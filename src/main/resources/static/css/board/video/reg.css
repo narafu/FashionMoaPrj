@@ -3,10 +3,6 @@
 @import url(/css/inc/layout.css);
 @import url(/css/inc/style.css);
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
-@font-face { font-family: '777Littlebear'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/777Littlebear.woff') format('woff'); font-weight: normal; font-style: normal; }
-
-
 	#main {
 	    height: 800px;
 	}

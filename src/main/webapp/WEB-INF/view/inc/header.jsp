@@ -19,21 +19,21 @@
 				</li>
 				<li class="hexagon-wrapper">
 					<div class="hexagon flex-center">
-						<a href="playlist.html">
+						<a href="/board/playlist/list">
 							<div class="text">PlayList</div>
 						</a>
 					</div>
 				</li>
 				<li class="hexagon-wrapper">
 					<div class="hexagon flex-center">
-						<a href="channel.html">
+						<a href="/board/channel/list">
 							<div class="text">Channel</div>
 						</a>
 					</div>
 				</li>
 				<li class="hexagon-wrapper">
 					<div class="hexagon flex-center">
-						<a href="ranking.html">
+						<a href="/board/ranking/list">
 							<div class="text">List</div>
 						</a>
 					</div>
