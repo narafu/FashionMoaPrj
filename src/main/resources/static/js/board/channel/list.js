@@ -7,7 +7,7 @@ $(function () {
 
     regBtn.click(function () {
 
-
+        boardContainer.$(selector).append(content);
 
     });
 

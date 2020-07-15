@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
 }
 
-.container .card {
+#mycloset .card {
     width: 300px;
     height: 200px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
@@ -17,7 +17,7 @@ body {
     margin: 40px;
 }
 
-    .container .card:hover {
+    .#mycloset .card:hover {
         transition: 1s;
         cursor: pointer;
     }
@@ -28,26 +28,31 @@ body {
     font-family: 'Orbitron', sans-serif;
     text-shadow: 5px 0px 5px rgba(0,0,0,1);
     text-align: center;
+    padding: 40px;
 }
 
     .title>div {
         margin: 10px;
     }
 
-    .container .card:hover i {
+    #mycloset .card:hover i {
         transition: 1s;
         display: none;
+        cursor: pointer;
     }
 
-    .container .card span {
+    #mycloset .card span {
         display: none;
         font-size: 50px;
         font-family: 'Orbitron', sans-serif;
+        text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+        cursor: pointer;
     }
 
-    .container .card:hover span {
+    #mycloset .card:hover span {
         display: inline-block;
         color: white;
+        cursor: pointer;
     }
 
 .cloth-menu
@@ -83,7 +88,55 @@ body {
 /* //// */
 
 .detail {
+    display: none;
     width: 1140px;
     height: 560px;
-    background-color: #aaaaaa;
+    z-index: 1;
+    position: absolute;
+    color: black;
+    background-color: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+.sub-title {
+    background: #ec3843;
+    padding: 15px 40px;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    font-size: 30px;
+    color: white;
+}
+
+.fa-times {
+    margin: 10px 20px;
+}
+
+.box-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    width: 90%;
+    height: 80%;
+    margin: auto;  
+}
+
+.cloth-box {
+    width: 300px;
+    height: 200px;
+    background-color: #cccccc;
+}
+
+.fa-plus {
+    color: white;
+}
+
+.pager {
+    width: 40%;
+    margin: 0px auto;
+    color: #292929;
+}
+
+.pager li:hover, i:hover {
+    color: #ec3843;
+    cursor: pointer;
 }
