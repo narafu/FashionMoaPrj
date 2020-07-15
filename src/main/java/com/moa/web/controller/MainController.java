@@ -11,6 +11,7 @@ public class MainController {
 	@GetMapping("")
 	public String main() {
 		System.out.println();
+		System.out.println();
 		return "main";
 	} 
 
