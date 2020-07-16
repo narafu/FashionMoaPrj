@@ -20,60 +20,64 @@
         <h1 class="hidden">My Closet</h1>
         <div class="title">My Closet</div>
 
-        <div class="detail">
-            <div class="flex-between">
-                <div class="sub-title">Outer</div>
-                <i class="fas fa-times fa-2x"></i>
-            </div>
-            <div class="box-container">
-                <c:forEach begin="1" end="6">
-                    <div class="cloth-box flex-center">
-                        <i class="fas fa-plus fa-5x"></i>
-                    </div>
-                </c:forEach>
-            </div>
-            <div class="pager">
-                <ul class="flex-evenly">
-                    <li>
-                        <i class="fas fa-arrow-left" onclick="alert('이전 페이지가 없습니다.');"></i>
-                    </li>
-                    <c:forEach var="i" begin="1" end="5">
-                        <li>${i}</li>
+        <form action="">
+            <div class="detail">
+                <div class="flex-between">
+                    <div class="sub-title">Outer</div>
+                    <i class="fas fa-times fa-2x"></i>
+                </div>
+                <div class="box-container">
+                    <c:forEach begin="1" end="6">
+                        <div class="cloth-box flex-center">
+                            <i class="fas fa-times fa"></i>
+                            <img class="cloth-img" src="" alt="">
+                            <input class="cloth-input" type="file">
+                        </div>
                     </c:forEach>
-                    <li>
-                        <i class="fas fa-arrow-right" onclick="alert('다음 페이지가 없습니다.');"></i>
-                    </li>
-                </ul>
+                </div>
+                <div class="pager">
+                    <ul class="flex-evenly">
+                        <li>
+                            <i class="fas fa-arrow-left" onclick="alert('이전 페이지가 없습니다.');"></i>
+                        </li>
+                        <c:forEach var="i" begin="1" end="5">
+                            <li>${i}</li>
+                        </c:forEach>
+                        <li>
+                            <i class="fas fa-arrow-right" onclick="alert('다음 페이지가 없습니다.');"></i>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </form>
 
         <ul class="cloth-menu">
             <div class="top-menu flex-center">
                 <li class="card outer flex-center">
                     <i class="fas fa-tshirt fa-5x"></i>
-                    <span>Outer</span>
+                    <span class="sub-title">Outer</span>
                 </li>
                 <li class="card flex-center">
                     <i class="fas fa-tshirt fa-5x"></i>
-                    <span>Tops</span>
+                    <span class="sub-title">Tops</span>
                 </li>
                 <li class="card flex-center">
                     <i class="fas fa-tshirt fa-5x"></i>
-                    <span>Bottoms</span>
+                    <span class="sub-title">Bottoms</span>
                 </li>
             </div>
             <div class="bottom-menu flex-center">
                 <li class="card flex-center">
                     <i class="fas fa-tshirt fa-5x"></i>
-                    <span>Shoes</span>
+                    <span class="sub-title">Shoes</span>
                 </li>
                 <li class="card flex-center">
                     <i class="fas fa-tshirt fa-5x"></i>
-                    <span style="font-size:40px;">Accessories</span>
+                    <span style="font-size:40px;" class="sub-title">Accessories</span>
                 </li>
                 <li class="card flex-center">
                     <i class="fas fa-tshirt fa-5x"></i>
-                    <span>Etc</span>
+                    <span class="sub-title">Etc</span>
                 </li>
             </div>
         </ul>

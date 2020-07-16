@@ -15,11 +15,15 @@ body {
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
     color: white;
     margin: 40px;
+    cursor: pointer;
+    flex-direction: column;
 }
 
-    .#mycloset .card:hover {
-        transition: 1s;
-        cursor: pointer;
+    #mycloset .card span {
+        display: none;
+        font-size: 50px;
+        font-family: 'Orbitron', sans-serif;
+        text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
     }
 
 .title { 
@@ -35,57 +39,37 @@ body {
         margin: 10px;
     }
 
-    #mycloset .card:hover i {
-        transition: 1s;
-        display: none;
-        cursor: pointer;
-    }
-
-    #mycloset .card span {
-        display: none;
-        font-size: 50px;
-        font-family: 'Orbitron', sans-serif;
-        text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
-        cursor: pointer;
-    }
-
-    #mycloset .card:hover span {
-        display: inline-block;
-        color: white;
-        cursor: pointer;
-    }
-
 .cloth-menu
-.top-menu>li:nth-child(1) {
-    background: #ec3843;
+.top-menu>.card:nth-child(1) {
+    background-color: #ec3843;
 }
 
 .cloth-menu
-.top-menu>li:nth-child(2) {
-    background: #f7c100;
+.top-menu>.card:nth-child(2) {
+    background-color: #f7c100;
 }
 
 .cloth-menu
-.top-menu>li:nth-child(3) {
-    background: #00bac9;
+.top-menu>.card:nth-child(3) {
+    background-color: #00bac9;
 }
 
 .cloth-menu
-.bottom-menu>li:nth-child(1) {
-    background: #8c7c5b;
+.bottom-menu>.card:nth-child(1) {
+    background-color: #8c7c5b;
 }
 
 .cloth-menu
-.bottom-menu>li:nth-child(2) {
-    background: #b2d135;
+.bottom-menu>.card:nth-child(2) {
+    background-color: #b2d135;
 }
 
 .cloth-menu
-.bottom-menu>li:nth-child(3) {
-    background: #7c5977;
+.bottom-menu>.card:nth-child(3) {
+    background-color: #7c5977;
 }
 
-/* //// */
+/* detail */
 
 .detail {
     display: none;
@@ -98,8 +82,8 @@ body {
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
 }
 
-.sub-title {
-    background: #ec3843;
+.detail .sub-title {
+    background-color: #ec3843;
     padding: 15px 40px;
     font-family: 'Orbitron', sans-serif;
     text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
@@ -107,7 +91,7 @@ body {
     color: white;
 }
 
-.fa-times {
+.detail>div>.fa-times {
     margin: 10px 20px;
 }
 
@@ -123,20 +107,29 @@ body {
 .cloth-box {
     width: 300px;
     height: 200px;
-    background-color: #cccccc;
+    flex-direction: column;
+    border: solid 1px black;
+    position: relative;
 }
 
-.fa-plus {
-    color: white;
+.cloth-box img {
+    width: auto;
+    max-height: 90%;
+}
+
+.detail .cloth-box .fa-times {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top:10px;
+}
+
+input[type="file"] {
+    width: 200px;
 }
 
 .pager {
     width: 40%;
     margin: 0px auto;
     color: #292929;
-}
-
-.pager li:hover, i:hover {
-    color: #ec3843;
-    cursor: pointer;
 }
