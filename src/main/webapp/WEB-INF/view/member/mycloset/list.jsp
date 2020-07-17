@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="/css/member/mycloset/list.css">
     <script src="https://kit.fontawesome.com/49d3a7e676.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/js/member/mycloset/list.js"></script>
     <title>My Closet</title>
 </head>
 
@@ -24,7 +23,9 @@
             <div class="detail">
                 <div class="flex-between">
                     <div class="sub-title">Outer</div>
-                    <i class="fas fa-times fa-2x"></i>
+                    <button type="submit">
+                        <i class="fas fa-times fa-2x"></i>
+                    </button>
                 </div>
                 <div class="box-container">
                     <c:forEach begin="1" end="6">
@@ -53,7 +54,7 @@
 
         <ul class="cloth-menu">
             <div class="top-menu flex-center">
-                <li class="card outer flex-center">
+                <li class="card flex-center">
                     <i class="fas fa-tshirt fa-5x"></i>
                     <span class="sub-title">Outer</span>
                 </li>
@@ -82,6 +83,9 @@
             </div>
         </ul>
     </section>
+    
+    <script src="/js/member/mycloset/list.js"></script>
 </body>
+
 
 </html>

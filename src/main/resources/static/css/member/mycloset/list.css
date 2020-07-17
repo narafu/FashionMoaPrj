@@ -91,8 +91,11 @@ body {
     color: white;
 }
 
-.detail>div>.fa-times {
-    margin: 10px 20px;
+.detail button {
+    margin: 20px;
+    background: none;
+    border: none;
+    outline: none;
 }
 
 .box-container {
@@ -132,4 +135,8 @@ input[type="file"] {
     width: 40%;
     margin: 0px auto;
     color: #292929;
+}
+
+.detail i:hover, li:hover {
+    cursor: pointer;
 }
