@@ -18,8 +18,8 @@
     <section id="mycloset">
         <h1 class="hidden">My Closet</h1>
         <div class="title">My Closet</div>
-
-        <form action="">
+        
+        <form method="post" enctype="multipart/form-data" action="/member/mycloset/list" >
             <div class="detail">
                 <div class="flex-between">
                     <div class="sub-title">Outer</div>
@@ -50,6 +50,7 @@
                     </ul>
                 </div>
             </div>
+            <input type="hidden" name="uid" value="narafu">
         </form>
 
         <ul class="cloth-menu">

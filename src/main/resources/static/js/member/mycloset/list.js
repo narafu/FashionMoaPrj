@@ -26,14 +26,15 @@ $(function () {
     // 이미지 업로드
     $(".cloth-box").click(function (e) {
         if (e.target.nodeName != "INPUT") return;
-        $(".cloth-input").change(function (e) {
-            $(this).toggle();
+        $(e.target).change(function (e) {
             let img = $(this).siblings("img")
             let reader = new FileReader();
             reader.onload = function (e) {
                 img.attr("src", e.target.result);
             }
             reader.readAsDataURL(this.files[0]);
+            console.log(3);
+            $(this).toggle();
             $(this).siblings(".fa-times").toggle();
         });
     });
@@ -55,10 +56,15 @@ $(function () {
     });
 
     // submit
-    $("button[type='submit']").click(function () {
-        alert(1);
-
+    $("form").submit(function (e) { 
+        e.preventDefault();
+        var url = $(this).attr( "action" );
+        var data = $(this).serialize();
+        
+        $.post( url, data )
+        .done(function( data ) {
+          console.log('--->', data);
+        });
     });
-
 
 });
