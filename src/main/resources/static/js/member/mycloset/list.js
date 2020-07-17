@@ -8,7 +8,7 @@ $(function () {
         subTitleColor = $(e.target).parents("li").css("background-color");
         $(".detail .sub-title").text(subTitle);
         $(".detail .sub-title").css("background-color", subTitleColor);
-        $(".detail").toggle(500)
+        $(".detail").toggle(500);
     });
 
     // detail 나가기
@@ -24,16 +24,20 @@ $(function () {
     });
 
     // 이미지 업로드
-    $(".cloth-input").change(function (e) {
-        $(this).toggle();
-        let img = $(this).siblings("img")
-        let reader = new FileReader();
-        reader.onload = function (e) {
-            img.attr("src", e.target.result);
-        }
-        reader.readAsDataURL(this.files[0]);
-        $(this).siblings(".fa-times").toggle();
+    $(".cloth-box").click(function (e) {
+        if (e.target.nodeName != "INPUT") return;
+        $(".cloth-input").change(function (e) {
+            $(this).toggle();
+            let img = $(this).siblings("img")
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                img.attr("src", e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+            $(this).siblings(".fa-times").toggle();
+        });
     });
+
 
     // 이미지 삭제
     $(".cloth-box .fa-times").click(function () {
@@ -49,5 +53,12 @@ $(function () {
     }, function () {
         $(this).css("color", "#292929")
     });
+
+    // submit
+    $("button[type='submit']").click(function () {
+        alert(1);
+
+    });
+
 
 });
