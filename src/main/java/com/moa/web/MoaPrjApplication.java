@@ -12,5 +12,4 @@ public class MoaPrjApplication {
 		SpringApplication.run(MoaPrjApplication.class, args);
 	}
 	//깃 리버트 전
-	//깃 리버트 후~!!!
 }
