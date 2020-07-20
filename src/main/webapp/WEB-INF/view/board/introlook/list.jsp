@@ -12,103 +12,96 @@
 
 		<section class="board-container flex-between">
 			<h1 class="hidden">board</h1>
+			
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/casual.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/street.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
 
-			<div class="thumbnail-wrapper">
-				<div class="channel-content flex-between thumbnail">
-					<div class="thumbnail-centered">
-						<img name="casual" src="/images/introlook/casual.jpg" alt="fashion look"
-							class="thumbnail-img" />
-					</div>
-				</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/vintage.jpg" alt="fashion look"
+					class="thumbnail-img" />
 			</div>
-			<div class="thumbnail-wrapper">
-				<div class="channel-content flex-between thumbnail">
-					<div class="thumbnail-centered">
-						<img src="/images/introlook/street.jpg" alt="fashion look"
-							class="thumbnail-img" />
-					</div>
-				</div>
-			</div>
-			<div class="thumbnail-wrapper">
-				<div class="channel-content flex-between thumbnail">
-					<div class="thumbnail-centered">
-						<img src="/images/introlook/vintage.jpg" alt="fashion look"
-							class="thumbnail-img" />
-					</div>
-				</div>
-			</div>
-			<div class="thumbnail-wrapper">
-				<div class="channel-content flex-between thumbnail">
-					<div class="thumbnail-centered">
-						<img src="/images/introlook/classic.jpg" alt="fashion look"
-							class="thumbnail-img" />
-					</div>
-				</div>
-			</div>
-			<div class="thumbnail-wrapper">
-				<div class="channel-content flex-between thumbnail">
-					<div class="thumbnail-centered">
-						<img src="/images/introlook/dandy.jpg" alt="fashion look"
-							class="thumbnail-img" />
-					</div>
-				</div>
-			</div>
-			<div class="thumbnail-wrapper">
-				<div class="channel-content flex-between thumbnail">
-					<div class="thumbnail-centered">
-						<img src="/images/introlook/minimalism.jpg" alt="fashion look"
-							class="thumbnail-img" />
-					</div>
-				</div>
-			</div>
-			<div class="thumbnail-wrapper">
-				<div class="channel-content flex-between thumbnail">
-					<div class="thumbnail-centered">
-						<img src="/images/introlook/maximalism.jpg" alt="fashion look"
-							class="thumbnail-img" />
-					</div>
-				</div>
-			</div>
-			<div class="thumbnail-wrapper">
-				<div class="channel-content flex-between thumbnail">
-					<div class="thumbnail-centered">
-						<img src="/images/introlook/avant-garde.jpg" alt="fashion look"
-							class="thumbnail-img" />
-					</div>
-				</div>
-			</div>
-			<div class="thumbnail-wrapper">
-				<div class="channel-content flex-between thumbnail">
-					<div class="thumbnail-centered">
-						<img src="/images/introlook/normcore.jpg" alt="fashion look"
-							class="thumbnail-img" />
-					</div>
-				</div>
-			</div>
+		</div>
+	</div>
 
-			<div class="detail">
-				<div class="flex-between">
-					<div>
-						<div class="sub-title">Casual</div>
-						<i class="fas fa-times fa-2x"></i>
-					</div>
-					<div class="context">contextcontextcontextcontextcontextcontextcontextcontextcontext
-						contextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontext
-						contextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontext
-						contextcontextcontextcontextcontextcontextcontextcontextcontext
-						contextcontextcontextcontextcontextcontext</div>
-				</div>
-				
-				<div class="flex-between">
-					<div>
-						<div class="sub-title">Street</div>
-						<i class="fas fa-times fa-2x"></i>
-					</div>
-					<div class="context">22222222222222222222222</div>
-				</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/classic.jpg" alt="fashion look"
+					class="thumbnail-img" />
 			</div>
+		</div>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/dandy.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/minimalism.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/maximalism.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/avant-garde.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/normcore.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
 
-		</section>
+	<div class="detail">
+		<div class="flex-between">
+			<div>
+			<div class="sub-title">detail</div>
+			<i class="fas fa-times fa-2x"></i></div>
+			<div class="context">contextcontextcontextcontextcontextcontextcontextcontextcontext
+			contextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontext
+			contextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontext
+			contextcontextcontextcontextcontextcontextcontextcontextcontext
+			contextcontextcontextcontextcontextcontext</div>
+		</div>
+	</div>
+
+	</section>
 
 	</div>
 
