@@ -1,108 +1,167 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+
+<!-- ************** 게시판  main ************** -->
 <main id="main">
-	<h1 class="hidden">main</h1>
-	<div class="container">
 
-		<form action="list" method="get">
-			<div class="top-btn flex-center">
-				<div class="search-btn">
-					<input type="text" name="s" value="">
-					<input type="submit" value="&#xf002">
-				</div>
-           		<div class="btn-reg">
-					<a href="reg">Write</a>
-				</div>
-			</div>
-		</form>
-		
-		<section class="board-container flex-between">
-			<h1 class="hidden">board</h1>
+	<nav class="sub-header">
+		<h1 class="hidden">서브 헤더</h1>
 
-		<c:forEach begin="0" end="7">
-			<div class="board-channel">
-				<div class="channel-content flex-between">
-					<div class="channel-img">
-						<a href="detail.html">
-							<img src="/images/unnamed1.jpg" alt="">
-						</a>
-					</div>
-					<div class="flex-between">
-						<div class="channel-info">
-							<div>
-								<span>SUBSCRIBE :</span>
-								<span>13,400</span>
-							</div>
-							<div>
-								<span>VIEWS :</span>
-								<span>1,269,038</span>
-							</div>
-							<div>
-								<span>VIDEOS :</span>
-								<span>523</span>
-							</div>
-						</div>
-						<div class="channel-box">
-							<div class="like-hate flex-between">
-								<div>
-									<i class="like far fa-thumbs-up"></i>
-									<div>123</div>
-								</div>
-								<div>
-									<i class="hate far fa-thumbs-down"></i>
-									<div>456</div>
-								</div>
-							</div>
-							<div class="link-youtube">
-								<a>Go to Channel</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="recommend-comment">
-					<div>
-						<span>Comment : </span>
-						<span style="margin: 0px 10px;">/</span>
-						<span>narafu 나라퓨</span>
-					</div>
-					<span>장성규가 대박 웃겨요~!! 장성규가 대박 웃겨요~!! 장성규가 대박 웃겨요~!! 장성규가 대박 웃겨요~!!</span>
-				</div>
-			</div>
-		</c:forEach>
-		
+		<div class="sub-header-title fnt_jua">자유 게시판</div>
+
+
+		<section class="sub-link">
+			<h1 class="hidden">서브링크</h1>
+
+			<ul class="sub-link-list">
+				<li class="sub-link-item"><a href=""><i class="fas"></i>최근순</a></li>
+				<li class="sub-link-item"><a href=""><i
+						class="fas"></i>인기순</a></li>
+				<li class="sub-link-item"><a href=""><i
+						class="fas "></i>카테고리</a></li>
+				<li class="sub-link-item"><a href=""><i
+						class="fas "></i></a></li>
+			</ul>
+
+			<section class="sub-link-search">
+				<h1 class="hidden">서브링크 검색폼</h1>
+				<form class="sub-link-search-form">
+					<fieldset>
+						<legend class="hidden">서브링크 검색필드</legend>
+						<label class="hidden" for="">검색분류</label> <select name="f"
+							class="select">
+							<option ${param.f=="title" ? "selected" : "" } value="title">제목</option>
+							<option ${param.f=="nickname" ? "selected" : "" }
+								value="nickname">작성자</option>
+							<option ${param.f=="content" ? "selected" : "" } value="content">내용</option>
+						</select> <label class="hidden" for="">검색어</label> <input type="text"
+							name="q" value="${param.q }"> <input type="submit"
+							value="검색">
+
+					</fieldset>
+				</form>
+
+			</section>
 		</section>
 
-		<div class="page-num">
-			<span class="current"> 1 </span>
-			<span> / </span>
-			<span> 1 </span>
-			<span>pages</span>
+
+	</nav>
+
+	<!-- *************************************** -->
+	<section class="review-board">
+		<h1 class="hidden">리뷰게시판 목록</h1>
+
+		<!-- 글쓰기 -->
+		<div class="write-btn">
+			<a href="reg" class="reg-btn"><i class="fas fa-edit"></i></a>
 		</div>
 
-		<div class="pager">
-			<ul class="flex-evenly">
-				<li><a href=""> <i class="fas fa-arrow-left"
-						onclick="alert('이전 페이지가 없습니다.');"></i>
-				</a></li>
-				<li><a class="" href="">1</a></li>
-				<li><a class="" href="">2</a></li>
-				<li><a class="" href="">3</a></li>
-				<li><a class="" href="">4</a></li>
-				<li><a class="" href="">5</a></li>
-				<li><a class="" href="">6</a></li>
-				<li><a class="" href="">7</a></li>
-				<li><a class="" href="">8</a></li>
-				<li><a class="" href="">9</a></li>
-				<li><a class="" href="">10</a></li>
-				<li><a href=""> <i class="fas fa-arrow-right"
-						onclick="alert('다음 페이지가 없습니다.');"></i>
-				</a></li>
-			</ul>
+		<div class="review-board-box">
+			<c:forEach var="list" items="${list}">
+				<div class="review-list-box">
+
+					<div class="review-list-box_group">
+						<a class="fnt_sunflower" href="#">${list.mfcProduct}</a>
+					</div>
+
+					<div class="review-list-box_vote">
+						<!-- <i class="far fa-thumbs-up"></i> -->
+						<div class="star">
+							<c:choose>
+								<c:when test="${list.gradeId==1}">★☆☆☆☆</c:when>
+								<c:when test="${list.gradeId==2}">★★☆☆☆</c:when>
+								<c:when test="${list.gradeId==3}">★★★☆☆</c:when>
+								<c:when test="${list.gradeId==4}">★★★★☆</c:when>
+								<c:when test="${list.gradeId==5}">★★★★★</c:when>
+							</c:choose>
+						</div>
+					</div>
+
+					<div class="review-list-box_content">
+
+						<div class="review-list-box_title">
+							<div class="span-title">
+								<a class="review-title" href="detail?id=${list.id}">${list.title}</a>
+							</div>
+
+							<span class="review-comment darkgray">[${list.cmtCount}]</span>
+						</div>
+
+
+						<div class="review-list-box-meta darkcyan">
+							<div class="review-list-box-meta_regdate">
+								${list.regdate}
+								<%-- 	<fmt:parseDate var="date" value="${list.regdate}"
+										pattern="yyyy-MM-dd HH:mm" />
+									<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm" /> --%>
+								<%-- <fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd HH:mm" /> --%>
+							</div>
+							<div class="review-list-box-meta_author">${list.nickname }</div>
+						</div>
+					</div>
+
+
+				</div>
+			</c:forEach>
+		</div>
+
+	</section>
+
+	<c:set var="page" value="${ (empty param.p) ? 1:param.p }" />
+	<c:set var="startNum" value="${page-(page-1)%5 }" />
+	<!--ex)page: 23 -> 23 - (23-1)%5 = 21~25 -->
+	<c:set var="lastNum"
+		value="${fn:substringBefore(Math.ceil(count/10),'.')}" />
+
+	<div class="indexer-box">	
+		<h1 class="hidden">현재 페이지</h1>
+		<div>
+			<span class="index-num">${(empty param.p)? 1:param.p}</span>/${lastNum }
+			pages
 		</div>
 	</div>
 
+
+	<div class="pager-box">
+		<div class="prev-box">
+			<c:if test="${startNum-1>0 }">
+				<a class="prev" href="?p=${startNum-1}&f=${param.f }&q=${param.q}"><i
+					class="fas fa-angle-left"></i></a>
+			</c:if>
+			<c:if test="${startNum-1<=0 }">
+				<i class="fas fa-angle-left" onclick="alert('이전 페이지가 없습니다.')"></i>
+			</c:if>
+		</div>
+
+
+		<ul class="pager">
+			<c:forEach var="i" begin="0" end="4">
+				<c:if test="${(startNum+i) <= lastNum }">
+					<li class="pager-item"><a
+						class="pager-num ${(page==(startNum+i)) ? 'orange' : ''  }"
+						href="?p=${startNum+i}&f=${param.f }&q=${param.q}">${startNum+i}</a></li>
+				</c:if>
+			</c:forEach>
+		</ul>
+
+		<div class="next-box">
+			<c:if test="${startNum+5<=lastNum }">
+				<a class="next" href="?p=${startNum+5}&f=${param.f }&q=${param.q}"><i
+					class="fas fa-angle-right"></i></a>
+			</c:if>
+			<c:if test="${startNum+5>=lastNum }">
+				<i class="fas fa-angle-right" onclick="alert('다음 페이지가 없습니다.')"></i>
+			</c:if>
+		</div>
+
+	</div>
+	<!-- --------------js--------------- -->
+	<script type="text/javascript" src="../js/utils.js"></script>
+	<script type="text/javascript" src="../js/board/review/list.js"></script>
 </main>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

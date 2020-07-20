@@ -1,108 +1,108 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"
+	integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+	crossorigin="anonymous"></script>
+
+<script src="/js/board/introlook/list.js"></script>
 <main id="main">
-	<h1 class="hidden">main</h1>
+	<h1 class="hidden">Fashion Look</h1>
 	<div class="container">
 
-		<form action="list" method="get">
-			<div class="top-btn flex-center">
-				<div class="search-btn">
-					<input type="text" name="s" value="">
-					<input type="submit" value="&#xf002">
-				</div>
-           		<div class="btn-reg">
-					<a href="reg">Write</a>
-				</div>
-			</div>
-		</form>
-		
 		<section class="board-container flex-between">
 			<h1 class="hidden">board</h1>
-
-		<c:forEach begin="0" end="7">
-			<div class="board-channel">
-				<div class="channel-content flex-between">
-					<div class="channel-img">
-						<a href="detail.html">
-							<img src="/images/unnamed1.jpg" alt="">
-						</a>
-					</div>
-					<div class="flex-between">
-						<div class="channel-info">
-							<div>
-								<span>SUBSCRIBE :</span>
-								<span>13,400</span>
-							</div>
-							<div>
-								<span>VIEWS :</span>
-								<span>1,269,038</span>
-							</div>
-							<div>
-								<span>VIDEOS :</span>
-								<span>523</span>
-							</div>
-						</div>
-						<div class="channel-box">
-							<div class="like-hate flex-between">
-								<div>
-									<i class="like far fa-thumbs-up"></i>
-									<div>123</div>
-								</div>
-								<div>
-									<i class="hate far fa-thumbs-down"></i>
-									<div>456</div>
-								</div>
-							</div>
-							<div class="link-youtube">
-								<a>Go to Channel</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="recommend-comment">
-					<div>
-						<span>Comment : </span>
-						<span style="margin: 0px 10px;">/</span>
-						<span>narafu 나라퓨</span>
-					</div>
-					<span>장성규가 대박 웃겨요~!! 장성규가 대박 웃겨요~!! 장성규가 대박 웃겨요~!! 장성규가 대박 웃겨요~!!</span>
-				</div>
+			
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/casual.jpg" alt="fashion look"
+					class="thumbnail-img" />
 			</div>
-		</c:forEach>
-		
-		</section>
-
-		<div class="page-num">
-			<span class="current"> 1 </span>
-			<span> / </span>
-			<span> 1 </span>
-			<span>pages</span>
 		</div>
-
-		<div class="pager">
-			<ul class="flex-evenly">
-				<li><a href=""> <i class="fas fa-arrow-left"
-						onclick="alert('이전 페이지가 없습니다.');"></i>
-				</a></li>
-				<li><a class="" href="">1</a></li>
-				<li><a class="" href="">2</a></li>
-				<li><a class="" href="">3</a></li>
-				<li><a class="" href="">4</a></li>
-				<li><a class="" href="">5</a></li>
-				<li><a class="" href="">6</a></li>
-				<li><a class="" href="">7</a></li>
-				<li><a class="" href="">8</a></li>
-				<li><a class="" href="">9</a></li>
-				<li><a class="" href="">10</a></li>
-				<li><a href=""> <i class="fas fa-arrow-right"
-						onclick="alert('다음 페이지가 없습니다.');"></i>
-				</a></li>
-			</ul>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/street.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
 		</div>
 	</div>
 
-</main>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/vintage.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/classic.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/dandy.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/minimalism.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/maximalism.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/avant-garde.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
+	<div class="thumbnail-wrapper">
+		<div class="channel-content flex-between thumbnail">
+			<div class="thumbnail-centered">
+				<img src="/images/introlook/normcore.jpg" alt="fashion look"
+					class="thumbnail-img" />
+			</div>
+		</div>
+	</div>
+
+	<div class="detail">
+		<div class="flex-between">
+			<div>
+			<div class="sub-title">detail</div>
+			<i class="fas fa-times fa-2x"></i></div>
+			<div class="context">contextcontextcontextcontextcontextcontextcontextcontextcontext
+			contextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontext
+			contextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontextcontext
+			contextcontextcontextcontextcontextcontextcontextcontextcontext
+			contextcontextcontextcontextcontextcontext</div>
+		</div>
+	</div>
+
+	</section>
+
+	</div>
+
+</main>

@@ -91,6 +91,7 @@ body {
     display: none;
     width: 1140px;
     height: 560px;
+    
     z-index: 1;
     position: absolute;
     color: black;

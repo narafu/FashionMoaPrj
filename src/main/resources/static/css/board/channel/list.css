@@ -63,6 +63,17 @@
    		    border: solid 2px white;
         }
 
+	.introboard-container{
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);  
+        column-gap: 80px;
+        row-gap: 40px;
+        margin: 0px auto 30px auto;
+        padding: 10px;
+        font-size: 14px;
+	}
+	
     .board-container {
         width: 90%;
         display: grid;
