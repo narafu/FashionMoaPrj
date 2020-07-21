@@ -20,12 +20,9 @@
 
 			<ul class="sub-link-list">
 				<li class="sub-link-item"><a href=""><i class="fas"></i>최근순</a></li>
-				<li class="sub-link-item"><a href=""><i
-						class="fas"></i>인기순</a></li>
-				<li class="sub-link-item"><a href=""><i
-						class="fas "></i>카테고리</a></li>
-				<li class="sub-link-item"><a href=""><i
-						class="fas "></i></a></li>
+				<li class="sub-link-item"><a href=""><i class="fas"></i>인기순</a></li>
+				<li class="sub-link-item"><a href=""><i class="fas "></i>카테고리</a></li>
+				<li class="sub-link-item"><a href=""><i class="fas "></i></a></li>
 			</ul>
 
 			<section class="sub-link-search">
@@ -118,7 +115,7 @@
 	<c:set var="lastNum"
 		value="${fn:substringBefore(Math.ceil(count/10),'.')}" />
 
-	<div class="indexer-box">	
+	<div class="indexer-box">
 		<h1 class="hidden">현재 페이지</h1>
 		<div>
 			<span class="index-num">${(empty param.p)? 1:param.p}</span>/${lastNum }

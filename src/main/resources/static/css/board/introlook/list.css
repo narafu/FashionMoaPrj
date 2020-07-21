@@ -5,36 +5,58 @@ img{
 	 width: 100%;
     height: auto;
 }
-.detail {
-    display: none;
+
+/**** board list ****/
+
+.board-container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    column-gap: 20px;
+    row-gap: 40px;
+    margin: 0px auto 30px auto;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/*** hidden context  ****/
+.casual-context,.street-context,.vintage-context,.avantgarde-context,.classic-context,.dandy-context,.maximalism-context,.minimalism-context,.normcore-context{
+	  display: none;
     width: 80%;
     min-width:1024px;
     height: 100%;
-    z-index: 1;
+    z-index: 10;
     position: absolute;
     color: black;
     background-color: white;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
-.detail .context{
-  position: relative;
-  width:100%;
-}
+	.detail-context-container{
+	display:block;
+	
+	}
+	
+	/** 본문 내용 **/
+	.detail-context-container .context{
+	text-align:center;
+	
+	}
+		.title-container{
+		display:flex;
+		padding-left:10px;
+		justify-content: space-between;
+		align-items:center;
+		
+		}
+			.title-container .sub-title{
+				font-size:30px;
+			}
 
-    .board-container {
-        width: 90%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);  
-        column-gap: 80px;
-        row-gap: 40px;
-        margin: 0px auto 30px auto;
-        padding: 10px;
-        font-size: 14px;
-    }
 
+/*****  Thumb nail ******/
 .thumbnail-wrapper {
-  width: 90%;
+  width: 60%;
    overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
