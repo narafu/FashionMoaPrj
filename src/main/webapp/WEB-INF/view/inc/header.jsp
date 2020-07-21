@@ -17,10 +17,24 @@
 						</a>
 					</div>
 				</li>
+					<li class="hexagon-wrapper">
+					<div class="hexagon flex-center">
+						<a href="/board/introlook/list">
+							<div class="text">FASHION LOOK</div>
+						</a>
+					</div>
+				</li>
 				<li class="hexagon-wrapper">
 					<div class="hexagon flex-center">
 						<a href="/board/playlist/list">
 							<div class="text">PlayList</div>
+						</a>
+					</div>
+				</li>
+				<li class="hexagon-wrapper">
+					<div class="hexagon flex-center">
+						<a href="/board/free/list">
+							<div class="text">자유게시판</div>
 						</a>
 					</div>
 				</li>
@@ -93,8 +107,8 @@
 		<nav class="member-menu">
 			<h1 class="hidden">member-menu</h1>
 			<ul class="flex-center">
-				<li><a href="/member/mypage/list">MyPage</a></li>
-				<li><a href="login.html">Login</a></li>
+				<li><a href="/member/mycloset/list">MyPage</a></li>
+				<li><a href="/member/login">Login</a></li>
 			</ul>
 		</nav>
 	</div>

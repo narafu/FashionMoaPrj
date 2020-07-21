@@ -1,0 +1,10 @@
+@import url(/css/inc/reset.css);
+@import url(/css/inc/layout.css);
+@import url(/css/inc/style.css);
+@charset "UTF-8";
+
+#main{
+	display:flex;
+	font-size:14px;
+	color:black;
+}
