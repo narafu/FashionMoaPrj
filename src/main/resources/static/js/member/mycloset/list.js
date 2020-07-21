@@ -1,20 +1,7 @@
 $(function () {
 
-    // detail toggle
     let subTitle;
     let subTitleColor;
-    $(".card").click(function (e) {
-        subTitle = $(this).find("span").text();
-        subTitleColor = $(e.target).parents("li").css("background-color");
-        $(".detail .sub-title").text(subTitle);
-        $(".detail .sub-title").css("background-color", subTitleColor);
-        $(".detail").toggle(500);
-    });
-
-    // detail 나가기
-    $(".detail button .fa-times").click(function () {
-        $(".detail").toggle();
-    });
 
     // card 이펙트
     $(".card").hover(function () {
@@ -23,8 +10,37 @@ $(function () {
         $(this).children("span").slideUp(500);
     });
 
+    // detail toggle
+    $(".card").click(function (e) {
+        subTitle = $(this).find("span").text();
+        subTitleColor = $(this).css("background-color");
+        if ($(this).hasClass("register")) {
+            $(".register .sub-title").text(subTitle);
+            $(".register .sub-title").css("background-color", subTitleColor);
+            $(".detail.register").toggle(500);
+        }
+        else {
+            $(".cloth .sub-title").text(subTitle);
+            $(".cloth .sub-title").css("background-color", subTitleColor);
+            $(".detail.cloth").toggle(500);
+        }
+    });
+
+    // detail 나가기
+    $(".detail button .fa-times").click(function () {
+        $(e.target).toggle();
+    });
+
+        // detail - hover
+        $(".detail i, .detail li").hover(function () {
+            $(this).css("color", subTitleColor)
+        }, function () {
+            $(this).css("color", "#292929")
+        });
+    
+
     // 이미지 업로드
-    $(".cloth-box").click(function (e) {
+    $(".detail-register .cloth-box").click(function (e) {
         if (e.target.nodeName != "INPUT") return;
         $(e.target).change(function (e) {
             let img = $(this).siblings("img")
@@ -39,32 +55,19 @@ $(function () {
         });
     });
 
-
-    // 이미지 삭제
-    $(".cloth-box .fa-times").click(function () {
+    // 이미지 업로드 취소
+    $(".detail-register .cloth-box .fa-times").click(function () {
         $(this).toggle();
         $(this).siblings("img").attr("src", "");
         $(this).siblings(".cloth-input").remove();
         $("<input class='cloth-input' type='file'>").appendTo($(this).parents(".cloth-box"));
     });
 
-    // detail - hover
-    $(".detail i, .detail li").hover(function () {
-        $(this).css("color", subTitleColor)
-    }, function () {
-        $(this).css("color", "#292929")
-    });
-
-    // submit
-    $("form").submit(function (e) { 
-        e.preventDefault();
-        var url = $(this).attr( "action" );
-        var data = $(this).serialize();
-        
-        $.post( url, data )
-        .done(function( data ) {
-          console.log('--->', data);
-        });
+    // 이미지 삭제
+    $(".detail-cloth .cloth-box .fa-times").click(function () {
+        if (confirm("삭제하시겠습니까?")) {
+            $(this).toggle();
+        }
     });
 
 });

@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.moa.web.service.MemberService;
+import com.moa.web.service.ClothService;
 
 @Controller
 @RequestMapping("/member/mycloset/")
 public class MyClosetController {
 	
 	@Autowired
-	MemberService memberService;
+	ClothService clothService;
 
 	@GetMapping("list")
 	public String mypage() {
@@ -21,12 +21,20 @@ public class MyClosetController {
 		return "member/mycloset/list";
 	}
 	
-	@PostMapping("reg")
+	@RequestMapping("reg")
 	public String reg() {
 		
-		memberService.insertOuter();
+//		clothService.insertOuter();
 		
-		return "";
+		return "redirect:list";
+	}
+	
+	@RequestMapping("del")
+	public String del() {
+		
+//		clothService.insertOuter();
+		
+		return "redirect:list";
 	}
 	
 }

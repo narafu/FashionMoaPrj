@@ -14,14 +14,49 @@
     <title>My Closet</title>
 </head>
 
-<body class="flex-center">
-    <section id="mycloset">
-        <h1 class="hidden">My Closet</h1>
-        <div class="title">My Closet</div>
-        
-        <form method="post" enctype="multipart/form-data" action="/member/mycloset/list" >
-            <div class="detail">
-                <div class="flex-between">
+<body>
+    <h1 class="hidden">My Closet</h1>
+    <div class="title">My Closet</div>
+
+    <section class="flex-center">
+        <h1 class="hidden">cloth-menu</h1>
+        <ul class="cloth-menu">
+            <div class="top-menu flex-center">
+                <li class="card cloth flex-center">
+                    <i class="fas fa-tshirt fa-5x"></i>
+                    <span class="sub-title">Outer</span>
+                </li>
+                <li class="card cloth flex-center">
+                    <i class="fas fa-tshirt fa-5x"></i>
+                    <span class="sub-title">Tops</span>
+                </li>
+                <li class="card cloth flex-center">
+                    <i class="fas fa-tshirt fa-5x"></i>
+                    <span class="sub-title">Bottoms</span>
+                </li>
+            </div>
+            <div class="bottom-menu flex-center">
+                <li class="card cloth flex-center">
+                    <i class="fas fa-tshirt fa-5x"></i>
+                    <span class="sub-title">Shoes</span>
+                </li>
+                <li class="card cloth flex-center">
+                    <i class="fas fa-tshirt fa-5x"></i>
+                    <span style="font-size:40px;" class="sub-title">Etc</span>
+                </li>
+                <li class="card register flex-center">
+                    <i class="fas fa-plus fa-5x"></i>
+                    <span class="sub-title">Register</span>
+                </li>
+            </div>
+        </ul>
+    </section>
+
+    <section class="detail-cloth">
+        <h1 class="hidden">detail-cloth</h1>
+        <form action="del">
+            <div class="detail cloth">
+                <div class="flex-between" style="margin-top: -1px;">
                     <div class="sub-title">Outer</div>
                     <button type="submit">
                         <i class="fas fa-times fa-2x"></i>
@@ -32,7 +67,6 @@
                         <div class="cloth-box flex-center">
                             <i class="fas fa-times fa"></i>
                             <img class="cloth-img" src="" alt="">
-                            <input class="cloth-input" type="file">
                         </div>
                     </c:forEach>
                 </div>
@@ -52,41 +86,45 @@
             </div>
             <input type="hidden" name="uid" value="narafu">
         </form>
-
-        <ul class="cloth-menu">
-            <div class="top-menu flex-center">
-                <li class="card flex-center">
-                    <i class="fas fa-tshirt fa-5x"></i>
-                    <span class="sub-title">Outer</span>
-                </li>
-                <li class="card flex-center">
-                    <i class="fas fa-tshirt fa-5x"></i>
-                    <span class="sub-title">Tops</span>
-                </li>
-                <li class="card flex-center">
-                    <i class="fas fa-tshirt fa-5x"></i>
-                    <span class="sub-title">Bottoms</span>
-                </li>
-            </div>
-            <div class="bottom-menu flex-center">
-                <li class="card flex-center">
-                    <i class="fas fa-tshirt fa-5x"></i>
-                    <span class="sub-title">Shoes</span>
-                </li>
-                <li class="card flex-center">
-                    <i class="fas fa-tshirt fa-5x"></i>
-                    <span style="font-size:40px;" class="sub-title">Accessories</span>
-                </li>
-                <li class="card flex-center">
-                    <i class="fas fa-tshirt fa-5x"></i>
-                    <span class="sub-title">Etc</span>
-                </li>
-            </div>
-        </ul>
     </section>
-    
+
+    <section class="detail-register">
+        <h1 class="hidden">detail-register</h1>
+        <form action="reg">
+            <div class="detail register">
+                <div class="flex-between" style="margin-top: -1px;">
+                    <div class="sub-title">register</div>
+                    <div class="category">
+                        <label for="">Outer</label>
+                        <input type="radio" value="Outer" name="category" checked>
+                        <label for="">Tops</label>
+                        <input type="radio" value="Tops" name="category">
+                        <label for="">Bottoms</label>
+                        <input type="radio" value="Bottoms" name="category">
+                        <label for="">Shoes</label>
+                        <input type="radio" value="Shoes" name="category">
+                        <label for="">Etc</label>
+                        <input type="radio" value="Etc" name="category">
+                    </div>
+                    <button type="submit">
+                        <i class="fas fa-times fa-2x"></i>
+                    </button>
+                </div>
+                <div class="box-container">
+                    <c:forEach begin="1" end="6">
+                        <div class="cloth-box flex-center">
+                            <i class="fas fa-times fa"></i>
+                            <img src="" alt="">
+                            <input type="file">
+                        </div>
+                    </c:forEach>
+                </div>
+            </div>
+            <input type="hidden" name="uid" value="narafu">
+        </form>
+    </section>
+
     <script src="/js/member/mycloset/list.js"></script>
 </body>
-
 
 </html>

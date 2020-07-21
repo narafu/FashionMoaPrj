@@ -9,7 +9,7 @@ body {
     min-height: 100vh;
 }
 
-#mycloset .card {
+.card {
     width: 300px;
     height: 200px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
@@ -19,7 +19,7 @@ body {
     flex-direction: column;
 }
 
-    #mycloset .card span {
+    .card span {
         display: none;
         font-size: 50px;
         font-family: 'Orbitron', sans-serif;
@@ -56,7 +56,8 @@ body {
 
 .cloth-menu
 .bottom-menu>.card:nth-child(1) {
-    background-color: #8c7c5b;
+    background-color: #7c5977;
+
 }
 
 .cloth-menu
@@ -66,20 +67,23 @@ body {
 
 .cloth-menu
 .bottom-menu>.card:nth-child(3) {
-    background-color: #7c5977;
+    /* background-color: #8c7c5b; */
+    background-color: #292929;
 }
 
 /* detail */
 
 .detail {
     display: none;
+    position: absolute;
+    top: 125px;
+    left: 200px;
     width: 1140px;
     height: 560px;
-    z-index: 1;
-    position: absolute;
     color: black;
     background-color: white;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    margin: auto;
 }
 
 .detail .sub-title {
@@ -89,6 +93,10 @@ body {
     text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
     font-size: 30px;
     color: white;
+}
+
+.category input {
+    margin-right: 50px;
 }
 
 .detail button {
@@ -115,21 +123,20 @@ body {
     position: relative;
 }
 
-.cloth-box img {
-    width: auto;
-    max-height: 90%;
-}
+    .cloth-box img {
+        width: auto;
+        max-height: 90%;
+    }
 
-.detail .cloth-box .fa-times {
-    display: none;
-    position: absolute;
-    right: 10px;
-    top:10px;
-}
+    .cloth-box .fa-times {
+        position: absolute;
+        right: 10px;
+        top:10px;
+    }
 
-input[type="file"] {
-    width: 200px;
-}
+    .detail-register .cloth-box .fa-times {
+        display: none;
+    }
 
 .pager {
     width: 40%;
@@ -140,3 +147,7 @@ input[type="file"] {
 .detail i:hover, li:hover {
     cursor: pointer;
 }
+
+    input[type="file"] {
+        width: 200px;
+    }
