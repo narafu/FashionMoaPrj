@@ -24,7 +24,7 @@
             <div class="top-menu flex-center">
                 <li class="card cloth flex-center">
                     <i class="fas fa-tshirt fa-5x"></i>
-                    <span class="sub-title">Outer</span>
+                    <span class="sub-title">Outers</span>
                 </li>
                 <li class="card cloth flex-center">
                     <i class="fas fa-tshirt fa-5x"></i>
@@ -54,10 +54,10 @@
 
     <section class="detail-cloth">
         <h1 class="hidden">detail-cloth</h1>
-        <form action="del">
+        <form action="del" method="POST">
             <div class="detail cloth">
                 <div class="flex-between" style="margin-top: -1px;">
-                    <div class="sub-title">Outer</div>
+                    <div class="sub-title">Outers</div>
                     <button type="submit">
                         <i class="fas fa-times fa-2x"></i>
                     </button>
@@ -84,7 +84,7 @@
                     </ul>
                 </div>
             </div>
-            <input type="hidden" name="uid" value="narafu">
+            <!-- <input type="hidden" name="uid" value="narafu"> -->
         </form>
     </section>
 
@@ -95,16 +95,16 @@
                 <div class="flex-between" style="margin-top: -1px;">
                     <div class="sub-title">register</div>
                     <div class="category">
-                        <label for="">Outer</label>
-                        <input type="radio" value="Outer" name="category" checked>
+                        <label for="">Outers</label>
+                        <input type="radio" value="outers" name="category" checked>
                         <label for="">Tops</label>
-                        <input type="radio" value="Tops" name="category">
+                        <input type="radio" value="tops" name="category">
                         <label for="">Bottoms</label>
-                        <input type="radio" value="Bottoms" name="category">
+                        <input type="radio" value="bottoms" name="category">
                         <label for="">Shoes</label>
-                        <input type="radio" value="Shoes" name="category">
+                        <input type="radio" value="shoes" name="category">
                         <label for="">Etc</label>
-                        <input type="radio" value="Etc" name="category">
+                        <input type="radio" value="etc" name="category">
                     </div>
                     <button type="submit">
                         <i class="fas fa-times fa-2x"></i>
@@ -120,7 +120,7 @@
                     </c:forEach>
                 </div>
             </div>
-            <input type="hidden" name="uid" value="narafu">
+            <!-- <input type="hidden" name="uid" value="narafu"> -->
         </form>
     </section>
 
