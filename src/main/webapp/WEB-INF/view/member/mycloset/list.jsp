@@ -87,21 +87,21 @@
 
     <section class="detail-register">
         <h1 class="hidden">detail-register</h1>
-        <form action="reg">
+        <form action="reg" method="POST" enctype="multipart/form-data">
             <div class="detail register">
                 <div class="flex-between" style="margin-top: -1px;">
                     <div class="sub-title">register</div>
                     <div class="category">
                         <label for="">Outers</label>
-                        <input type="radio" value="outers" name="category" checked>
+                        <input type="radio" value="Outers" name="c">
                         <label for="">Tops</label>
-                        <input type="radio" value="tops" name="category">
+                        <input type="radio" value="Tops" name="c">
                         <label for="">Bottoms</label>
-                        <input type="radio" value="bottoms" name="category">
+                        <input type="radio" value="Bottoms" name="c">
                         <label for="">Shoes</label>
-                        <input type="radio" value="shoes" name="category">
+                        <input type="radio" value="Shoes" name="c">
                         <label for="">Etc</label>
-                        <input type="radio" value="etc" name="category">
+                        <input type="radio" value="Etc" name="c">
                     </div>
                     <button type="submit">
                         <i class="fas fa-times fa-2x"></i>
@@ -112,7 +112,7 @@
                         <div class="cloth-box flex-center">
                             <i class="fas fa-times fa"></i>
                             <img src="" alt="">
-                            <input type="file">
+                            <input type="file" name="f">
                         </div>
                     </c:forEach>
                 </div>
