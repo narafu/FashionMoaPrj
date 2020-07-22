@@ -28,14 +28,15 @@ public class MyClosetController {
 	}
 
 	@ResponseBody
-	@PostMapping("list-ajax")
-	public List<Cloth> listAjax(@RequestParam(name = "c", defaultValue = "Outers") String category,
+	@GetMapping("list-ajax")
+	public List<Cloth> listAjax(
+			@RequestParam(name = "c", defaultValue = "Outers") String category,
 			@RequestParam(name = "p", defaultValue = "1") int page) {
 
 //		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
 		String uid = "test";
 
-		List<Cloth> list = clothService.getOuterList(category, uid, page);
+		List<Cloth> list = clothService.getClothList(category, uid, page);
 
 		return list;
 	}
@@ -43,15 +44,23 @@ public class MyClosetController {
 	@GetMapping("reg")
 	public String reg(@RequestBody Cloth cloth) {
 
-
 		return "redirect:list";
 	}
 
+	@ResponseBody
 	@PostMapping("del")
-	public String del(String img) {
+	public List<Cloth> del(
+			@RequestParam(name = "c", defaultValue = "Outers") String category,
+			@RequestParam(name = "id") String id,
+			@RequestParam(name = "p", defaultValue = "1") int page) {
 
+//		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
+		String uid = "test";
 
-		return "redirect:list";
+		clothService.delCloth(category, uid, id);
+		List<Cloth> list = clothService.getClothList(category, uid, page);
+
+		return list;
 	}
 
 }

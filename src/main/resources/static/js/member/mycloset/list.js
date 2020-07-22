@@ -2,6 +2,7 @@ $(function () {
 
     let category;
     let subTitleColor;
+    let page;
 
     // card 이펙트
     $(".card").hover(function () {
@@ -12,27 +13,34 @@ $(function () {
 
     // detail-cloth toggle
     $(".card.cloth").click(function (e) {
+        page = 1;
         category = $(this).find("span").text();
         subTitleColor = $(this).css("background-color");
+        $(".detail.cloth .sub-title").text(category);
+        $(".detail.cloth .sub-title").css("background-color", subTitleColor);
+        $(".detail.cloth").toggle(500);
+        // 이미지 로드
         $.ajax({
-            type: "post",
+            type: "get",
             url: "/member/mycloset/list-ajax",
-            data: { "c": category },
+            data: {
+                "c": category,
+                "p": page
+            },
             dataType: "json",
             success: function (list) {
                 for (var i in list) {
                     $(`.detail-cloth .cloth-box:eq(${i}) img`)
                         .attr("src", `${list[i].img}`);
+                    $(`.detail-cloth .cloth-box:eq(${i}) img`)
+                        .attr("id", `${list[i].id}`);
                 }
             }
         });
-        $(".cloth .sub-title").text(category);
-        $(".cloth .sub-title").css("background-color", subTitleColor);
-        $(".detail.cloth").toggle(500);
     });
 
     // detail-register
-    $(".card.register").click(function (e) {
+    $(".card.register").click(function () {
         category = $(this).find("span").text();
         subTitleColor = $(this).css("background-color");
         $(".register .sub-title").text(category);
@@ -40,39 +48,23 @@ $(function () {
         $(".detail.register").toggle(500);
     });
 
-    // detail 나가기 : 이미지 업로드 & 삭제
+    // detail 나가기 : 이미지 업로드
     $(".detail button .fa-times").click(function () {
-
-        let imgSrc = $(this).siblings("img").attr("src");
 
         // 이미지 업로드
         if ($(this).parents(".detail").hasClass("cloth")) {
-            console.log("reg")
             // $.ajax({
             //     type: "post",
             //     url: "/member/mycloset/reg",
-            //     data: ?,
+            //     data: "json",
             //     success: function (response) {
 
             //     }
             // });
         }
 
-        // 이미지 삭제
-        else {
-            console.log("del")
-            $.ajax({
-                type: "post",
-                url: "/member/mycloset/del",
-                data: { "img": imgSrc },
-                success: function (response) {
-
-                }
-            });
-        }
-
         // 종료
-        $(e.target).toggle(500);
+        $(this).parents(".detail").toggle(500);
     });
 
     // detail - hover
@@ -109,13 +101,28 @@ $(function () {
     // 이미지 삭제
     $(".detail-cloth .cloth-box .fa-times").click(function () {
         if (!(confirm("삭제하시겠습니까?"))) return;
-        $(this).siblings("img").attr("src", "");
-        $(this).css("color", "#292929");
-        let clothBox = $(this).siblings("img").parents(".cloth-box");
-        let clothBoxClone = clothBox.clone();
-        clothBox.remove();
-        clothBoxClone.appendTo(".detail-cloth .box-container");
-        $(this).toggle();
+        let imgId = $(this).siblings("img").attr("id");
+
+        $.ajax({
+            type: "post",
+            url: "/member/mycloset/del",
+            data: {
+                "id": imgId,
+                "c": category,
+                "p": page
+            },
+            dataType: "json",
+            success: function (list) {
+                alert("삭제되었습니다.");
+                for (var i in list) {
+                    $(`.detail-cloth .cloth-box:eq(${i}) img`)
+                        .attr("src", `${list[i].img}`);
+                    $(`.detail-cloth .cloth-box:eq(${i}) img`)
+                        .attr("id", `${list[i].id}`);
+                }
+            }
+        });
+
     });
 
 });

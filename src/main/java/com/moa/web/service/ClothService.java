@@ -14,13 +14,18 @@ public class ClothService {
 	@Autowired
 	ClothDao clothDao;
 
-	public List<Cloth> getOuterList(String category, String uid, int page) {
+	public List<Cloth> getClothList(String category, String uid, int page) {
 
 		int size = 6;
 		int offset = (page - 1) * size;
 
-		return clothDao.getOuterList(category, uid, offset, size);
+		return clothDao.getClothList(category, uid, offset, size);
 
+	}
+
+	public void delCloth(String category, String uid, String id) {
+
+		clothDao.delCloth(category, uid, id);
 	}
 
 }

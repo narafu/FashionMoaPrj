@@ -54,7 +54,6 @@
 
     <section class="detail-cloth">
         <h1 class="hidden">detail-cloth</h1>
-        <form action="del" method="POST">
             <div class="detail cloth">
                 <div class="flex-between" style="margin-top: -1px;">
                     <div class="sub-title">Outers</div>
@@ -84,8 +83,6 @@
                     </ul>
                 </div>
             </div>
-            <!-- <input type="hidden" name="uid" value="narafu"> -->
-        </form>
     </section>
 
     <section class="detail-register">
@@ -120,7 +117,6 @@
                     </c:forEach>
                 </div>
             </div>
-            <!-- <input type="hidden" name="uid" value="narafu"> -->
         </form>
     </section>
 
