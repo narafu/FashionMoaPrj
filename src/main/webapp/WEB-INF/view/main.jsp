@@ -62,6 +62,13 @@
 						</a>
 					</div>
 				</li>
+				<li class="hexagon-wrapper">
+					<div class="hexagon flex-center">
+						<a href="board/styleFeedback/list"> <i class="fas fa-list-ol"></i>
+							<div class="text">Style<br />Feedback</div>
+						</a>
+					</div>
+				</li>
 			</ul>
 		</nav>
 	</div>

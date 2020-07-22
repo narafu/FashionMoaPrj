@@ -1,0 +1,90 @@
+
+@import url(/css/inc/reset.css);
+@import url(/css/inc/layout.css);
+@import url(/css/inc/style.css);
+
+
+    .container-table {
+        width: 90%;
+        margin: 100px auto;
+    }
+    
+    .reg-table {
+        background: white;
+        width: 700px;
+        margin: 10px auto;
+        border: solid 1px #cccccc;
+        color: #292929;
+    }
+    
+	    .reg-table .padding-b-unset{
+			padding-bottom: unset;
+		}
+    
+    thead {
+        border: solid 1px #cccccc;
+    }
+    
+    .reg-table tr td {
+        padding: 5px;
+    }
+    
+    .reg-table tr td {
+        padding: 10px 30px;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+
+    .reg-table>thead>tr>td {
+        font-size: 0.9em;;
+        font-weight: bold;
+    }
+    
+    .reg-table>thead td {
+        --width: 25%;
+        border-bottom: solid 1px #cccccc;
+    }
+    
+    .reg-table>thead td {
+        text-align: left;
+        border-bottom: solid 1px #cccccc;
+    }
+        
+    .reg-table td input {
+	    height: 25px;
+    }
+    
+        .reg-table td input[type="text"] {
+     	   width: 450px;
+ 	   }
+
+	    .reg-table input[type="submit"] {
+	        width: 35px;
+	        font-family: FontAwesome;
+	        background: white;
+	        border: none;
+	    }
+
+    textarea {
+		width: 606px;
+		padding: 15px;
+		--font-size: 1.5em;
+		margin: 10px 0;
+		resize: none;
+		margin-top: unset;
+    }
+    
+    .bottom-btn {
+        margin: 40px;
+    }
+    
+	    .bottom-btn input {
+	        padding: 5px 10px;
+	        margin: 10px;
+	        font-family: 'Orbitron', sans-serif;
+	    }
+	
+	    .bottom-btn input:hover {
+	        cursor: pointer;
+	        opacity: 0.5;
+	    }
