@@ -48,14 +48,14 @@ public class MyClosetController {
 	}
 
 	@PostMapping("reg")
-	public String reg(@RequestParam(name = "c", defaultValue = "Outers") String category,
+	public String reg(@RequestParam(name = "c", defaultValue = "Outer") String category,
 			@RequestParam(name = "f") MultipartFile file, HttpServletRequest request, Principal principal)
 			throws IOException {
 
 //		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
 		String uid = "test";
 		String img = "\\upload\\" + file.getOriginalFilename();
-		
+
 		String path = request.getServletContext().getRealPath("/upload/"); /* 실제경로 */
 
 		File file1 = new File(path);

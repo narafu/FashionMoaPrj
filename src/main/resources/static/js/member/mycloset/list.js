@@ -47,11 +47,12 @@ $(function () {
     });
 
     // detail 나가기 : 이미지 업로드
-    $(".detail button .fa-times").click(function () {
-
+    $(".detail button").click(function (e) {
+        e.preventDefault();
         // 이미지 업로드
         if ($(this).parents(".detail").hasClass("register")) {
-            let formData = new FormData($("form[action='reg']"));
+            if (confirm("저장하시겠습니까?")) {
+            let formData = new FormData($("form[action='reg']")[0]);
             $.ajax({
                 type: "post",
                 url: "/member/mycloset/reg",
@@ -62,7 +63,8 @@ $(function () {
                 success: function (response) {
                 }
             });
-        }
+            }
+        };
 
         // 종료
         $(".detail img").attr("src", "");
@@ -116,6 +118,8 @@ $(function () {
             },
             dataType: "json",
             success: function (list) {
+                $(".detail img").attr("src", "");
+                $(".detail img").attr("id", "");
                 alert("삭제되었습니다.");
                 for (var i in list) {
                     $(`.detail-cloth .cloth-box:eq(${i}) img`)
