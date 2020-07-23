@@ -1,0 +1,198 @@
+@import url(/css/inc/reset.css);
+@import url(/css/inc/layout.css);
+@import url(/css/inc/style.css);
+
+.img{
+    width: 200px;
+    height: 200px;
+    background: rgb(230, 223, 223);
+}
+
+.icon{
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.writer{
+    --display: block;
+    width: 100px;
+    height: 20px;
+}
+
+.regdate{
+    margin-right: 5px;
+    width: 200px;
+    height: 20px;
+}
+
+.report{
+    display: block;
+    --height: 20px;
+}
+
+.delete{
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.reg{
+    margin-left: auto;
+    margin-right: 5px;
+}
+
+.del{
+	margin-right: 5px;
+}
+
+.edit{
+	margin-left: auto;
+	margin-right: 10px;
+}
+
+.prev-detail{
+    margin: auto auto;
+    margin-top: 260px;
+}
+
+    .prev-detail h1{
+        text-align: center;
+    }
+
+.next-detail{
+    margin: auto auto;
+    margin-top: 260px;
+}
+
+    .next-detail h1{
+        text-align: center;
+    }
+
+.style-feedback-detail{
+    display: flex;
+    margin: 0 auto 10px auto;
+    width: fit-content;
+    color: black;
+}
+
+.detail-table{
+    background: pink;
+    display: flex;
+    width: 735px;
+    min-height: 500px;
+    flex-direction: column;
+    height: initial;
+}
+
+    .detail-table .title{
+        background: rgb(231, 158, 231);
+        width: 100%;
+        --height: 20px;
+        align-self: center;
+    }
+
+    .detail-table .box{
+        background: skyblue;
+        display: flex;
+    }
+    
+    .detail-table .content{
+        display: flex;
+        padding: 10px;
+        flex-wrap: wrap;
+        --flex-direction: column;
+        --margin: 10px auto;
+    }
+
+        .detail-table .content .content-info1{
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .detail-table .content .content-info1 .picture{
+            width: 300px;
+            height: 513px;
+            background: gray;
+        }
+
+        .detail-table .content .content-info2{
+            margin-left: 10px;
+        }
+
+        .detail-table .content .content-info2 .top{
+            display: flex;
+            margin-bottom: 5px;
+        }
+
+        .detail-table .content .content-info2 .bottom{
+            display: flex;
+            margin-bottom: 5px;
+        }
+
+        .detail-table .content .content-info2 .shoes{
+            display: flex;
+            margin-bottom: 5px;
+        }
+
+        .detail-table .content .content-info2 .accessory{
+            display: flex;
+            margin-bottom: 5px;
+        }
+        
+        .detail-table .content .content-info2 .item{
+            background: silver;
+            --border: 1px dashed black;
+            width: 100px;
+            height: 100px;
+        }
+
+        .detail-table .content .content-info3{
+            background: yellowgreen;
+            width: 715px;
+            height: 300px;
+        }
+    
+    .style-feedback-detail .comment{
+    	width: 600px;
+        --margin-top: 20px;
+        background: lemonchiffon;
+        margin-left: 5px;
+    }
+
+        .style-feedback-detail .comment .comment-list{
+            border-bottom: 2px solid blue;
+            margin-bottom: 20px;
+        }
+
+        .style-feedback-detail .comment .comment-list .content-container{
+            display: flex;
+            width: 100%;
+            --height: 300px;
+            flex-wrap: wrap;
+        }
+
+            .style-feedback-detail .comment .comment-list .content-container .content{
+                width: 100%;
+                height: 100px;
+                border: 1px dotted black;
+            }
+
+        .style-feedback-detail .comment .comment-reg{
+            --border-bottom: 2px solid blue;
+            margin-bottom: 20px;
+        }
+
+            .style-feedback-detail .comment .comment-reg .content-container{
+                display: flex;
+                width: 100%;
+                --height: 300px;
+                flex-wrap: wrap;
+            }
+            
+                .style-feedback-detail .comment .comment-reg .content-container .content{
+                    width: 100%;
+                    height: 100px;
+                    border: 1px dotted black;
+                    resize: none;
+                }
