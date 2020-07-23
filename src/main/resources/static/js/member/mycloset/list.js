@@ -116,6 +116,8 @@ $(function () {
             },
             dataType: "json",
             success: function (list) {
+                $(".detail img").attr("src", "");
+                $(".detail img").attr("id", "");
                 alert("삭제되었습니다.");
                 for (var i in list) {
                     $(`.detail-cloth .cloth-box:eq(${i}) img`)
