@@ -9,6 +9,26 @@ body {
     min-height: 100vh;
 }
 
+.header-menu {
+    position: relative;
+}
+
+.header-menu ul {
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    color: black;
+}
+
+.header-menu ul li {
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+}
+
 .card {
     width: 300px;
     height: 200px;
@@ -139,10 +159,17 @@ body {
     }
 
 .pager {
-    width: 40%;
     margin: 0px auto;
     color: #292929;
 }
+
+    .pager ul {
+        margin: 0px 10px;
+    }
+
+        .pager ul li {
+            padding: 0px 10px;
+        }
 
 .detail i:hover, li:hover {
     cursor: pointer;

@@ -2,7 +2,8 @@ $(function () {
 
     let category;
     let subTitleColor;
-    let page;
+    let currentPage;
+    let lastPage;
 
     // card 이펙트
     $(".card").hover(function () {
@@ -11,30 +12,59 @@ $(function () {
         $(this).children("span").slideUp(500);
     });
 
+    // detail - hover
+    $(".detail i").hover(function () {
+        $(this).css("color", subTitleColor)
+    }, function () {
+        $(this).css("color", "#292929")
+    });
+
     // detail-cloth toggle
     $(".card.cloth").click(function (e) {
-        page = 1;
+        currentPage = 1;
         category = $(this).find("span").text();
         subTitleColor = $(this).css("background-color");
         $(".detail.cloth .sub-title").text(category);
         $(".detail.cloth .sub-title").css("background-color", subTitleColor);
         $(".detail.cloth").toggle(500);
 
-        // 이미지 로드
+        // 이미지 load
+        $.loadImg();
+
+        // 페이저 load
+        let offset = 6;
         $.ajax({
-            type: "get",	
-            url: "/member/mycloset/list-ajax",
-            data: { "c": category, "p": page },
+            type: "get",
+            url: "/member/mycloset/page-ajax",
+            data: "data",
             dataType: "json",
-            success: function (list) {
-                for (let i in list) {
-                    $(`.detail-cloth .cloth-box:eq(${i}) img`)
-                        .attr("src", `${list[i].img}`);
-                    $(`.detail-cloth .cloth-box:eq(${i}) img`)
-                        .attr("id", `${list[i].id}`);
+            success: function (result) {
+                let cntCategory;
+                switch (category) {
+                    case "Outers":
+                        cntCategory = result.cntOuters;
+                        break;
+                    case "Tops":
+                        cntCategory = result.cntTops;
+                        break;
+                    case "Bottoms":
+                        cntCategory = result.cntBottoms;
+                        break;
+                    case "Shoes":
+                        cntCategory = result.cntShoes;
+                        break;
+                    case "Etc":
+                        cntCategory = result.cntEtc;
+                        break;
                 }
+                lastPage = Math.ceil(cntCategory / offset);
+                for (let i = 0; i < lastPage; i++) {
+                    $(".pager ul").append(`<li>${i + 1}</li>`)
+                }
+                $(".pager ul li:first").css("color", subTitleColor);
             }
         });
+
     });
 
     // detail-register
@@ -52,33 +82,24 @@ $(function () {
         // 이미지 업로드
         if ($(this).parents(".detail").hasClass("register")) {
             if (confirm("저장하시겠습니까?")) {
-            let formData = new FormData($("form[action='reg']")[0]);
-            $.ajax({
-                type: "post",
-                url: "/member/mycloset/reg",
-                data: formData,
-                processData: false,
-                contentType: false,
-                cache: false,
-                success: function (response) {
-                }
-            });
+                let formData = new FormData($("form[action='reg']")[0]);
+                $.ajax({
+                    type: "post",
+                    url: "/member/mycloset/reg",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+                    success: function () {
+                    }
+                });
             }
         };
 
         // 종료
-        $(".detail img").attr("src", "");
-        $(".detail img").attr("id", "");
+        $(".detail .pager li").remove();
         $(this).parents(".detail").toggle(500);
     });
-
-    // detail - hover
-    $(".detail i, .detail li").hover(function () {
-        $(this).css("color", subTitleColor)
-    }, function () {
-        $(this).css("color", "#292929")
-    });
-
 
     // 이미지 업로드: ui
     $(".detail-register .cloth-box").click(function (e) {
@@ -114,7 +135,7 @@ $(function () {
             data: {
                 "id": imgId,
                 "c": category,
-                "p": page
+                "p": currentPage
             },
             dataType: "json",
             success: function (list) {
@@ -129,7 +150,62 @@ $(function () {
                 }
             }
         });
-
     });
+
+    // pager(num)
+    $(".pager ul").click(function (e) {
+        if (e.target.nodeName != "LI") return;
+        currentPage = $(e.target).html();
+        // 이미지 load
+        $.loadImg();
+    })
+
+    // pager(arrow)
+    $(".pager .fa-arrow-left").click(function () {
+        if (currentPage == 1) {
+            alert('이전 페이지가 없습니다.');
+        }
+        else {
+            currentPage--;
+            // 이미지 load
+            $.loadImg();
+        }
+    })
+
+    $(".pager .fa-arrow-right").click(function () {
+        if (currentPage == lastPage) {
+            alert('다음 페이지가 없습니다.');
+        }
+        else {
+            currentPage++;
+            // 이미지 load
+            $.loadImg();
+        }
+    })
+
+    // 이미지 load
+    $.loadImg = function () {
+        $(".pager ul li").css("color", "#292929");
+        $(`.pager ul li:eq(${currentPage-1})`).css("color", subTitleColor);
+        $.ajax({
+            type: "get",
+            url: "/member/mycloset/list-ajax",
+            data: { "c": category, "p": currentPage },
+            dataType: "json",
+            success: function (list) {
+                $(".box-container").empty();
+                for (let i in list) {
+                    $(".box-container").append(`
+                        <div class="cloth-box flex-center">
+                                <i class="fas fa-times fa"></i>
+                                <img class="cloth-img" src="${list[i].img}" alt="">
+                            </div>
+                        `);
+                    $(`.detail-cloth .cloth-box:eq(${i}) img`)
+                        .attr("id", `${list[i].id}`);
+                }
+            }
+        });
+    }
 
 });

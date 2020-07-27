@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.moa.web.dao.ClothDao;
 import com.moa.web.entity.Cloth;
+import com.moa.web.entity.CntCloth;
 
 @Service
 public class ClothService {
@@ -31,6 +32,11 @@ public class ClothService {
 	public void regClothList(String uid, String category, String img) {
 
 		clothDao.regCloth(uid, category, img);
+	}
+
+	public CntCloth getCount(String uid) {
+		
+		return clothDao.getCount(uid);
 	}
 
 }

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.moa.web.entity.Cloth;
+import com.moa.web.entity.CntCloth;
 import com.moa.web.service.ClothService;
 
 @Controller
@@ -29,22 +31,41 @@ public class MyClosetController {
 	ClothService clothService;
 
 	@GetMapping("list")
-	public String list() {
+	public String list(Principal principal, Model model) {
 
+//		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
+		String uid = "test";
+
+		CntCloth cntCloth = clothService.getCount(uid);
+		model.addAttribute("cntCloth", cntCloth);
+		
 		return "member/mycloset/list";
 	}
 
 	@ResponseBody
 	@GetMapping("list-ajax")
 	public List<Cloth> listAjax(@RequestParam(name = "c", defaultValue = "Outers") String category,
-			@RequestParam(name = "p", defaultValue = "1") int page, Principal principal) {
+			@RequestParam(name = "p", defaultValue = "1") int page, Model model, Principal principal) {
 
 //		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
 		String uid = "test";
 
 		List<Cloth> list = clothService.getClothList(uid, category, page);
-
+		CntCloth cntCloth = clothService.getCount(uid);
+		
 		return list;
+	}
+	
+	@ResponseBody
+	@GetMapping("page-ajax")
+	public CntCloth pageAjax(Principal principal) {
+
+//		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
+		String uid = "test";
+
+		CntCloth cntCloth = clothService.getCount(uid);
+		
+		return cntCloth;
 	}
 
 	@PostMapping("reg")

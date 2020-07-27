@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +17,17 @@
 
 <body>
     <h1 class="hidden">My Closet</h1>
-    <div class="title">My Closet</div>
+    <div class="header-menu container">
+        <div class="title">My Closet</div>
+        <ul>
+            <li>
+                <a href="/home">LogOut</a>
+            </li>
+            <li>
+                <a href="/home"><i class="fas fa-home fa-3x"></i></a>
+            </li>
+        </ul>
+    </div>
 
     <section class="flex-center">
         <h1 class="hidden">cloth-menu</h1>
@@ -54,35 +65,24 @@
 
     <section class="detail-cloth">
         <h1 class="hidden">detail-cloth</h1>
-            <div class="detail cloth">
-                <div class="flex-between" style="margin-top: -1px;">
-                    <div class="sub-title">Outers</div>
-                    <button type="submit">
-                        <i class="fas fa-times fa-2x"></i>
-                    </button>
+        <div class="detail cloth">
+            <div class="flex-between" style="margin-top: -1px;">
+                <div class="sub-title">Outers</div>
+                <button type="submit">
+                    <i class="fas fa-times fa-2x"></i>
+                </button>
+            </div>
+            <div class="box-container"></div>
+            <div class="pager flex-center">
+                <div>
+                    <i class="fas fa-arrow-left"></i>
                 </div>
-                <div class="box-container">
-                    <c:forEach begin="1" end="6">
-                        <div class="cloth-box flex-center">
-                            <i class="fas fa-times fa"></i>
-                            <img class="cloth-img" src="" alt="">
-                        </div>
-                    </c:forEach>
-                </div>
-                <div class="pager">
-                    <ul class="flex-evenly">
-                        <li>
-                            <i class="fas fa-arrow-left" onclick="alert('이전 페이지가 없습니다.');"></i>
-                        </li>
-                        <c:forEach var="i" begin="1" end="5">
-                            <li>${i}</li>
-                        </c:forEach>
-                        <li>
-                            <i class="fas fa-arrow-right" onclick="alert('다음 페이지가 없습니다.');"></i>
-                        </li>
-                    </ul>
+                <ul class="flex-center"></ul>
+                <div>
+                    <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
+        </div>
     </section>
 
     <section class="detail-register">
