@@ -1,0 +1,48 @@
+@import url(/css/inc/reset.css);
+@import url(/css/inc/layout.css);
+@import url(/css/inc/style.css);
+@charset "UTF-8";
+
+#board-main{
+	display:flex;
+	font-size:14px;
+	min-height:90vh;
+	height:100%;
+	color:black;
+	justify-content:center;
+	--align-items:center;
+}
+
+.board-post{
+	position:absolute;
+	width:100%;
+	min-width:1024px;
+	margin:0px auto 0px auto;
+}
+	.board-post form{
+	position:relative;
+	display:flex;
+	justify-content:center;
+	}
+
+.board-container{
+	position:relative;
+	display:flex;
+	width:80%;
+	height:90%;
+	background:#979797;
+	justify-content:center;
+	margin-top:10%;
+	--align-items:center;
+}
+
+	.post-table{
+	position:relative;
+	width:90%;
+	}
+.content-area{
+	position:relative;
+	width:100%;
+	min-height:500px;
+	resize:none;
+}

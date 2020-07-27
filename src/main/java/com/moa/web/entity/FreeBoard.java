@@ -7,7 +7,7 @@ public class FreeBoard {
 	   private String title;
 	   private String content;
 	   private int hit;
-	   private Date regDate;
+	   private Date regdate;
 	   private String img;
 	   private String nickname;
 	   private int likes;
@@ -16,12 +16,12 @@ public class FreeBoard {
 		// TODO Auto-generated constructor stub
 	}
 	   
-	 public FreeBoard( int id, String title, String content,String nickname, Date regDate, int hit, int likes, String img ) {
+	 public FreeBoard( int id, String title, String content,String nickname, Date regdate, int hit, int likes, String img ) {
 		this.id=id;
 		this.title=title;
 		this.content=content;
 		this.nickname=nickname;
-		this.regDate=regDate;
+		this.regdate=regdate;
 		this.hit=hit;
 		this.likes=likes;
 		this.img=img;
@@ -51,11 +51,11 @@ public class FreeBoard {
 	public void setHit(int hit) {
 		this.hit = hit;
 	}
-	public Date getRegDate() {
-		return regDate;
+	public Date getRegdate() {
+		return regdate;
 	}
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
 	public String getImg() {
 		return img;
@@ -77,8 +77,8 @@ public class FreeBoard {
 	}
 	@Override
 	public String toString() {
-		return "FreeBoard [id=" + id + ", title=" + title + ", content=" + content + ", hit=" + hit + ", regDate="
-				+ regDate + ", img=" + img + ", nickname=" + nickname + ", likes=" + likes + "]";
+		return "FreeBoard [id=" + id + ", title=" + title + ", content=" + content + ", hit=" + hit + ", regdate="
+				+ regdate + ", img=" + img + ", nickname=" + nickname + ", likes=" + likes + "]";
 	}
 	   
 	   

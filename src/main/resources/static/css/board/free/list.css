@@ -86,4 +86,11 @@
 			.list .table .col-text{
 			width:120px;}	
 						
-					
+.right{
+	right:0;
+}
+
+.pager-box{
+	display:flex;
+}						
+				

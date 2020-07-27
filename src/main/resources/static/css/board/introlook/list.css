@@ -52,7 +52,9 @@ img{
 			.title-container .sub-title{
 				font-size:30px;
 			}
-
+.context img{
+	width:80%;
+}
 
 /*****  Thumb nail ******/
 .thumbnail-wrapper {

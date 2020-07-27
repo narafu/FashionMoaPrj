@@ -13,16 +13,21 @@
 	--align-items:center;
 }
 
-.nav{
+.board-post{
 	position:absolute;
-	width:80%;
-	justify-content:center;
-	
+	width:100%;
+	min-width:1024px;
+	margin:0px auto 0px auto;
 }
+	.board-post form{
+	position:relative;
+	display:flex;
+	justify-content:center;
+	}
 
 .board-container{
 	position:relative;
-	--display:flex;
+	display:flex;
 	width:80%;
 	height:90%;
 	background:#979797;
@@ -31,8 +36,13 @@
 	--align-items:center;
 }
 
+	.post-table{
+	position:relative;
+	width:90%;
+	}
 .content-area{
-	display:position;
+	position:relative;
 	width:100%;
-	height:300px;
+	min-height:500px;
+	resize:none;
 }

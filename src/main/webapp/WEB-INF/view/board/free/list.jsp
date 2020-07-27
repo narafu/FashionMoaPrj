@@ -3,6 +3,7 @@
 <%@page import="java.util.List"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <main id="board-main">
 	<section class="board-container">
 
@@ -54,10 +55,10 @@
 
 							<tr>
 								<td>${brd.id }</td>
-								<td class="title"><a href="detail?id=${brd.id}">${brd.title }</a><span style="color:red;">&nbsp;&nbsp;[${brd.cmtCount }]</span></td>
+								<td class="title"><a href="detail/${brd.id}">${brd.title }</a><span style="color:red;">&nbsp;&nbsp;[${brd.cmtCount }]</span></td>
 								<td>${brd.nickname }</td>
 								<td>${brd.hit }</td>
-								<td>${brd.regDate}</td>
+								<td><fmt:formatDate value="${brd.regdate}" pattern="yyyy-MM-dd HH:mm" /></td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -70,41 +71,53 @@
 					</div>
 				</section>
 			</form>
-			<section class="page">
-				<h1 class="hidden">페이지</h1>
 
-				<c:set var="page" value="${(empty param.p)?1:param.p }" />
-				<c:set var="startNum" value="${page-(page-1)%5 }" />
-				<c:set var="lastNum"
-					value="${fn:substringBefore(Math.ceil(count/10), '.')}" />
+<c:set var="page" value="${ (empty param.p) ? 1:param.p }" />
+	<c:set var="startNum" value="${page-(page-1)%5 }" />
+	<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/10),'.')}" />
 
-				<div>
-					<c:if test="${startNum>1 }">
-						<a class="prev" href="?p=${startNum-1 }&f=&q=">이전</a>
-					</c:if>
-					<c:if test="${startNum<=1 }">
-						<span class="prev" onclick="alert('이전페이지가 업습니다.')">이전</span>
-					</c:if>
-				</div>
+	<div class="indexer-box">
+		<h1 class="hidden">현재 페이지</h1>
+		<div>
+			<span class="index-num">${(empty param.p)? 1:param.p}</span>/${lastNum }
+			pages
+		</div>
+	</div>
 
-				<ul>
-					<c:forEach var="i" begin="0" end="4">
-						<c:if test="${(startNum+i) <= lastNum }">
-							<li><a
-								class="${(page==(startNum+i))?'text-highlight':'' } font-weight-bold"
-								href="?p=${startNum+i }&f=&q=">${startNum+i }</a></li>
-						</c:if>
-					</c:forEach>
-				</ul>
-				<div>
-					<c:if test="${startNum+4<lastNum }">
-						<a class="next" href="?p=${startNum+5 }&f=&q=">다음</a>
-					</c:if>
-					<c:if test="${startNum+4>=lastNum }">
-						<span class="next" onclick="alert('다음페이지가 없습니다.')">다음</span>
-					</c:if>
-				</div>
-			</section>
+
+	<div class="pager-box">
+		<div class="prev-box">
+			<c:if test="${startNum-1>0 }">
+				<a class="prev" href="?p=${startNum-1}&f=${param.f }&q=${param.q}"><i
+					class="fas fa-angle-left"></i></a>
+			</c:if>
+			<c:if test="${startNum-1<=0 }">
+				<i class="fas fa-angle-left" onclick="alert('이전 페이지가 없습니다.')"></i>
+			</c:if>
+		</div>
+
+
+		<ul class="pager">
+			<c:forEach var="i" begin="0" end="4">
+				<c:if test="${(startNum+i) <= lastNum }">
+					<li class="pager-item"><a
+						class="pager-num ${(page==(startNum+i)) ? 'orange' : ''  }"
+						href="?p=${startNum+i}&f=${param.f }&q=${param.q}">${startNum+i}</a></li>
+				</c:if>
+			</c:forEach>
+		</ul>
+
+		<div class="next-box">
+			<c:if test="${startNum+5<=lastNum }">
+				<a class="next" href="?p=${startNum+5}&f=${param.f }&q=${param.q}"><i
+					class="fas fa-angle-right"></i></a>
+			</c:if>
+			<c:if test="${startNum+5>=lastNum }">
+				<i class="fas fa-angle-right" onclick="alert('다음 페이지가 없습니다.')"></i>
+			</c:if>
+		</div>
+
+	</div>
 		</div>
 		</section>
 		
