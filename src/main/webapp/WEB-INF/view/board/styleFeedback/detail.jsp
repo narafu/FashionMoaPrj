@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <main id="main">
 
 	<section class="style-feedback-detail">
@@ -19,7 +20,7 @@
 			<div class="content">
 				<div class="content-info1">
 					<span class="f-size-30">코디</span> <img class="picture"
-						src="/image/KakaoTalk_20200703_220605084.jpg"></img>
+						src="/${session.uid }/${list.img}"></img>
 				</div>
 
 				<div class="content-info2">
@@ -85,48 +86,114 @@
 
 		<section class="comment">
 			<h1 class="hidden">댓글</h1>
-			<div class="comment-list">
-				<div class="content-container">
-					<div class="icon">아이콘</div>
-					<div class="writer">작성자</div>
-					<div class="report">신고</div>
-					<div class="content">내용</div>
-					<div class="regdate">작성일</div>
-					<div class="delete">삭제</div>
-				</div>
-			</div>
-
-			<div class="comment-list">
-				<div class="content-container">
-					<div class="icon">아이콘</div>
-					<div class="writer">작성자</div>
-					<div class="report">신고</div>
-					<div class="content">내용</div>
-					<div class="regdate">작성일</div>
-					<div class="delete">삭제</div>
-				</div>
-			</div>
-
-			<div class="comment-list">
-				<div class="content-container">
-					<div class="icon">아이콘</div>
-					<div class="writer">작성자</div>
-					<div class="report">신고</div>
-					<div class="content">내용</div>
-					<div class="regdate">작성일</div>
-					<div class="delete">삭제</div>
-				</div>
-			</div>
-
-			<form action="" method="POST">
-				<div class="comment-reg">
+			<div class="comment-box1">
+				<div class="comment-list">
 					<div class="content-container">
-						<!-- <div class="writer">작성자</div> -->
-						<textarea class="content" placeholder="내용을 입력하세요"></textarea>
-						<div class="reg">등록</div>
+						<div class="icon">아이콘</div>
+						<div class="writer">작성자</div>
+						<div class="report">신고</div>
+						<div class="content">내용</div>
+						<div class="regdate">작성일</div>
+						<div class="delete">삭제</div>
 					</div>
 				</div>
-			</form>
+	
+				<div class="comment-list">
+					<div class="content-container">
+						<div class="icon">아이콘</div>
+						<div class="writer">작성자</div>
+						<div class="report">신고</div>
+						<div class="content">내용</div>
+						<div class="regdate">작성일</div>
+						<div class="delete">삭제</div>
+					</div>
+				</div>
+	
+				<div class="comment-list">
+					<div class="content-container">
+						<div class="icon">아이콘</div>
+						<div class="writer">작성자</div>
+						<div class="report">신고</div>
+						<div class="content">내용</div>
+						<div class="regdate">작성일</div>
+						<div class="delete">삭제</div>
+					</div>
+				</div>
+				
+				<div class="comment-list">
+					<div class="content-container">
+						<div class="icon">아이콘</div>
+						<div class="writer">작성자</div>
+						<div class="report">신고</div>
+						<div class="content">내용</div>
+						<div class="regdate">작성일</div>
+						<div class="delete">삭제</div>
+					</div>
+				</div>
+				
+				<div class="comment-list">
+					<div class="content-container">
+						<div class="icon">아이콘</div>
+						<div class="writer">작성자</div>
+						<div class="report">신고</div>
+						<div class="content">내용</div>
+						<div class="regdate">작성일</div>
+						<div class="delete">삭제</div>
+					</div>
+				</div>
+				<div class="comment-list">
+					<div class="content-container">
+						<div class="icon">아이콘</div>
+						<div class="writer">작성자</div>
+						<div class="report">신고</div>
+						<div class="content">내용</div>
+						<div class="regdate">작성일</div>
+						<div class="delete">삭제</div>
+					</div>
+				</div>
+				<div class="comment-list">
+					<div class="content-container">
+						<div class="icon">아이콘</div>
+						<div class="writer">작성자</div>
+						<div class="report">신고</div>
+						<div class="content">내용</div>
+						<div class="regdate">작성일</div>
+						<div class="delete">삭제</div>
+					</div>
+				</div>
+				<div class="comment-list">
+					<div class="content-container">
+						<div class="icon">아이콘</div>
+						<div class="writer">작성자</div>
+						<div class="report">신고</div>
+						<div class="content">내용</div>
+						<div class="regdate">작성일</div>
+						<div class="delete">삭제</div>
+					</div>
+				</div>
+				<div class="comment-list">
+					<div class="content-container">
+						<div class="icon">아이콘</div>
+						<div class="writer">작성자</div>
+						<div class="report">신고</div>
+						<div class="content">내용</div>
+						<div class="regdate">작성일</div>
+						<div class="delete">삭제</div>
+					</div>
+				</div>
+				
+			</div>			
+			<div class="comment-box2">
+				<form action="" method="POST">
+					<div class="comment-reg">
+						<div class="content-container">
+							<!-- <div class="writer">작성자</div> -->
+							<textarea class="content" placeholder="내용을 입력하세요"></textarea>
+							<div class="reg">등록</div>
+						</div>
+					</div>
+				</form>
+			</div>
 		</section>
 	</section>
 

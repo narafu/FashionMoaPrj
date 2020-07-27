@@ -11,28 +11,26 @@
 					<thead>
 						<tr>
 							<td>제목</td>
-							<td><input type="text" name="title"></td>
+							<td><input type="text" name="title" placeholder="제목을 입력하세요"></td>
 						</tr>
 						<tr>
 							<td>작성자</td>
-							<td>나는야멋쟁이</td>
-							<input type="hidden" name="uid">
+							<td><input type="hidden" name="writerId" value="3">input [value]바꿔</td>
 						</tr>
 						<tr>
 							<td>작성일</td>
 							<td>${regdate}</td>
-							<input type="hidden" name="regdate">
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td class="padding-b-unset">코디 사진</td>
-							<td class="padding-b-unset"><input type="file" name="title"></td>
+							<td class="padding-b-unset"><input type="file" name="img"></td>
 						</tr>
 						<tr>
 							<td colspan="6">
 								<div>
-									<textarea name="content" cols="30" rows="15"></textarea>
+									<textarea name="content" cols="30" rows="15" placeholder="내용을 입력하세요"></textarea>
 								</div>
 							</td>
 						</tr>

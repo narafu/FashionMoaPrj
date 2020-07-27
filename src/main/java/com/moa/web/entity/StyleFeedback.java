@@ -10,7 +10,7 @@ public class StyleFeedback {
 	private String content;
 	private Date regdate;
 	private int hit;
-	private String files;
+	private String img;
 	
 	public StyleFeedback() {
 		// TODO Auto-generated constructor stub
@@ -64,18 +64,18 @@ public class StyleFeedback {
 		this.hit = hit;
 	}
 
-	public String getFiles() {
-		return files;
+	public String getImg() {
+		return img;
 	}
 
-	public void setFiles(String files) {
-		this.files = files;
+	public void setImg(String img) {
+		this.img = img;
 	}
 
 	@Override
 	public String toString() {
 		return "StyleFeedback [id=" + id + ", title=" + title + ", writerId=" + writerId + ", content=" + content
-				+ ", regdate=" + regdate + ", hit=" + hit + ", files=" + files + "]";
+				+ ", regdate=" + regdate + ", hit=" + hit + ", img=" + img + "]";
 	}
 	
 }
