@@ -22,7 +22,7 @@ $(function () {
 
         // 이미지 로드
         $.ajax({
-            type: "get",
+            type: "get",	
             url: "/member/mycloset/list-ajax",
             data: { "c": category, "p": page },
             dataType: "json",
