@@ -14,7 +14,7 @@ import com.moa.web.entity.CntCloth;
 @Mapper
 public interface MyClothDao {
 
-	@Select("SELECT * FROM ${category} WHERE memberUid = #{uid} ORDER BY regdate ASC LIMIT ${offset}, ${size}")
+	@Select("SELECT * FROM ${category} WHERE memberUid = #{uid} ORDER BY regdate DESC LIMIT ${offset}, ${size}")
 	public List<Cloth> getClothList(@Param("uid") String uid, @Param("category") String category,
 			@Param("offset") int offset, @Param("size") int size);
 

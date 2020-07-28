@@ -53,7 +53,7 @@
                 </li>
                 <li class="card cloth flex-center">
                     <i class="fas fa-tshirt fa-5x"></i>
-                    <span style="font-size:40px;" class="sub-title">Etc</span>
+                    <span class="sub-title">Etc</span>
                 </li>
                 <li class="card register flex-center">
                     <i class="fas fa-plus fa-5x"></i>
@@ -66,11 +66,11 @@
     <section class="detail-cloth">
         <h1 class="hidden">detail-cloth</h1>
         <div class="detail cloth">
-            <div class="flex-between" style="margin-top: -1px;">
+            <div class="flex-between" style="margin-top: -3px;">
                 <div class="sub-title">Outers</div>
-                <button type="submit">
+                <div class="exit">
                     <i class="fas fa-times fa-2x"></i>
-                </button>
+                </div>
             </div>
             <div class="box-container"></div>
             <div class="pager flex-center">
@@ -89,7 +89,7 @@
         <h1 class="hidden">detail-register</h1>
         <form action="reg" method="POST" enctype="multipart/form-data">
             <div class="detail register">
-                <div class="flex-between" style="margin-top: -1px;">
+                <div class="flex-between" style="margin-top: -3px;">
                     <div class="sub-title">register</div>
                     <div class="category">
                         <label for="">Outers</label>
@@ -103,19 +103,12 @@
                         <label for="">Etc</label>
                         <input type="radio" value="Etc" name="c">
                     </div>
-                    <button type="submit">
+                    <button>Save</button>
+                    <div class="exit">
                         <i class="fas fa-times fa-2x"></i>
-                    </button>
+                    </div>
                 </div>
-                <div class="box-container">
-                    <c:forEach begin="1" end="6">
-                        <div class="cloth-box flex-center">
-                            <i class="fas fa-times fa"></i>
-                            <img src="" alt="">
-                            <input type="file" name="f">
-                        </div>
-                    </c:forEach>
-                </div>
+                <div class="box-container"></div>
             </div>
         </form>
     </section>
