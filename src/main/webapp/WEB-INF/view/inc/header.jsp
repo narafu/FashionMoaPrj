@@ -52,6 +52,13 @@
 						</a>
 					</div>
 				</li>
+				<li class="hexagon-wrapper">
+					<div class="hexagon flex-center">
+						<a href="/board/styleFeedback/list">
+							<div class="text">StyleFeedback</div>
+						</a>
+					</div>
+				</li>
 			</ul>
 			<!-- <ul class="header-main-menu">
                     <li>
