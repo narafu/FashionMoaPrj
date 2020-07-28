@@ -1,10 +1,15 @@
 package com.moa.web.controller.board;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
-import java.util.Collection;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,8 +18,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.moa.web.entity.StyleFeedback;
 import com.moa.web.entity.StyleFeedbackView;
 import com.moa.web.service.StyleFeedbackService;
 
@@ -24,10 +29,7 @@ public class StyleFeedbackController {
 	
 	@Autowired
 	private StyleFeedbackService sfService;
-	private StyleFeedback sf;
 	
-//	@Autowired
-
 	@GetMapping("list")
 	public String list(
 			@RequestParam(name = "p", defaultValue = "1") int page, 
@@ -43,7 +45,8 @@ public class StyleFeedbackController {
 	}
 
 	@GetMapping("detail")
-	public String detail() {
+	public String detail(
+			) {
 
 		return "board.styleFeedback.detail";
 	}
@@ -65,19 +68,50 @@ public class StyleFeedbackController {
 			@RequestParam("title") String title, 
 			@RequestParam("writerId") int writerId,
 			@RequestParam("content") String content, 
-			@RequestParam("img") String img) {
+			HttpServletRequest req,
+			@RequestParam("img") MultipartFile mFile) {
 		
-//		System.out.printf("제목 : %s, 작성자 : %d, 내용 : "title);
+		// 파일 경로
+		String path = req.getServletContext().getRealPath("/upload/");
+		
+		File file = new File(path);
+	    if (!file.exists()) /* 존재하지 않다면 false */
+	    	file.mkdir(); /* file1 폴더를 만들어줌 */
 		
 		
-		sf.setTitle(title);
-		sf.setWriterId(writerId);
-		sf.setContent(content);
-		sf.setImg(img);
+	    String fileName = mFile.getOriginalFilename();
+	    
+			try {
+				mFile.transferTo(new File(path + fileName));
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+			
+		String img = "/upload/" + mFile.getOriginalFilename();
+
+//		System.out.println("1. img : " + img);
+		
+		if(fileName.equals("")) {	// equals() : 값, == : 주소
+			img = null;
+//			System.out.println("2. img : " + img);
+		}
+
+		sfService.insert(title, writerId, content, img);
 		
 		return "redirect:list";
 	}
 	
+	@GetMapping("delete")
+	public String delete(@RequestParam("id")int id) {
+		
+		sfService.delete(id);
+		
+		return "redirect:list";
+	}
 	
-
 }

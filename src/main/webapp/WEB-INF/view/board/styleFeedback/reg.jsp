@@ -6,7 +6,7 @@
 	<h1 class="hidden">main</h1>
 	<div class="container">
 		<div class="container-table">
-			<form action="reg" method="post">
+			<form action="reg" method="post" enctype="multipart/form-data">
 				<table class="reg-table">
 					<thead>
 						<tr>

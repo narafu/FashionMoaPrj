@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import com.moa.web.dao.StyleFeedbackDao;
 import com.moa.web.entity.StyleFeedback;
@@ -17,10 +15,10 @@ public class StyleFeedbackService {
 	@Autowired
 	private StyleFeedbackDao sfDao;
 	
-	public List<StyleFeedbackView> getList(
-			@RequestParam(name = "p", defaultValue = "1") int page, 
-			@RequestParam(name = "q", defaultValue = "") String query, 
-			@RequestParam(name = "f", defaultValue = "title") String field){
+//	@Autowired
+//	private StyleFeedback sf;
+
+	public List<StyleFeedbackView> getList(int page, String query, String field){
 		
 		int offset = (page-1)*10;
 		int size = 10;
@@ -33,14 +31,24 @@ public class StyleFeedbackService {
 		return sfDao.get(id);
 	}
 	
-	public int insert(
-			@RequestParam("title") String title, 
-			@RequestParam("writerId") int writerId,
-			@RequestParam("content") String content, 
-			@RequestParam("img") String img) {
+	public int insert(String title, int writerId, String content, String img) {
 		
 		
+		
+//		sf.setTitle(title);
+//		sf.setWriterId(writerId);
+//		sf.setContent(content);
+//		sf.setImg(img);i
+//		System.out.println(img);
+//		System.out.printf("제목 : %s, 작성자 : %d, 내용 : %s\n", title, writerId, content);
 		
 		return sfDao.insert(title, writerId, content, img);
 	}
+	
+	public int delete(int id) {
+		
+		return sfDao.delete(id);
+	}
+
+	
 }

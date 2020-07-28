@@ -15,7 +15,7 @@
 				<div class="regdate">2222-22-22 22:22</div>
 				<div class="hit">조회수 1</div>
 				<div class="edit">수정</div>
-				<div class="del">삭제</div>
+				<div class="delete">삭제</div>
 			</div>
 			<div class="content">
 				<div class="content-info1">
