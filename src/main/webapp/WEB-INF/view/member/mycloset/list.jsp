@@ -103,7 +103,7 @@
                         <label for="">Etc</label>
                         <input type="radio" value="Etc" name="c">
                     </div>
-                    <button>Save</button>
+                    <button>SAVE</button>
                     <div class="exit">
                         <i class="fas fa-times fa-2x"></i>
                     </div>

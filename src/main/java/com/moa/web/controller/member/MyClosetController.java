@@ -48,10 +48,14 @@ public class MyClosetController {
 		}
 
 		Iterator<String> files = multi.getFileNames();
+
 		while (files.hasNext()) {
 			String uploadFile = files.next();
 			MultipartFile mFile = multi.getFile(uploadFile);
 			String fileName = mFile.getOriginalFilename();
+
+			if (fileName.equals(""))
+				continue;
 
 			try {
 
@@ -64,10 +68,11 @@ public class MyClosetController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			
+
 //			String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
 			String uid = "test";
 			String img = "/upload/" + fileName;
+
 			clothService.regClothList(uid, category, img);
 
 		}

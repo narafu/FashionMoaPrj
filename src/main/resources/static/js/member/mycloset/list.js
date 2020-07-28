@@ -43,8 +43,6 @@ $(function () {
 
     // detail exit
     $(".detail .exit").click(function (e) {
-        $(".detail .pager ul").empty();
-        $(".box-container").empty();
         $(this).parents(".detail").toggle(500);
     });
 
@@ -60,6 +58,32 @@ $(function () {
             reader.readAsDataURL(this.files[0]);
             $(this).toggle();
             $(this).siblings(".fa-times").toggle();
+        });
+    });
+
+    // image upload
+    $("form[action='reg']").submit(function (e) {
+        e.preventDefault();
+
+        var checked = $("input[name='c']:checked").val();
+        if (checked == undefined) {
+            alert("카테고리가 입력되지 않았습니다.");
+            return;
+        }
+
+        let formData = new FormData($("form[action='reg']")[0]);
+        $.ajax({
+            type: "post",
+            enctype: 'multipart/form-data',
+            url: "/member/mycloset/reg",
+            data: formData,
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function () {
+                alert("저장되었습니다.");
+                $.loadInput();
+            }
         });
     });
 
@@ -134,6 +158,7 @@ $(function () {
 
     // input load
     $.loadInput = function () {
+        $(".register .box-container").empty();
         for (let i = 0; i < 6; i++) {
             $(".register .box-container").append(`
                     <div class="cloth-box flex-center">
@@ -170,6 +195,7 @@ $(function () {
             data: "data",
             dataType: "json",
             success: function (result) {
+                $(".detail .pager ul").empty();
                 let cntCategory;
                 switch (category) {
                     case "Outers":
@@ -196,24 +222,5 @@ $(function () {
             }
         });
     };
-
-    // image upload
-    $("form[action='reg']").submit(function (e) {
-        e.preventDefault();
-
-        let formData = new FormData($("form[action='reg']")[0]);
-        $.ajax({
-            type: "post",
-            enctype: 'multipart/form-data',
-            url: "/member/mycloset/reg",
-            data: formData,
-            processData: false,
-            contentType: false,
-            cache: false,
-            success: function () {
-                alert("ok");
-            }
-        });
-    });
 
 });
