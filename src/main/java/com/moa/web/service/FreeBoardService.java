@@ -31,14 +31,13 @@ public class FreeBoardService {
 		return fbdDao.detail(id);
 	}
 
-	public Object delete(int id) {
-		
-		return fbdDao.delete(id);
-	}
 	
 	public void reg(FreeBoard freeBoard) {
 		fbdDao.reg(freeBoard);
 	}
 
+	public void delete(FreeBoard freeBoard) {
+		fbdDao.delete(freeBoard);
+	}
 	
 }

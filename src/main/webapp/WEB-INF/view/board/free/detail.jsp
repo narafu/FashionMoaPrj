@@ -8,7 +8,7 @@
 
 	<section class="detail">
 
-		<h1 class="d-none">디테일</h1>
+		<h1 class="hidden">디테일</h1>
 
 		<div class="mini-title-box">
 			<a href="../list" class="mini-title">후기게시판 전체목록</a>
@@ -37,7 +37,7 @@
 		</div>
 
 		<div class="content-box detail-margin-top">
-			<div class="content">${detail.content}</div>
+			<div class="content">${r.content}</div>
 		</div>
 
 		<form action="" method="POST">
@@ -46,7 +46,7 @@
 				<button type="button" class="love-btn ">
 					<span class="love-btn-txt">공감</span><i
 						class="likes love-img far fa-heart"></i>
-					<i class="likes fas fa-heart d-none"></i>
+					<i class="likes fas fa-heart hidden"></i>
 				</button>
 			</div>
 		</form>
@@ -55,7 +55,8 @@
 			<div class="btn-box_box">
 				<a class="btn-text btn-cancel btn-hover" href="../list">이전 목록</a> <a
 					class="btn-text btn-default btn-hover" href="../edit/${detail.id }">수정</a>
-				<a class="btn-text btn-default btn-hover" href="../delete/${detail.id }">삭제</a>
+				<a class="btn-text btn-default btn-hover" onclick="return confirm('정말 삭제 하겠습니까?');"
+				href="../delete/${detail.id }">삭제</a>
 			</div>
 		</div>
 

@@ -36,6 +36,6 @@ public interface FreeBoardDao {
 
 	// 게시글 삭제
 	@Delete("DELETE FROM FreeBoard WHERE id=#{id}")
-	public FreeBoard delete(int bno);
+	public void delete(FreeBoard freeBoard);
 
 }

@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.moa.web.NaverLoginBO;
 import com.moa.web.dao.FreeBoardDao;
 import com.moa.web.entity.FreeBoard;
 import com.moa.web.service.FreeBoardService;
@@ -32,13 +33,11 @@ import com.moa.web.view.FreeBoardView;
 @RequestMapping("/board/free")
 public class FreeController {
 
-	private static final Logger logger = LoggerFactory.getLogger(FreeController.class);
 	
 	@Autowired
 	private FreeBoardService fbdService;
 	private FreeBoard freeBoard;
-	private FreeBoardView freeBoardView;
-	private SqlSession sqlSession;
+	private NaverLoginBO naverLoginBO;
 	
 	@GetMapping("/list")
 	public String list(@RequestParam(name = "p", defaultValue = "1") int page,
@@ -83,8 +82,7 @@ public class FreeController {
 			,Model model)
 			throws IOException {
 		
-		freeBoard.setNickname("admin");
-		
+	
 		fbdService.reg(freeBoard);
 		//model.addAttribute("r", freeBoard);
 		System.out.println(freeBoard);
@@ -93,12 +91,12 @@ public class FreeController {
 	}
 	
 	
-    @RequestMapping("/delete/{id}")
-    private String boardDelete(@PathVariable int id) throws Exception{
+    @GetMapping("/delete/{id}")
+    private String delete(FreeBoard freeBoard) throws Exception{
         
-        fbdService.delete(id);
+        fbdService.delete(freeBoard);
         
-        return "board.free.list";
+        return "redirect:/board/free/list";
     }
 
 

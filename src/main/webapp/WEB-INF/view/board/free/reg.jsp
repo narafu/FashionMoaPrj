@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <main id="board-main">
 
 	<div class="board-post">
@@ -21,7 +22,7 @@
 							<td class="writer">작성자</td>
 							<td class="w180 h30">
 							<input type="hidden" name="uid" value="admin">
-								admin</td>
+								${nickname}</td>
 								<!--value="${sessionScope.uid }">${sessionScope.nickname }</td>  -->
 							<td class="regdate">작성일</td>
 							<td class="w180 h30">${regdate}</td>
