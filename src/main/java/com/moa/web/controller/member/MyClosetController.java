@@ -21,14 +21,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.moa.web.entity.Cloth;
 import com.moa.web.entity.CntCloth;
-import com.moa.web.service.ClothService;
+import com.moa.web.service.MyClothService;
 
-@Controller
+@Controller("myClosetController")
 @RequestMapping("/member/mycloset/")
 public class MyClosetController {
 
 	@Autowired
-	ClothService clothService;
+	MyClothService clothService;
 
 	@GetMapping("list")
 	public String list(Principal principal, Model model) {
@@ -40,32 +40,6 @@ public class MyClosetController {
 		model.addAttribute("cntCloth", cntCloth);
 		
 		return "member/mycloset/list";
-	}
-
-	@ResponseBody
-	@GetMapping("list-ajax")
-	public List<Cloth> listAjax(@RequestParam(name = "c", defaultValue = "Outers") String category,
-			@RequestParam(name = "p", defaultValue = "1") int page, Model model, Principal principal) {
-
-//		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
-		String uid = "test";
-
-		List<Cloth> list = clothService.getClothList(uid, category, page);
-		CntCloth cntCloth = clothService.getCount(uid);
-		
-		return list;
-	}
-	
-	@ResponseBody
-	@GetMapping("page-ajax")
-	public CntCloth pageAjax(Principal principal) {
-
-//		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
-		String uid = "test";
-
-		CntCloth cntCloth = clothService.getCount(uid);
-		
-		return cntCloth;
 	}
 
 	@PostMapping("reg")

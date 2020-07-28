@@ -35,7 +35,7 @@ $(function () {
         let offset = 6;
         $.ajax({
             type: "get",
-            url: "/member/mycloset/page-ajax",
+            url: "/api/member/mycloset/page-ajax",
             data: "data",
             dataType: "json",
             success: function (result) {
@@ -85,7 +85,7 @@ $(function () {
                 let formData = new FormData($("form[action='reg']")[0]);
                 $.ajax({
                     type: "post",
-                    url: "/member/mycloset/reg",
+                    url: "/api/member/mycloset/reg",
                     data: formData,
                     processData: false,
                     contentType: false,
@@ -189,7 +189,7 @@ $(function () {
         $(`.pager ul li:eq(${currentPage-1})`).css("color", subTitleColor);
         $.ajax({
             type: "get",
-            url: "/member/mycloset/list-ajax",
+            url: "/api/member/mycloset/list-ajax",
             data: { "c": category, "p": currentPage },
             dataType: "json",
             success: function (list) {
