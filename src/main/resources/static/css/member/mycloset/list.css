@@ -7,6 +7,7 @@
 
 body {
     min-height: 100vh;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .header-menu {
@@ -42,14 +43,14 @@ body {
     .card span {
         display: none;
         font-size: 50px;
-        font-family: 'Orbitron', sans-serif;
+        /* font-family: 'Orbitron', sans-serif; */
         text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
     }
 
 .title { 
     font-weight: bold;
     font-size: 40px;
-    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Orbitron', sans-serif; */
     text-shadow: 5px 0px 5px rgba(0,0,0,1);
     text-align: center;
     padding: 40px;
@@ -115,7 +116,7 @@ body {
 .detail .sub-title {
     background-color: #ec3843;
     padding: 15px 40px;
-    font-family: 'Orbitron', sans-serif;
+    /* font-family: 'Orbitron', sans-serif; */
     text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
     font-size: 30px;
     color: white;
@@ -125,11 +126,8 @@ body {
     margin-right: 50px;
 }
 
-.detail button {
+.detail .exit {
     margin: 20px;
-    background: none;
-    border: none;
-    outline: none;
 }
 
 .box-container {
@@ -164,6 +162,13 @@ body {
         display: none;
     }
 
+    .detail-register button {
+        font-weight: 900;
+        letter-spacing: 1px;
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+
 .pager {
     margin: 0px auto;
     color: #292929;
@@ -177,7 +182,7 @@ body {
             padding: 0px 10px;
         }
 
-.detail i:hover, li:hover {
+.detail i:hover, li:hover, button {
     cursor: pointer;
 }
 

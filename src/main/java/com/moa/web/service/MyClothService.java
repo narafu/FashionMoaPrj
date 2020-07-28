@@ -5,15 +5,15 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.moa.web.dao.ClothDao;
+import com.moa.web.dao.MyClothDao;
 import com.moa.web.entity.Cloth;
 import com.moa.web.entity.CntCloth;
 
 @Service
-public class ClothService {
+public class MyClothService {
 
 	@Autowired
-	ClothDao clothDao;
+	MyClothDao clothDao;
 
 	public List<Cloth> getClothList(String uid, String category, int page) {
 
