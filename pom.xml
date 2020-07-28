@@ -99,8 +99,23 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
 		</dependency> -->
-		
+<!-- naver -->
+<dependency>
+<groupId>com.github.scribejava</groupId>
+<artifactId>scribejava-core</artifactId>
+<version>2.8.1</version>
+</dependency>
 
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
