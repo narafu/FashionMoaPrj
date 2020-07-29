@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
@@ -23,11 +24,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.moa.web.NaverLoginBO;
 import com.moa.web.dao.FreeBoardDao;
 import com.moa.web.entity.FreeBoard;
 import com.moa.web.service.FreeBoardService;
 import com.moa.web.view.FreeBoardView;
+import com.sun.tools.javac.main.Main.Result;
 
 @Controller
 @RequestMapping("/board/free")
@@ -38,6 +41,7 @@ public class FreeController {
 	private FreeBoardService fbdService;
 	private FreeBoard freeBoard;
 	private NaverLoginBO naverLoginBO;
+	private String apiResult = null;
 	
 	@GetMapping("/list")
 	public String list(@RequestParam(name = "p", defaultValue = "1") int page,
@@ -59,37 +63,70 @@ public class FreeController {
 	}
 	
 	  @GetMapping("/detail/{id}") 
-	    private String boardDetail(@PathVariable int id, Model model) throws Exception{
+	    private String boardDetail(@PathVariable("id") int id, Model model) throws Exception{
 			
 			//List<BoardCmt> cmt= null;
 			
 	        model.addAttribute("detail", fbdService.detail(id));
 	        model.addAttribute("r", freeBoard);
+	       
 	        //model.addAttribute("cmt", cmt);
 	        return "board.free.detail";
 	    }
-
+/*
 	@GetMapping("/reg")
-	public String reg() {
-
+	public String reg(Model model) {
+		
 		return "board.free.reg";
 	}
-	
-	
+*/	  
+	@GetMapping("/reg")
+	public String reg(HttpSession session,Model model) {
+		
+		session.getAttribute(apiResult);
+		model.getAttribute("result");
+	      model.addAttribute("r", freeBoard);
+		return "board.free.reg";
+	}
 
 	@PostMapping("/reg")
-	public String reg(FreeBoard freeBoard, MultipartFile[] file, HttpServletRequest request, Principal principal
-			,Model model)
-			throws IOException {
+	public String reg(FreeBoard freeBoard,
+			MultipartFile[] file,
+			HttpServletRequest request,
+			Principal principal,
+			HttpSession session,
+			Model model
+			)	throws IOException {
 		
+	//	model.getAttribute("result");
+		//freeBoard.setNickname(principal.getName());
 	
+		//freeBoard.setNickname(session.getAttribute(apiResult.));
 		fbdService.reg(freeBoard);
-		//model.addAttribute("r", freeBoard);
-		System.out.println(freeBoard);
-
+		
+		System.out.println("reg"+freeBoard);
 		return "redirect:list";
 	}
+
+
+	@GetMapping("/edit/{id}")
+	public String edit(FreeBoard freeBoard,@PathVariable("id") int id, Model model) {
+        
+		model.addAttribute("detail", fbdService.detail(id));
+        model.addAttribute("r", freeBoard);
+       
+		return "board.free.edit";
+	}
 	
+	@PostMapping("/edit/{id}")
+	public String edit(FreeBoard freeBoard) throws Exception {
+		
+		fbdService.edit(freeBoard);
+		
+		System.out.println(freeBoard);
+		return "redirect:../detail/"+freeBoard.getId();
+		
+	}
 	
     @GetMapping("/delete/{id}")
     private String delete(FreeBoard freeBoard) throws Exception{
@@ -99,40 +136,4 @@ public class FreeController {
         return "redirect:/board/free/list";
     }
 
-
-/*	
-	@GetMapping("/delete/{id}")
-	public String delete(HttpServletRequest request) {
-		logger.info("delete()");
-		
-		FreeBoardDao dao = sqlSession.getMapper(FreeBoardDao.class);
-		dao.delete(Integer.parseInt(request.getParameter("id")));
-		
-		return "redirect:list";
-	}
-	*/
-	
-	
-	
-	/*
-	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable int id, Model model) throws Exception{
-		
-		//FreeBoard bd=null;
-		//List<BoardCmt> cmt= null;
-		
-		model.addAttribute("r", freeBoard);
-        model.addAttribute("delete", fbdService.delete(id));
-		return "redirect:/list";
-	}
-	*/
-	@GetMapping("/edit/{id}")
-	public String edit() {
-		
-	}
-	
-	@PostMapping("/edit/{id}")
-	public String edit() {
-		
-	}
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.github.scribejava.core.model.OAuth2AccessToken;
 import com.moa.web.NaverLoginBO;
@@ -24,6 +25,7 @@ import com.moa.web.NaverLoginBO;
  * Handles requests for the application home page.
  */
 @Controller
+@SessionAttributes("result")
 public class LoginController {
 
 	/* NaverLoginBO */
@@ -60,11 +62,11 @@ public class LoginController {
 		System.out.println("여기는 callback");
 		OAuth2AccessToken oauthToken;
         oauthToken = naverLoginBO.getAccessToken(session, code, state);
+        
         //로그인 사용자 정보를 읽어온다.
 	    apiResult = naverLoginBO.getUserProfile(oauthToken);
 	    
 		model.addAttribute("result", apiResult);
-	
 
         /* 네이버 로그인 성공 페이지 View 호출 */
 		return "member/naversuccess";

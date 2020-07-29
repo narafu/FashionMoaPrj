@@ -63,19 +63,15 @@
 						</c:forEach>
 					</tbody>
 				</table>
+<!--------------------------- 하단 부분 ---------------------->
 
-				<section class="write">
-					<h1 class="hidden">글쓰기</h1>
-					<div>
-						<a href="reg">글쓰기</a>
-					</div>
-				</section>
 			</form>
 
 <c:set var="page" value="${ (empty param.p) ? 1:param.p }" />
 	<c:set var="startNum" value="${page-(page-1)%5 }" />
 	<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/10),'.')}" />
 
+<div class="under-box">
 	<div class="indexer-box">
 		<h1 class="hidden">현재 페이지</h1>
 		<div>
@@ -118,6 +114,15 @@
 		</div>
 
 	</div>
+					<section class="write">
+					<h1 class="hidden">글쓰기</h1>
+					<div>
+						<a href="reg">글쓰기</a>
+					</div>
+				</section>
+				</div>
+				
+				
 		</div>
 		</section>
 		

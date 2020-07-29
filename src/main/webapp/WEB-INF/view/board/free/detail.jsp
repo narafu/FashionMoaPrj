@@ -14,7 +14,7 @@
 			<a href="../list" class="mini-title">후기게시판 전체목록</a>
 		</div>
 		<div class="title-box">
-			<div class="title fnt_jua">${detail.title }</div>
+			<div class="title fnt_jua">${detail.title}</div>
 
 		</div>
 
@@ -35,9 +35,9 @@
 				</div>
 			</div>
 		</div>
-
 		<div class="content-box detail-margin-top">
-			<div class="content">${r.content}</div>
+		
+			<div class="content"> ${detail.content}</div>
 		</div>
 
 		<form action="" method="POST">

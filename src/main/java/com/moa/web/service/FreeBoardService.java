@@ -31,6 +31,9 @@ public class FreeBoardService {
 		return fbdDao.detail(id);
 	}
 
+	public void edit(FreeBoard freeBoard) {
+		fbdDao.edit(freeBoard);
+	}
 	
 	public void reg(FreeBoard freeBoard) {
 		fbdDao.reg(freeBoard);

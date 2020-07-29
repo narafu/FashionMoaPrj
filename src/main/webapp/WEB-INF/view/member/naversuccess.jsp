@@ -9,9 +9,9 @@
     src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		var name = ${result}.response.name;
+		var nickname = ${result}.response.nickname;
 		var email = ${result}.response.email;
-		$("#name").html("환영합니다. "+name+"님");
+		$("#nickname").html("환영합니다. "+nickname+"님");
 		$("#email").html(email);
 	  });
 </script>
@@ -20,7 +20,7 @@
 <main>
 
 	<br>
-	<h2 style="text-align: center" id="name"></h2>
+	<h2 style="text-align: center" id="nickname"></h2>
 	<h4 style="text-align: center" id="email"></h4>
 	<div style="text-align: center"><a href="main">홈으로</a></div>
 </main>

@@ -1,44 +1,70 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<main class="main">
-	<section class="admin-service">
-		<h1 class="font-size-30">공지 수정</h1>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<main id="board-main">
+
+	<section class="detail">
+
+		<h1 class="hidden">수정</h1>
+
+		<form action="edit" method="post">
+			<div class="mini-title-box">
+				<a href="../list" class="mini-title">후기게시판 전체목록</a>
+			</div>
+			<div class="title-box">
+				<div class="title fnt_jua">
+					<input type="text" placeholder="제목을 입력 해 주세요." name="title"
+						value="${detail.title}" required>
+				</div>
+
+			</div>
+
+			<div class="meta-box detail-margin-top">
+				<div class="meta-info">
+					<div class="detail-regdate">
+						<%-- <fmt:parseDate var="date" value="${r.regdate}"
+						pattern="yyyy-MM-dd HH:mm" /> --%>
+						<fmt:formatDate value="${detail.regdate}"
+							pattern="yyyy-MM-dd HH:mm" />
+					</div>
+					<div class="writer-name">${detail.nickname }</div>
+				</div>
+				<div class="meta-info">
+					<div class="hit">조회수 ${detail.hit }</div>
+					<div class="comment">댓글 ${detail.cmtCount}</div>
+					<div class="love">
+						<span class="love-img">♥</span> ${detail.likes}
+					</div>
+				</div>
+			</div>
+			<div class="content-box detail-margin-top">
+
+				<div class="content">
+					<textarea class="content-area" name="content">${detail.content}</textarea>
+				</div>
+			</div>
+
+				<div class="btn-box">
+					<!--<input type="button" class="btn-text love-btn" value="공감♡"></input>-->
+					<button type="button" class="love-btn ">
+						<span class="love-btn-txt">공감</span><i
+							class="likes love-img far fa-heart"></i> <i
+							class="likes fas fa-heart hidden"></i>
+					</button>
+				</div>
+
+			<div class="btn-box">
+				<div class="btn-box_box">
+					
+					<input type="hidden" name="id" value="${detail.id }" /> <input
+						class="btn-text btn-save btn-hover" type="submit" value="저장" onclick="return confirm('저장 하겠습니까?');"/> <a
+						class="btn-text btn-cancel btn-hover" href="../">취소</a>
+				</div>
+			</div>
+		</form>
 	</section>
 
-	<form action="edit" method="post">
-		<section class="post">
-			<h1 class="hidden">공지사항 입력</h1>
-			<table class="detail-table">
-				<tbody>
-					<tr class="text-center border-bottom-bdbdbd">
-						<td class="title">제목</td>
-						<td colspan="6">
-							<input class="edit-input" type="text" name="title" value="${n.title }" />
-						</td>
-					</tr>
-
-					<tr class="text-center">
-						<td class="writer">작성자</td>
-						<td class="w140 h30">${n.writerId }</td>
-						<td class="regdate">작성일</td>
-						<td class="w120 h30">${n.regdate }</td>
-						<td class="hit-w80">조회수</td>
-						<td class="w60 h30">${n.hit }</td>
-					</tr>
-
-					<tr>
-						<td colspan="6">
-							<textarea class="content-input" name="content">${n.content }</textarea>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-		</section>
-		<div class="post-btn">
-			<input type="hidden" name="id" value="${n.id }" /> 
-			<input type="submit" value="저장" /> 
-			<a href="detail?id=${n.id }">취소</a>
-		</div>
-	</form>
-
 </main>
+
+

@@ -85,13 +85,24 @@
 			width:50px;}
 			.list .table .col-text{
 			width:120px;}	
+.under-box{
+	position:relative;
+}
 						
 .write{
-	right:0;
+	display:flex;
+	justify-content:flex-end;
+	margin-top:20px;
+	font-size:24px;
 }
 
+.indexer-box{
+	display:flex;
+	justify-content:flex-end;
+}
 .pager-box{
 	display:flex;
+	justify-content:flex-end;
 	right:0;
 }	
 

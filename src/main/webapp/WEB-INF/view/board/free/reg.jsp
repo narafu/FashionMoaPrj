@@ -2,10 +2,20 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<script type="text/javascript"
+    src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js"
+    charset="utf-8"></script>
+<script type="text/javascript"
+    src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var nickname = ${result}.response.nickname;
+		$("#nickname").val(nickname);
+	  });
+</script>
 
 <main id="board-main">
 
-	<div class="board-post">
 	
 	<section class="board-container">
 		<form action="reg" method="post">
@@ -19,12 +29,12 @@
 						</tr>
 
 						<tr class="text-center">
-							<td class="writer">작성자</td>
+							<!--<td class="writer">작성자</td>  -->
 							<td class="w180 h30">
-							<input type="hidden" name="uid" value="admin">
-								${nickname}</td>
+							<input type="hidden" id=nickname name="nickname">
+								</td>
 								<!--value="${sessionScope.uid }">${sessionScope.nickname }</td>  -->
-							<td class="regdate">작성일</td>
+							<!-- <td class="regdate">작성일</td>  -->
 							<td class="w180 h30">${regdate}</td>
 						</tr>
 						<tr>
@@ -37,10 +47,9 @@
 					</tbody>
 				</table>
 			<div class="post-btn">
-				<input type="submit" value="등록" /> <a href="list">취소</a>
+				<input type="submit" onclick="return confirm('등록 하겠습니까?');" value="등록" /> <a href="list">취소</a>
 			</div>
 		</form>
 			</section>
-	</div>
 
 </main>

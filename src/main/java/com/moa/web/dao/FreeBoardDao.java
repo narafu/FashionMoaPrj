@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.moa.web.entity.FreeBoard;
 import com.moa.web.view.FreeBoardView;
@@ -32,7 +33,8 @@ public interface FreeBoardDao {
 	public void reg(FreeBoard freeBoard);
 
 	// 게시글 수정
-	public void update(FreeBoard freeBoard);
+	@Update("UPDATE FreeBoard SET title=#{title}, content=#{content} WHERE id=#{id}")
+	public void edit(FreeBoard freeBoard);
 
 	// 게시글 삭제
 	@Delete("DELETE FROM FreeBoard WHERE id=#{id}")
