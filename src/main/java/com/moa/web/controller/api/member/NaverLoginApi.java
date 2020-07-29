@@ -1,4 +1,4 @@
-package com.moa.web.api;
+package com.moa.web.controller.api.member;
 
 import com.github.scribejava.core.builder.api.DefaultApi20;
 
