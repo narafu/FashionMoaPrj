@@ -10,6 +10,9 @@ public class MoaPrjApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MoaPrjApplication.class, args);
+		
+		
+		
 	}
 
 }

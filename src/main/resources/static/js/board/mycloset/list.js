@@ -4,6 +4,8 @@ $(function () {
     let subTitleColor;
     let currentPage;
     let lastPage;
+    let detailTop;
+    let detailLeft;
 
     // card hover
     $(".card").hover(function () {
@@ -26,6 +28,12 @@ $(function () {
         subTitleColor = $(this).css("background-color");
         $(".detail.cloth .sub-title").text(category);
         $(".detail.cloth .sub-title").css("background-color", subTitleColor);
+
+        detailTop = (($(window).height() - $(".detail").outerHeight()) / 2 + $(window).scrollTop()) + "px"
+        detailLeft = (($(window).width() - $(".detail").outerWidth()) / 2 + $(window).scrollLeft()) + "px"
+        $(".detail").css("top", detailTop);
+        $(".detail").css("left", detailLeft);
+
         $(".detail.cloth").toggle(500);
         $.loadImg();
         $.loadPage();
@@ -37,6 +45,12 @@ $(function () {
         subTitleColor = $(this).css("background-color");
         $(".register .sub-title").text(category);
         $(".register .sub-title").css("background-color", subTitleColor);
+
+        detailTop = (($(window).height() - $(".detail").outerHeight()) / 2 + $(window).scrollTop()) + "px"
+        detailLeft = (($(window).width() - $(".detail").outerWidth()) / 2 + $(window).scrollLeft()) + "px"
+        $(".detail").css("top", detailTop);
+        $(".detail").css("left", detailLeft);
+
         $(".detail.register").toggle(500);
         $.loadInput();
     });
@@ -75,7 +89,7 @@ $(function () {
         $.ajax({
             type: "post",
             enctype: 'multipart/form-data',
-            url: "/member/mycloset/reg",
+            url: "/board/mycloset/reg",
             data: formData,
             processData: false,
             contentType: false,
@@ -137,7 +151,7 @@ $(function () {
         $(`.pager ul li:eq(${currentPage - 1})`).css("color", subTitleColor);
         $.ajax({
             type: "get",
-            url: "/api/member/mycloset/list-ajax",
+            url: "/api/board/mycloset/list-ajax",
             data: { "c": category, "p": currentPage },
             dataType: "json",
             success: function (list) {
@@ -173,7 +187,7 @@ $(function () {
     $.delImg = function (imgId) {
         $.ajax({
             type: "post",
-            url: "/api/member/mycloset/del",
+            url: "/api/board/mycloset/del",
             data: {
                 "id": imgId,
                 "c": category,
@@ -191,7 +205,7 @@ $(function () {
         let size = 6;
         $.ajax({
             type: "get",
-            url: "/api/member/mycloset/page-ajax",
+            url: "/api/board/mycloset/page-ajax",
             data: "data",
             dataType: "json",
             success: function (result) {

@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://kit.fontawesome.com/49d3a7e676.js"
 	crossorigin="anonymous"></script>
-<link href='<tiles:getAsString name="css"/>' type="text/css" rel="stylesheet" />
+<link href='<tiles:getAsString name="css"/>' type="text/css" rel="stylesheet" />	
 <title>Moa</title>
 </head>
 

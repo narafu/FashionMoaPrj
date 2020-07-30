@@ -1,4 +1,4 @@
-package com.moa.web.controller.api.member;
+package com.moa.web.controller.api.board;
 
 import java.security.Principal;
 import java.util.List;
@@ -17,7 +17,7 @@ import com.moa.web.entity.CntCloth;
 import com.moa.web.service.MyClothService;
 
 @RestController("apiMyClosetController")
-@RequestMapping("/api/member/mycloset/")
+@RequestMapping("/api/board/mycloset/")
 public class MyClosetController {
 
 	@Autowired

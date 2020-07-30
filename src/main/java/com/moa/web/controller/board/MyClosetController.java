@@ -1,4 +1,4 @@
-package com.moa.web.controller.member;
+package com.moa.web.controller.board;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import com.moa.web.entity.CntCloth;
 import com.moa.web.service.MyClothService;
 
 @Controller("myClosetController")
-@RequestMapping("/member/mycloset/")
+@RequestMapping("/board/mycloset/")
 public class MyClosetController {
 
 	@Autowired
@@ -34,7 +34,7 @@ public class MyClosetController {
 		CntCloth cntCloth = clothService.getCount(uid);
 		model.addAttribute("cntCloth", cntCloth);
 
-		return "member/mycloset/list";
+		return "board.mycloset.list";
 	}
 
 	@PostMapping("reg")

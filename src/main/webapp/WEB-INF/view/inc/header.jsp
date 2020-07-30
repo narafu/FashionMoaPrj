@@ -9,27 +9,26 @@
 		</div>
 		<nav class="header-menu">
 			<h1 class="hidden">header-menu</h1>
-			<ul class="flex-center">
-				<li class="hexagon-wrapper">
-					<div class="hexagon flex-center">
-						<a href="/board/introlook/list">
-							<div class="text">FASHION LOOK</div>
-						</a>
-					</div>
+			<ul class="flex-evenly">
+				<li class="flex-center">
+					<a href="/board/introlook/list">
+						<span class="text">Fashion<br/>Look</span>
+					</a>
 				</li>
-				<li class="hexagon-wrapper">
-					<div class="hexagon flex-center">
-						<a href="/board/free/list">
-							<div class="text">BOARD</div>
-						</a>
-					</div>
+				<li class="flex-center">
+					<a href="/board/styleFeedback/list">
+						<span class="text">Style<br/>Feedback</span>
+					</a>
 				</li>
-				<li class="hexagon-wrapper">
-					<div class="hexagon flex-center">
-						<a href="/board/styleFeedback/list">
-							<div class="text">StyleFeedback</div>
-						</a>
-					</div>
+				<li class="flex-center">
+					<a href="/board/free/list">
+						<span class="text">Board</span>
+					</a>
+				</li>
+				<li class="flex-center">
+					<a href="/board/mycloset/list">
+						<span class="text">My Closet</span>
+					</a>
 				</li>
 			</ul>
 		</nav>
@@ -41,4 +40,5 @@
 			</ul>
 		</nav>
 	</div>
+	<script src="/inc/header.js"></script>
 </header>
