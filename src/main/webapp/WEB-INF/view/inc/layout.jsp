@@ -7,8 +7,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://kit.fontawesome.com/49d3a7e676.js"
-	crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/49d3a7e676.js" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <link href='<tiles:getAsString name="css"/>' type="text/css" rel="stylesheet" />	
 <title>Moa</title>
 </head>
