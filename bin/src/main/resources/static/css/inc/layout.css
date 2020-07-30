@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&display=swap');
+@font-face { font-family: '777Littlebear'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_nine_@1.1/777Littlebear.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+body {
+    min-width: 1080px;
+    min-height: 100vh;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    font-weight: 900;
+}
+
+#header {
+	
+    background: #20232a;
+    padding: 50px;
+    font-size: 1.25em;
+    text-align: center;
+    border-bottom: solid 1px #dddddd;
+}
+
+    .title-main {
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    .header-menu {
+        flex-grow: 1;
+        align-self: flex-end;
+    }
+    
+        .header-menu li {
+			background: white;
+		    color: #282c34;
+   		    transition: 0.5s;
+   		  	cursor: pointer;
+		    padding: 10px;
+	   		width: 175px;
+  		    height: 50px;
+    	}
+    	
+  	        .header-menu li:hover {
+		          color: #292929;
+		          border-radius: 50px;
+		          transition: 0.5s;
+		          background: linear-gradient(-180deg, #fda3b2, #e37682);
+    		}
+		
+		.member-menu {
+		  align-self: flex-end;
+		}
+		
+		.member-menu li {
+		    color: white;
+		    font-size: 12px;
+		    display: block;
+		    padding: 7.5px 12.5px;
+		    margin: 2.5px;
+		}
+		
+		.member-menu li:hover {
+		    background: linear-gradient(-180deg, #fda3b2, #e37682);
+		    color: #292929;
+		    border-radius: 20px;
+		    transition: 0.5s;
+		}
+		
+		.member-menu li:hover a {
+		  font-weight: bold;
+		}
+
+
+
+#main {
+	background: white;
+    padding-top: 50px;
+    color: white;
+}
+
+
+
+#footer {
+	background: #20232a;
+    padding: 50px;
+    border-top: solid 1px #dddddd;
+}
+    
+    .footer-menu {
+        flex-grow: 9;
+    }
+
+    .sns-menu {
+        flex-grow: 1;
+    }
+
+.container {
+    width: 85%;
+    margin: 0px auto;
+}
