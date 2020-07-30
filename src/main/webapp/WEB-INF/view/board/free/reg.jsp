@@ -15,10 +15,9 @@
 </script>
 
 <main id="board-main">
-
 	
 	<section class="board-container">
-		<form action="reg" method="post">
+		<form action="reg" method="post" enctype="multipart/form-data">
 				<h1 class="hidden">공지사항 입력</h1>
 				<table class="post-table">
 					<tbody>
@@ -29,16 +28,13 @@
 						</tr>
 
 						<tr class="text-center">
-							<!--<td class="writer">작성자</td>  -->
 							<td class="w180 h30">
 							<input type="hidden" id=nickname name="nickname">
 								</td>
-								<!--value="${sessionScope.uid }">${sessionScope.nickname }</td>  -->
-							<!-- <td class="regdate">작성일</td>  -->
 							<td class="w180 h30">${regdate}</td>
 						</tr>
-						<tr>
-							<td><input multiple="multiple" type="file" class="d-none btn-file"></td>
+						<tr><th>첨부파일</th>
+							<td><input multiple="multiple" type="file" name="files" class="d-none btn-file" /></td>
 						</tr>
 						<tr>
 							<td colspan="4"><textarea class="content-area"
@@ -50,6 +46,6 @@
 				<input type="submit" onclick="return confirm('등록 하겠습니까?');" value="등록" /> <a href="list">취소</a>
 			</div>
 		</form>
-			</section>
+	</section>
 
 </main>

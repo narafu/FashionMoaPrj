@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.moa.web.dao.FreeBoardDao;
 import com.moa.web.entity.FreeBoard;
@@ -42,5 +43,7 @@ public class FreeBoardService {
 	public void delete(FreeBoard freeBoard) {
 		fbdDao.delete(freeBoard);
 	}
-	
+
+
+
 }

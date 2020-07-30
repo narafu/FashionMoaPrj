@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.social.google.connect.GoogleConnectionFactory;
 import org.springframework.social.oauth2.GrantType;
 import org.springframework.social.oauth2.OAuth2Operations;
 import org.springframework.social.oauth2.OAuth2Parameters;
@@ -73,11 +72,12 @@ public class LoginController {
 	}
 	
 	//로그아웃
-	@RequestMapping(value = "/logout", method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/member/logout", method = { RequestMethod.GET, RequestMethod.POST })
 	public String logout(HttpSession session)throws IOException {
+		
+		session.invalidate();
 	System.out.println("여기는 logout");
-	session.invalidate();
-	return "redirect:main";
+	return "redirect:../main";
 	}
 	
 	

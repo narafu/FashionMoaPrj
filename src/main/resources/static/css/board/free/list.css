@@ -66,10 +66,26 @@
 				border-bottom:1px solid #979797;
 			}
 			
+			.list .table .thead th{
+				text-align:center;
+			}
+			
+			.list .table tbody:nth-child(2){
+				text-align:left;
+			}
+			
 			.list .table tbody{
 		    	font-size:14px;	
 		    	text-align:center;
 			}
+			
+			.list .table tbody td{
+		    	text-align:center;
+			}
+			
+			
+			
+			
 			
 			
 			.list .table tbody:before {
@@ -86,7 +102,7 @@
 			.list .table .col-text{
 			width:120px;}	
 .under-box{
-	position:relative;
+	--position:d
 }
 						
 .write{

@@ -59,7 +59,7 @@
 					
 					<input type="hidden" name="id" value="${detail.id }" /> <input
 						class="btn-text btn-save btn-hover" type="submit" value="저장" onclick="return confirm('저장 하겠습니까?');"/> <a
-						class="btn-text btn-cancel btn-hover" href="../">취소</a>
+						class="btn-text btn-cancel btn-hover" href="../detail/${detail.id}">취소</a>
 				</div>
 			</div>
 		</form>

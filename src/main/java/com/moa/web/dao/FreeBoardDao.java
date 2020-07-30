@@ -16,7 +16,7 @@ import com.moa.web.view.FreeBoardView;
 public interface FreeBoardDao {
 
 	// 게시글 리스트
-	@Select("SELECT * FROM FreeBoard WHERE ${field} LIKE '%${query}%' ORDER BY regdate DESC LIMIT #{size} OFFSET ${offset}")
+	@Select("SELECT * FROM FreeBoardView WHERE ${field} LIKE '%${query}%' ORDER BY regdate DESC LIMIT #{size} OFFSET ${offset}")
 	List<FreeBoardView> getList(@Param("offset") int offset, @Param("size") int size, String query,
 			@Param("field") String field);
 
@@ -29,7 +29,7 @@ public interface FreeBoardDao {
 	public FreeBoardView detail(int bno);
 
 	// 게시글 작성
-	@Insert("INSERT INTO FreeBoard(title,content,hit,likes,img,nickname) VALUES(#{title},#{content},#{hit},#{likes},#{img},#{nickname})")
+	@Insert("INSERT INTO FreeBoard(title,content,hit,likes,file,nickname) VALUES(#{title},#{content},#{hit},#{likes},#{file},#{nickname})")
 	public void reg(FreeBoard freeBoard);
 
 	// 게시글 수정

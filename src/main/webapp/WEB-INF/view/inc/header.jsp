@@ -1,6 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<script type="text/javascript"
+    src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js"
+    charset="utf-8"></script>
+<script type="text/javascript"
+    src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/js/inc/header.js"></script>
+
 <header id="header">
 	<h1 class="hidden">header</h1>
 	<div class="container flex-between">
@@ -53,62 +60,15 @@
 					</div>
 				</li>
 			</ul>
-			<!-- <ul class="header-main-menu">
-                    <li>
-                        <a href="">Video</a>
-                        <ul class="header-sub-menu">
-                            <li><a href="">ASMR</a></li>
-                            <li><a href="">게임</a></li>
-                            <li><a href="">먹방</a></li>
-                            <li><a href="">뷰티</a></li>
-                            <li><a href="">시사</a></li>
-                            <li><a href="">어린이</a></li>
-                            <li><a href="">연예</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">PlayList</a>
-                        <ul class="header-sub-menu">
-                            <li><a href="">ASMR</a></li>
-                            <li><a href="">게임</a></li>
-                            <li><a href="">먹방</a></li>
-                            <li><a href="">뷰티</a></li>
-                            <li><a href="">시사</a></li>
-                            <li><a href="">어린이</a></li>
-                            <li><a href="">연예</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">Channel</a>
-                        <ul class="header-sub-menu">
-                            <li><a href="">ASMR</a></li>
-                            <li><a href="">게임</a></li>
-                            <li><a href="">먹방</a></li>
-                            <li><a href="">뷰티</a></li>
-                            <li><a href="">시사</a></li>
-                            <li><a href="">어린이</a></li>
-                            <li><a href="">연예</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="">menu</a>
-                        <ul class="header-sub-menu">
-                            <li><a href="">ASMR</a></li>
-                            <li><a href="">게임</a></li>
-                            <li><a href="">먹방</a></li>
-                            <li><a href="">뷰티</a></li>
-                            <li><a href="">시사</a></li>
-                            <li><a href="">어린이</a></li>
-                            <li><a href="">연예</a></li>
-                        </ul>
-                    </li>
-                </ul> -->
+
 		</nav>
 		<nav class="member-menu">
 			<h1 class="hidden">member-menu</h1>
 			<ul class="flex-center">
 				<li><a href="/member/mycloset/list">MyPage</a></li>
-				<li><a href="/member/login">Login</a></li>
+						<li class="btn-login"><a href="/member/login">Login</a></li>
+					
+						<li class="btn-logout"><a href="/member/logout" onclick="return confirm('로그아웃 하시겠습니까?');">Logout</a></li>
 			</ul>
 		</nav>
 	</div>
