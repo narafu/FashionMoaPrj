@@ -47,8 +47,7 @@
 			<ul>
 				<c:choose>
 					<c:when test="${userId eq null}">
-						<li><a href="https://kauth.kakao.com/oauth/authorize?client_id=8558c78e78ed8ede0d79e788ed66f359&redirect_uri=	
-	http://localhost:8080/member/login&response_type=code">Login</a></li>
+						<li class="login"><a href="">Login</a></li>
 					</c:when>
 					<c:otherwise>
 						<li><a href="/member/mypage">MyPage</a></li>
@@ -58,6 +57,6 @@
 			</ul>
 		</nav>
 	</div>
-
+	<div class="login-container"></div>
 	<script src="/js/inc/header.js"></script>
 </header>

@@ -37,7 +37,7 @@ public class MemberService {
 			StringBuilder sb = new StringBuilder();
 			sb.append("grant_type=authorization_code");
 			sb.append("&client_id=8558c78e78ed8ede0d79e788ed66f359");
-			sb.append("&redirect_uri=http://localhost:8080/member/login");
+			sb.append("&redirect_uri=http://localhost:8080/member/login/kakao");
 			sb.append("&code=" + authorize_code);
 			bw.write(sb.toString());
 			bw.flush();

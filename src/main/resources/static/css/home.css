@@ -9,3 +9,42 @@
 main {
 	height: 1000px;
 }
+
+.login-form {
+	
+	padding: 20px;
+    padding-bottom: 40px;
+	
+    width: 300px;
+    background-color: #292929;
+    color: white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    
+}
+
+	.login-form>div:first-child {
+	    margin-left: auto;
+	}
+	.login-form .login-title {
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: space-between;
+    	font-size: 2.75em;
+    	padding: 40px;
+	}
+	.login-form img {
+		width: 255px;
+		height: 55px;
+	}
+	
+i:hover {
+	cursor: pointer;
+}
