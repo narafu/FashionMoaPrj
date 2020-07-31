@@ -14,12 +14,12 @@
 			<ul class="flex-evenly">
 				<li class="flex-center">
 					<a href="/board/introlook/list">
-						<span class="text">Fashion<br/>Look</span>
+						<span class="text">Fashion<br />Look</span>
 					</a>
 				</li>
 				<li class="flex-center">
 					<a href="/board/styleFeedback/list">
-						<span class="text">Style<br/>Feedback</span>
+						<span class="text">Style<br />Feedback</span>
 					</a>
 				</li>
 				<li class="flex-center">
@@ -28,23 +28,30 @@
 					</a>
 				</li>
 				<li class="flex-center">
-					<a href="/board/mycloset/list">
-						<span class="text">My Closet</span>
-					</a>
+					<c:choose>
+						<c:when test="${userId eq null}">
+							<span class="text" onclick="alert('로그인 후 이용할 수 있습니다.')" ;>My Closet</span>
+						</c:when>
+						<c:otherwise>
+							<a href="/board/mycloset/list">
+								<span class="text">My Closet</span>
+							</a>
+						</c:otherwise>
+					</c:choose>
 				</li>
 			</ul>
 		</nav>
-		
+
 		<nav class="member-menu">
 			<h1 class="hidden">member-menu</h1>
 			<ul>
 				<c:choose>
-					 <c:when test="${userId eq null}">
+					<c:when test="${userId eq null}">
 						<li><a href="https://kauth.kakao.com/oauth/authorize?client_id=8558c78e78ed8ede0d79e788ed66f359&redirect_uri=	
 	http://localhost:8080/member/login&response_type=code">Login</a></li>
 					</c:when>
 					<c:otherwise>
-						<li><a href="/member/mypage/index">MyPage</a></li>
+						<li><a href="/member/mypage">MyPage</a></li>
 						<li><a href="/member/logout">Logout</a></li>
 					</c:otherwise>
 				</c:choose>

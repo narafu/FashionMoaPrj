@@ -31,6 +31,7 @@ body {
     }
 
 .title { 
+	color: white;
     font-weight: bold;
     font-size: 40px;
     text-shadow: 5px 0px 5px rgba(0,0,0,1);

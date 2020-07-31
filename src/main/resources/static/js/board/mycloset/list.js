@@ -1,5 +1,6 @@
 $(function () {
 
+    let uid = $("#uid").html();
     let category;
     let subTitleColor;
     let currentPage;
@@ -102,15 +103,18 @@ $(function () {
     });
 
     // image upload cancel
-    $(".detail-register .cloth-box .fa-times").click(function () {
-        $(this).toggle();
-        $(this).siblings("img").attr("src", "");
-        $(this).siblings(".cloth-input").remove();
-        $("<input class='cloth-input' type='file'>").appendTo($(this).parents(".cloth-box"));
+    $(".register .box-container").click(function (e) {
+        if (e.target.nodeName != "I") return;
+        $(e.target).toggle();
+        $(e.target).siblings("img").remove();
+        $("<img src=''>").appendTo($(e.target).parents(".cloth-box"));
+        let imgName = $(e.target).siblings("input[type='file']").attr("name");
+        $(e.target).siblings("input[type='file']").remove();
+        $(`<input type='file' name=${imgName}>`).appendTo($(e.target).parents(".cloth-box"));
     });
 
     // image del
-    $(".box-container").click(function (e) {
+    $(".cloth .box-container").click(function (e) {
         if (e.target.nodeName != "I") return;
         if (!(confirm("삭제하시겠습니까?"))) return;
         let imgId = $(this).find("img").attr("id");
@@ -152,10 +156,11 @@ $(function () {
         $.ajax({
             type: "get",
             url: "/api/board/mycloset/list-ajax",
-            data: { "c": category, "p": currentPage },
+            data: { "c": category, "p": currentPage, "uid": uid },
             dataType: "json",
             success: function (list) {
                 $(".cloth .box-container").empty();
+                let listLength = Object.keys(list).length;
                 for (let i in list) {
                     $(".cloth .box-container").append(`
                         <div class="cloth-box flex-center">
@@ -165,6 +170,14 @@ $(function () {
                         `);
                     $(`.detail-cloth .cloth-box:eq(${i}) img`)
                         .attr("id", `${list[i].id}`);
+                }
+                for (let i = 0; i < 6 - listLength; i++) {
+                    $(".cloth .box-container").append(`
+                        <div class="cloth-box flex-center">
+                                <i class="fas fa-times fa"></i>
+                                <img class="cloth-img" src="" alt="">
+                            </div>
+                        `);
                 }
             }
         });
@@ -191,7 +204,8 @@ $(function () {
             data: {
                 "id": imgId,
                 "c": category,
-                "p": currentPage
+                "p": currentPage,
+                "uid": uid
             },
             success: function (list) {
                 alert("삭제되었습니다.");
@@ -206,7 +220,7 @@ $(function () {
         $.ajax({
             type: "get",
             url: "/api/board/mycloset/page-ajax",
-            data: "data",
+            data: { "uid": uid },
             dataType: "json",
             success: function (result) {
                 $(".detail .pager ul").empty();

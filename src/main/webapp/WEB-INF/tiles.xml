@@ -13,6 +13,13 @@
 		<put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
 	</definition>
 	
+	<definition name="*.*" template="/WEB-INF/view/inc/layout.jsp">
+		<put-attribute name="css" value="/css/{1}/{2}.css" />
+		<put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />
+		<put-attribute name="main" value="/WEB-INF/view/{1}/{2}.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/view/inc/footer.jsp" />
+	</definition>
+	
 	<definition name="*" template="/WEB-INF/view/inc/layout.jsp">
 		<put-attribute name="css" value="/css/{1}.css" />
 		<put-attribute name="header" value="/WEB-INF/view/inc/header.jsp" />

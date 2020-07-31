@@ -44,4 +44,10 @@ public class MemberController {
 		return "home";
 	}
 
+	@RequestMapping("mypage")
+	public String mypage() {
+		
+		return "member.mypage";
+	}
+
 }

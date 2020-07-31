@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.security.Principal;
 import java.util.Iterator;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,23 +28,20 @@ public class MyClosetController {
 	MyClothService clothService;
 
 	@GetMapping("list")
-	public String list(Principal principal, Model model) {
-
-//		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
-		String uid = "test";
+	public String list(HttpSession session, Model model) {
 		
-		System.out.println(uid);
-
+		String uid = (String)session.getAttribute("userId");
 		CntCloth cntCloth = clothService.getCount(uid);
 		model.addAttribute("cntCloth", cntCloth);
-
+		
 		return "board.mycloset.list";
 	}
 
 	@PostMapping("reg")
 	public String reg(@RequestParam(name = "c", defaultValue = "Outer") String category,
-			MultipartHttpServletRequest multi, Principal principal) {
+			MultipartHttpServletRequest multi, HttpSession session) {
 
+		String uid = (String)session.getAttribute("userId");
 		String path = multi.getServletContext().getRealPath("/upload/");
 		File dir = new File(path);
 		if (!dir.isDirectory()) {
@@ -72,7 +71,6 @@ public class MyClosetController {
 			}
 
 //			String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
-			String uid = "test";
 			String img = "/upload/" + fileName;
 
 			clothService.regClothList(uid, category, img);

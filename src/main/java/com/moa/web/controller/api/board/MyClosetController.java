@@ -25,39 +25,31 @@ public class MyClosetController {
 
 	@GetMapping("list-ajax")
 	public List<Cloth> listAjax(@RequestParam(name = "c", defaultValue = "Outers") String category,
-			@RequestParam(name = "p", defaultValue = "1") int page, Model model, Principal principal) {
-
-//		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
-		String uid = "test";
+			@RequestParam(name = "p", defaultValue = "1") int page, Model model,
+			@RequestParam(name = "uid") String uid) {
 
 		List<Cloth> list = clothService.getClothList(uid, category, page);
 		CntCloth cntCloth = clothService.getCount(uid);
-
+		
 		return list;
 	}
 
 	@GetMapping("page-ajax")
-	public CntCloth pageAjax(Principal principal) {
-
-//		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
-		String uid = "test";
+	public CntCloth pageAjax(@RequestParam(name = "uid") String uid) {
 
 		CntCloth cntCloth = clothService.getCount(uid);
-		
+
 		return cntCloth;
 	}
 
 	@PostMapping("del")
 	public List<Cloth> del(@RequestParam(name = "c", defaultValue = "Outers") String category,
 			@RequestParam(name = "id") String id, @RequestParam(name = "p", defaultValue = "1") int page,
-			Principal principal) {
-
-//		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
-		String uid = "test";
+			@RequestParam(name = "uid") String uid) {
 
 		clothService.delCloth(id, category);
 		List<Cloth> list = clothService.getClothList(uid, category, page);
-		
+
 		return list;
 	}
 
