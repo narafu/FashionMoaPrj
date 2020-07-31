@@ -5,7 +5,7 @@ body {
     min-width: 1080px;
     min-height: 100vh;
     font-family: 'Orbitron', sans-serif;
-    color: white;
+    color: #232323;
     font-weight: 900;
 }
 
@@ -21,6 +21,7 @@ body {
     .title-main {
         font-size: 2em;
         font-weight: bold;
+	    color: white;
     }
 
     .header-menu {
@@ -29,8 +30,8 @@ body {
     }
     
         .header-menu li {
-			background: white;
-		    color: #282c34;
+    		background: white;
+        	color: #292929;
    		    transition: 0.5s;
    		  	cursor: pointer;
 		    padding: 10px;
@@ -39,7 +40,6 @@ body {
     	}
     	
   	        .header-menu li:hover {
-		          color: #292929;
 		          border-radius: 50px;
 		          transition: 0.5s;
 		          background: linear-gradient(-180deg, #fda3b2, #e37682);
@@ -52,14 +52,13 @@ body {
 		.member-menu li {
 		    color: white;
 		    font-size: 12px;
-		    display: block;
 		    padding: 7.5px 12.5px;
 		    margin: 2.5px;
 		}
 		
 		.member-menu li:hover {
+			color: #292929;
 		    background: linear-gradient(-180deg, #fda3b2, #e37682);
-		    color: #292929;
 		    border-radius: 20px;
 		    transition: 0.5s;
 		}
@@ -82,6 +81,7 @@ body {
 	background: #20232a;
     padding: 50px;
     border-top: solid 1px #dddddd;
+    color: white;
 }
     
     .footer-menu {

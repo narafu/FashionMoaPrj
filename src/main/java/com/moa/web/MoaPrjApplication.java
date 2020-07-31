@@ -12,7 +12,6 @@ public class MoaPrjApplication {
 		SpringApplication.run(MoaPrjApplication.class, args);
 		
 		
-		
 	}
 
 }

@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.moa.web.NaverLoginBO;
 import com.moa.web.entity.FreeBoard;
 import com.moa.web.service.FreeBoardService;
+import com.moa.web.service.NaverLoginBO;
 import com.moa.web.view.FreeBoardView;
 
 @Controller

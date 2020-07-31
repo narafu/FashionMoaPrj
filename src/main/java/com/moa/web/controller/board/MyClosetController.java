@@ -30,6 +30,8 @@ public class MyClosetController {
 
 //		String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
 		String uid = "test";
+		
+		System.out.println(uid);
 
 		CntCloth cntCloth = clothService.getCount(uid);
 		model.addAttribute("cntCloth", cntCloth);

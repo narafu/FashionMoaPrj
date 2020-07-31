@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/security/tags"%>
 
 <header id="header">
 	<h1 class="hidden">header</h1>
 	<div class="container flex-between">
 		<div class="title-main">
-			<a href="/main">Moa</a>
+			<a href="/home">Moa</a>
 		</div>
 		<nav class="header-menu">
 			<h1 class="hidden">header-menu</h1>
@@ -32,13 +34,23 @@
 				</li>
 			</ul>
 		</nav>
+		
 		<nav class="member-menu">
 			<h1 class="hidden">member-menu</h1>
-			<ul class="flex-center">
-				<li><a href="/member/mycloset/list">MyPage</a></li>
-				<li><a href="/member/login">Login</a></li>
+			<ul>
+				<c:choose>
+					 <c:when test="${userId eq null}">
+						<li><a href="https://kauth.kakao.com/oauth/authorize?client_id=8558c78e78ed8ede0d79e788ed66f359&redirect_uri=	
+	http://localhost:8080/member/login&response_type=code">Login</a></li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="/member/mypage/index">MyPage</a></li>
+						<li><a href="/member/logout">Logout</a></li>
+					</c:otherwise>
+				</c:choose>
 			</ul>
 		</nav>
 	</div>
-	<script src="/inc/header.js"></script>
+
+	<script src="/js/inc/header.js"></script>
 </header>
