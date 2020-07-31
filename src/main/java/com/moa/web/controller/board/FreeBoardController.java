@@ -104,7 +104,7 @@ public class FreeBoardController {
 		File file1= new File(path);
 		if(!file1.exists())
 				file1.mkdir();
-		
+				
 		path += files.getOriginalFilename();
 		System.out.println("파일네임붙은 경로"+path);
 		
@@ -118,22 +118,21 @@ public class FreeBoardController {
 		is.close();
 		os.close();
 		*/
-		
-		if(files==null) {
-			fbdService.reg(freeBoard);
-		return "redirect:list";
-		}
-		else {
-		
+
 		
 		for(int i = 0; i<files.length; i++) {
-			
+		
+			if(files[i].getOriginalFilename().equals("")) {
+				System.out.println("파일이 없습니다");
+				continue;
+			}
+				
 		File file1= new File(path);
 		if(!file1.exists())
 				file1.mkdir();
 		
 		System.out.println("파일이름="+files[i].getOriginalFilename());
-		
+	
 		path += files[i].getOriginalFilename();
 		System.out.println("파일네임붙은 경로="+path);
 		FileOutputStream os = new FileOutputStream(path);
@@ -148,39 +147,29 @@ public class FreeBoardController {
 		is.close();
 		os.close();
 		}
+		
 		fbdService.reg(freeBoard);
 		return "redirect:list";
 		}
-		}
 		
-
-
 	@GetMapping("/edit/{id}")
 	public String edit(FreeBoard freeBoard,@PathVariable("id") int id, Model model) {
-        
 		model.addAttribute("detail", fbdService.detail(id));
         model.addAttribute("r", freeBoard);
-       
 		return "board.free.edit";
 	}
 	
 	@PostMapping("/edit/{id}")
 	public String edit(FreeBoard freeBoard) throws Exception {
-		
 		fbdService.edit(freeBoard);
-		
 		System.out.println(freeBoard);
 		return "redirect:../detail/"+freeBoard.getId();
-		
 	}
 	
     @GetMapping("/delete/{id}")
     private String delete(FreeBoard freeBoard) throws Exception{
-        
         fbdService.delete(freeBoard);
-        
         return "redirect:/board/free/list";
     }
 
-    
 }

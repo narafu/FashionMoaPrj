@@ -74,7 +74,7 @@
 	<div class="indexer-box">
 		<h1 class="hidden">현재 페이지</h1>
 		<div>
-			<span class="index-num">${(empty param.p)? 1:param.p}</span>/${lastNum }
+			<span class="index-num"><b>${(empty param.p)? 1:param.p}</b></span> / ${lastNum }
 			pages
 		</div>
 	</div>
@@ -116,7 +116,7 @@
 					<section class="write">
 					<h1 class="hidden">글쓰기</h1>
 					<div>
-						<a href="reg">글쓰기</a>
+						<a class="context-write" href="reg">글쓰기</a>
 					</div>
 				</section>
 				</div>

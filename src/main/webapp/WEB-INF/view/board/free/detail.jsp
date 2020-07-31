@@ -18,14 +18,22 @@ $(function() {
 		
 		$("#nickname").val(nickname);
 		console.log('자스자스');
-		console.log(nickname);
-		console.log(docnick);
+		console.log('접속자 nickname='+nickname);
+		console.log('docnick='+docnick);
 		
-		if(( docnick != nickname)||(nickname==null)){
-	console.log("닉넴불일치");
-	$(".btn-edit").hide();
-	$(".btn-delete").hide();
+		if(docnick!=nickname){
+			console.log("닉넴불일치");
+			$(".btn-edit").hide();
+			$(".btn-delete").hide();
+		}
+
+		if(docnick==nickname){
+			console.log("닉넴일치");
+		}
+		if(nickname==null){
+				console.log("nick x");
 			}
+		
 		
 		showReplyList();
 
@@ -67,11 +75,13 @@ function showReplyList(){
 		}
 		$("#replyList").html(htmls);
         }	   // Ajax success end
-
 	});	// Ajax end
 
-}
 
+
+
+	
+}//cmtList
 
 $(document).on('click', '#insertCmt', function(){
 
@@ -104,9 +114,61 @@ $(document).on('click', '#insertCmt', function(){
 		}
 	});
 
-});
+	function fn_editCmt(cid, nickname, content){
 
-});
+		var htmls = "";
+
+		htmls += '<div class="media text-muted pt-3" id="rid' + rid + '">';
+		htmls += '<svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder:32x32">';
+		htmls += '<title>Placeholder</title>';
+		htmls += '<rect width="100%" height="100%" fill="#007bff"></rect>';
+		htmls += '<text x="50%" fill="#007bff" dy=".3em">32x32</text>';
+		htmls += '</svg>';
+		htmls += '<p class="media-body pb-3 mb-0 small lh-125 border-bottom horder-gray">';
+		htmls += '<span class="d-block">';
+		htmls += '<strong class="text-gray-dark">' + nickname + '</strong>';
+		htmls += '<span style="padding-left: 7px; font-size: 9pt">';
+		htmls += '<a href="javascript:void(0)" onclick="fn_updateReply(' + cid + ', \'' + nickname + '\')" style="padding-right:5px">저장</a>';
+		htmls += '<a href="javascript:void(0)" onClick="showReplyList()">취소<a>';
+		htmls += '</span>';
+		htmls += '</span>';		
+		htmls += '<textarea name="editContent" id="editContent" class="form-control" rows="3">';
+		htmls += content;
+		htmls += '</textarea>';
+		htmls += '</p>';
+		htmls += '</div>';
+
+		$('#cid' + cid).replaceWith(htmls);
+		$('#cid' + cid + ' #editContent').focus();
+	}//editButton
+});//insertCmt
+
+
+function fn_updateReply(cid, nickname){
+
+	var replyEditContent = $('#editContent').val();
+	var paramData = JSON.stringify({"content": replyEditContent
+			, "cid": cid
+	});
+	var headers = {"Content-Type" : "application/json"
+			, "X-HTTP-Method-Override" : "POST"};
+	$.ajax({
+		url: "${pageContext.request.contextPath}/restBoard/editCmt"
+		, headers : headers
+		, data : paramData
+		, type : 'POST'
+		, dataType : 'text'
+		, success: function(result){
+                            console.log(result);
+			showReplyList();
+		}
+		, error: function(error){
+			console.log("에러 : " + error);
+		}
+	});
+}//edit submit
+
+});//script
 
 </script>
 <main id="board-main">
@@ -131,7 +193,8 @@ $(document).on('click', '#insertCmt', function(){
 					<fmt:formatDate value="${detail.regdate}"
 						pattern="yyyy-MM-dd HH:mm" />
 				</div>
-				<div class="writer-name">작성자 : ${detail.nickname }</div>
+				<div>작성자 </div>
+				<div class="writer-name">${detail.nickname }</div>
 			</div>
 			<div class="meta-info">
 				<div class="hit">조회수 ${detail.hit }</div>
@@ -195,31 +258,18 @@ $(document).on('click', '#insertCmt', function(){
 						<button type="button" class="btn btn-sm btn-primary"
 							id="insertCmt" style="width: 100%; margin-top: 10px">
 							저 장</button>
-
 					</div>
-
 				</div>
-
 			</form:form>
-
 		</div>
-
-		<!-- Reply Form {e} -->
 
 		<!-- Reply List {s}-->
-
 		<div class="my-3 p-3 bg-white rounded shadow-sm"
 			style="padding-top: 10px">
-
 			<h6 class="border-bottom pb-2 mb-0">Reply list</h6>
-
 			<div id="replyList"></div>
-
 		</div>
-		<!-- Reply List {e}-->
-
 	</section>
-
 </main>
 
 

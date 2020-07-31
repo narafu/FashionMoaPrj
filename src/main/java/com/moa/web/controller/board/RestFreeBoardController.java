@@ -43,4 +43,23 @@ public class RestFreeBoardController {
 		
 		return result;
 	}
+	
+	
+	@PostMapping("/editCmt")
+	public Map<String,Object> editCmt(@RequestBody FreeBoardComment freeBoardCmt)throws Exception {		
+		
+		Map<String,Object> result = new HashMap<>();
+		System.out.println("수정중");
+		
+		try {
+			fbdCmtService.editCmt(freeBoardCmt);
+			result.put("status", "OK");
+		} catch (Exception e) {
+			e.printStackTrace();
+			result.put("status", "False");
+		}
+		
+		return result;
+	}
+	
 }
