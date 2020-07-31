@@ -6,7 +6,6 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <main id="board-main">
 	<section class="board-container">
-
 		<div class="board-header">
 			<div>
 				<h1 >자유게시판</h1>

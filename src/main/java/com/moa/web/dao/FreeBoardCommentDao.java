@@ -15,20 +15,20 @@ import com.moa.web.entity.FreeBoardComment;
 public interface FreeBoardCommentDao {
 	
 	//댓글 작성
-	@Insert("INSERT INTO FreeBoardComment (nickname,content,regdate) VALUES(#{nickname},#{content},#{regdate})")
+	@Insert("INSERT INTO FreeBoardComment (nickname,content,boardId) VALUES(#{nickname},#{content},#{bid})")
 	public int insertCmt(FreeBoardComment fbdCmt);
 
 	//댓글 수정
-	@Update("UPDATE FreeBoardComment SET content=#{content} WHERE id=#{id}")
+	@Update("UPDATE FreeBoardComment SET content=#{content} WHERE cid=#{cid}")
 	public void editCmt(FreeBoardComment fbdCmt);
 	
 	//댓글 삭제
-	@Delete("DELETE FROM FreeBoardComment WHERE id=#{id}")
+	@Delete("DELETE FROM FreeBoardComment WHERE cid=#{cid}")
 	public void deleteCmt(FreeBoardComment fbdCmt);
 	
 	//댓글 리스트
-	@Select("SELECT * FROM FreeBoardComment WHERE boardId=#{id}")
-	public List<FreeBoardComment> cmtList(int id);
+	@Select("SELECT * FROM FreeBoardComment WHERE boardId=#{boardId}")
+	public List<FreeBoardComment> cmtList(int bid);
 	
 	//댓글 개수
 	@Select("SELECT COUNT(*) count FROM FreeBoardComment")

@@ -3,16 +3,27 @@ package com.moa.web.entity;
 import java.util.Date;
 
 public class FreeBoardComment {
-	private int id;
+	private int cid;
 	private String nickname;
 	private String content;
 	private Date regdate;
+	private int bid;
 	
-	public int getId() {
-		return id;
+	public FreeBoardComment() {
+		// TODO Auto-generated constructor stub
 	}
-	public void setId(int id) {
-		this.id = id;
+	
+	public int getBid() {
+		return bid;
+	}
+	public void setBid(int bid) {
+		this.bid = bid;
+	}
+	public int getCid() {
+		return cid;
+	}
+	public void setCid(int cid) {
+		this.cid = cid;
 	}
 	public String getNickname() {
 		return nickname;
@@ -32,6 +43,13 @@ public class FreeBoardComment {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
+
+	@Override
+	public String toString() {
+		return "FreeBoardComment [cid=" + cid + ", nickname=" + nickname + ", content=" + content + ", regdate="
+				+ regdate + ", bid=" + bid + "]";
+	}
+	
 	
 	
 }

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,13 +21,15 @@ public class RestFreeBoardController {
 	private FreeBoardCommentService fbdCmtService;
 	
 	@PostMapping("/cmtList")
-	public List<FreeBoardComment> cmtList(int id) throws Exception{
-		System.out.println("리스트 출력");
-		return fbdCmtService.cmtList(id);
+	public List<FreeBoardComment> cmtList(int bid) throws Exception{
+		System.out.println("리스트 출력!");
+		return fbdCmtService.cmtList(bid);
 	}
 	
+	
 	@PostMapping("/insertCmt")
-	public Map<String,Object> insertCmt(FreeBoardComment freeBoardCmt) throws Exception{
+	public Map<String,Object> insertCmt(@RequestBody FreeBoardComment freeBoardCmt) throws Exception{
+		
 		Map<String,Object> result = new HashMap<>();
 		System.out.println("인서트중");
 		

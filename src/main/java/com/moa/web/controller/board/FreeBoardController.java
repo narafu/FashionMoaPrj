@@ -95,6 +95,7 @@ public class FreeBoardController {
 			,HttpServletRequest request
 			,@RequestParam("files")MultipartFile[] files,Model model
 			) throws IOException{ 
+		
 		System.out.println("reg작동");
 		String path = request.getServletContext().getRealPath("/upload/");
 		
@@ -117,6 +118,14 @@ public class FreeBoardController {
 		is.close();
 		os.close();
 		*/
+		
+		if(files==null) {
+			fbdService.reg(freeBoard);
+		return "redirect:list";
+		}
+		else {
+		
+		
 		for(int i = 0; i<files.length; i++) {
 			
 		File file1= new File(path);
@@ -135,16 +144,15 @@ public class FreeBoardController {
 		while ((len = is.read(buf)) != -1)
 			os.write(buf, 0, len);
 		
-		freeBoard.setFile("/"+path);
+		freeBoard.setFile(path);
 		is.close();
 		os.close();
 		}
 		fbdService.reg(freeBoard);
-		System.out.println(freeBoard);
-		 
-	
 		return "redirect:list";
-	}
+		}
+		}
+		
 
 
 	@GetMapping("/edit/{id}")
