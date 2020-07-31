@@ -14,14 +14,11 @@ public class StyleFeedbackService {
 
 	@Autowired
 	private StyleFeedbackDao sfDao;
-	
-//	@Autowired
-//	private StyleFeedback sf;
 
 	public List<StyleFeedbackView> getList(int page, String query, String field){
 		
-		int offset = (page-1)*10;
-		int size = 10;
+		int offset = (page-1)*9;
+		int size = 9;
 		
 		return sfDao.getList(offset, size, query, field);
 	}
@@ -31,16 +28,7 @@ public class StyleFeedbackService {
 		return sfDao.get(id);
 	}
 	
-	public int insert(String title, int writerId, String content, String img) {
-		
-		
-		
-//		sf.setTitle(title);
-//		sf.setWriterId(writerId);
-//		sf.setContent(content);
-//		sf.setImg(img);i
-//		System.out.println(img);
-//		System.out.printf("제목 : %s, 작성자 : %d, 내용 : %s\n", title, writerId, content);
+	public int insert(String title, String writerId, String content, String img) {
 		
 		return sfDao.insert(title, writerId, content, img);
 	}
@@ -50,5 +38,15 @@ public class StyleFeedbackService {
 		return sfDao.delete(id);
 	}
 
+	public int edit(int id, String title, String content, String img) {
+
+		
+		return sfDao.edit(id, title, content, img);
+	}
+
+	public int getCount(String field, String query) {
+
+		return sfDao.getCount(field, query);
+	}
 	
 }

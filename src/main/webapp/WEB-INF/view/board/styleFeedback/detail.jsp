@@ -1,200 +1,80 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<script src="/js/board/styleFeedback/list.js"></script>
+
 <main id="main">
-
-	<section class="style-feedback-detail">
-		<h1 class="hidden" style="font-size: 40px; color: red;">스타일 피드백 Detail</h1>
-		<div class="detail-table">
-			<div class="title">제목</div>
-			<div class="box">
-				<div class="icon">아이콘</div>
-				<div class="writer">작성자</div>
+	<section id="feedback">
+		<h2 class="feedback__title">${d.title }</h2>
+		<div class="feedback__header">
+			<div class="feedback__writer__container">
+				<span class="feedback__writer">ID : ${d.writerId }</span>
 			</div>
-			<div class="box border-bottom">
-				<div class="regdate">2222-22-22 22:22</div>
-				<div class="hit">조회수 1</div>
-				<div class="edit">수정</div>
-				<div class="delete">삭제</div>
-			</div>
-			<div class="content">
-				<div class="content-info1">
-					<span class="f-size-30">코디</span> <img class="picture"
-						src="/${session.uid }/${list.img}"></img>
-				</div>
-
-				<div class="content-info2">
-					<div>
-						<span class="f-size-30">상의</span>
-						<table class="top">
-							<tr>
-								<td><img class="item"
-									src="/image/KakaoTalk_20200703_220605084_01.jpg"></td>
-								<td><img class="item"
-									src="/image/KakaoTalk_20200703_220605084_02.jpg"></td>
-								<td><img class="item"
-									src="/image/KakaoTalk_20200703_220605084_03.jpg"></td>
-								<td><img class="item"
-									src="/image/KakaoTalk_20200703_220605084_04.jpg"></td>
-							</tr>
-						</table>
-					</div>
-					<div>
-						<span class="f-size-30">하의</span>
-						<table class="bottom">
-							<tr>
-								<td><img class="item"
-									src="/image/KakaoTalk_20200703_220605084_05.jpg"></td>
-								<td><img class="item"
-									src="/image/KakaoTalk_20200703_220605084_06.jpg"></td>
-								<td><img class="item"
-									src="/image/KakaoTalk_20200703_220605084_07.jpg"></td>
-								<td><img class="item"
-									src="/image/KakaoTalk_20200703_220605084_08.jpg"></td>
-							</tr>
-						</table>
-					</div>
-					<div>
-						<span class="f-size-30">신발</span>
-						<table class="shoes">
-							<tr>
-								<td class="item">신발 사진</td>
-								<td class="item">신발 사진</td>
-								<td class="item">신발 사진</td>
-								<td class="item">신발 사진</td>
-							</tr>
-						</table>
-					</div>
-					<div>
-						<span class="f-size-30">악세사리</span>
-						<table class="accessory">
-							<tr>
-								<td class="item">악세사리 사진</td>
-								<td class="item">악세사리 사진</td>
-								<td class="item">악세사리 사진</td>
-								<td class="item">악세사리 사진</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-
-				<div class="content-info3">
-					<div>글 내용</div>
-				</div>
+			<div class="feedback__writer__container">
+				<span class="feedback__writer__date"> 
+<%-- 					${n.regdate }  --%>
+					<fmt:parseDate var="date" value="${d.regdate}" pattern="yyyy-MM-dd HH:mm" />
+					<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm" />
+				</span>
+				<span class="feedback__writer__count"> 조회수 : ${d.hit } </span>
+				<span class="feedback__writer__modified"> <a href="edit?id=${d.id }">수정</a></span>
+				<span class="feedback__writer__delete"> <a href="delete?id=${d.id }">삭제</a></span>
 			</div>
 		</div>
-
-		<section class="comment">
-			<h1 class="hidden">댓글</h1>
-			<div class="comment-box1">
-				<div class="comment-list">
-					<div class="content-container">
-						<div class="icon">아이콘</div>
-						<div class="writer">작성자</div>
-						<div class="report">신고</div>
-						<div class="content">내용</div>
-						<div class="regdate">작성일</div>
-						<div class="delete">삭제</div>
-					</div>
-				</div>
-	
-				<div class="comment-list">
-					<div class="content-container">
-						<div class="icon">아이콘</div>
-						<div class="writer">작성자</div>
-						<div class="report">신고</div>
-						<div class="content">내용</div>
-						<div class="regdate">작성일</div>
-						<div class="delete">삭제</div>
-					</div>
-				</div>
-	
-				<div class="comment-list">
-					<div class="content-container">
-						<div class="icon">아이콘</div>
-						<div class="writer">작성자</div>
-						<div class="report">신고</div>
-						<div class="content">내용</div>
-						<div class="regdate">작성일</div>
-						<div class="delete">삭제</div>
-					</div>
-				</div>
-				
-				<div class="comment-list">
-					<div class="content-container">
-						<div class="icon">아이콘</div>
-						<div class="writer">작성자</div>
-						<div class="report">신고</div>
-						<div class="content">내용</div>
-						<div class="regdate">작성일</div>
-						<div class="delete">삭제</div>
-					</div>
-				</div>
-				
-				<div class="comment-list">
-					<div class="content-container">
-						<div class="icon">아이콘</div>
-						<div class="writer">작성자</div>
-						<div class="report">신고</div>
-						<div class="content">내용</div>
-						<div class="regdate">작성일</div>
-						<div class="delete">삭제</div>
-					</div>
-				</div>
-				<div class="comment-list">
-					<div class="content-container">
-						<div class="icon">아이콘</div>
-						<div class="writer">작성자</div>
-						<div class="report">신고</div>
-						<div class="content">내용</div>
-						<div class="regdate">작성일</div>
-						<div class="delete">삭제</div>
-					</div>
-				</div>
-				<div class="comment-list">
-					<div class="content-container">
-						<div class="icon">아이콘</div>
-						<div class="writer">작성자</div>
-						<div class="report">신고</div>
-						<div class="content">내용</div>
-						<div class="regdate">작성일</div>
-						<div class="delete">삭제</div>
-					</div>
-				</div>
-				<div class="comment-list">
-					<div class="content-container">
-						<div class="icon">아이콘</div>
-						<div class="writer">작성자</div>
-						<div class="report">신고</div>
-						<div class="content">내용</div>
-						<div class="regdate">작성일</div>
-						<div class="delete">삭제</div>
-					</div>
-				</div>
-				<div class="comment-list">
-					<div class="content-container">
-						<div class="icon">아이콘</div>
-						<div class="writer">작성자</div>
-						<div class="report">신고</div>
-						<div class="content">내용</div>
-						<div class="regdate">작성일</div>
-						<div class="delete">삭제</div>
-					</div>
-				</div>
-				
-			</div>			
-			<div class="comment-box2">
-				<form action="" method="POST">
-					<div class="comment-reg">
-						<div class="content-container">
-							<!-- <div class="writer">작성자</div> -->
-							<textarea class="content" placeholder="내용을 입력하세요"></textarea>
-							<div class="reg">등록</div>
+		<div class="feedback__container">
+			<div class="feedback__detail">
+				<div class="feedback__style">
+					<h3>Style</h3>
+						<div class="feedback__style__img">
+							<img src="${d.img }" />
 						</div>
+				</div>
+				<div class="feedback__clothes">
+					<h3>착용상품</h3>
+					<div class="feedback__clothes__img">
+<!-- 						<img src="" alt="" /> -->
+						<div class="items">아우터 캐러셀</div>
+						<div class="items">상의 캐러셀</div>
+						<div class="items">하의 캐러셀</div>
+						<div class="items">신발 캐러셀</div>
+						<div class="items">기타 캐러셀</div>
+					</div>
+				</div>
+			</div>
+			<div class="feedback__comment">
+				<div class="feedback__writer__comment">
+					<span class="feedback__writer__id">${d.writerId }</span>
+					<span>${d.content }</span>
+				</div>
+				<div class="comment-list">
+					<c:forEach var="cmt" items="${comment }">
+						<div class="comment">
+							<div class="comment-info">
+								<div class="icon"></div>
+								<div class="writer">${cmt.writerId }</div>
+								<div class="report">신고</div>
+								<div class="content">${cmt.content }</div>
+								<div class="regdate">
+									<fmt:parseDate var="date" value="${cmt.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
+									<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm" />
+								</div>
+								<div class="delete">삭제</div>
+							</div>
+						</div>
+					</c:forEach>
+				</div>
+				<form action="${d.id }" method="post">
+					<div class="feedback__member">
+						<input class="feedback__member__comment" type="text" name="content" />
+						<input type="hidden" value="정태다" name="writerId"/>
+						<input type="hidden" value="${d.id }" name="id"/>
+						<button class="member__register__comment">등록</button>
 					</div>
 				</form>
+				
 			</div>
-		</section>
+		</div>
 	</section>
-
 </main>
