@@ -49,8 +49,8 @@
 					<span class="feedback__writer__id">${d.writerId }</span>
 					<span>${d.content }</span>
 				</div>
-				<div class="comment-list">
-					<c:forEach var="cmt" items="${comment }">
+					<div class="comment-list">
+				<c:forEach var="cmt" items="${comment }">
 						<div class="comment">
 							<div class="comment-info">
 								<div class="icon"></div>
@@ -64,8 +64,8 @@
 								<div class="delete">삭제</div>
 							</div>
 						</div>
-					</c:forEach>
-				</div>
+				</c:forEach>
+					</div>
 				<form action="${d.id }" method="post">
 					<div class="feedback__member">
 						<input class="feedback__member__comment" type="text" name="content" />

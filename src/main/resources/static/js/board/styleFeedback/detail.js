@@ -1,9 +1,37 @@
 $(()=> {
 	
-	let button = $(".member__register__comment");
-	
+	let button = $(".member__register__comment");	// 댓글 등록 버튼
+	let cmtList = $(".comment-list");	// 댓글 리스트
+
 	button.click((e)=>{
 		e.preventDefault();
+		
+		$.ajax({
+			url : `/api/board/styleFeedback/${id}`,
+			type : "GET",
+			data : {
+				"id" : id
+			},
+			datatype : "JSON",
+			success : (cmt)=>{
+				console.log(id);
+				cmtList.append(`
+					<div class="comment-info">
+						<div class="icon"></div>
+						<div class="writer">${cmt.writerId }</div>
+						<div class="report">신고</div>
+						<div class="content">${cmt.content }</div>
+						<div class="regdate">
+							${cmt.regdate}
+//							<fmt:parseDate var="date" value="${cmt.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
+//							<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm" />
+						</div>
+						<div class="delete">삭제</div>
+					</div>
+				`);
+			}
+		});
+		
 /*		if(e.target.nodeName != "IMG") return;
 		console.log(e.target);
 		
@@ -79,8 +107,8 @@ $(()=> {
 	</section>`);
 				
 			}
-		});
-	});*/
+		});*/
+	});
 	
 });
 
