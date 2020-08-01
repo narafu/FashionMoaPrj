@@ -13,7 +13,7 @@
 //$(".btn-reg").click(function() {
 //	alert("ssss");
 //});
-
+/*
 $(()=> {
 	
 	let container = $(".board-container");
@@ -111,6 +111,4 @@ $(()=> {
 	});
 	
 });
-
-
-
+*/

@@ -15,7 +15,7 @@ public interface StyleFeedbackCommentDao {
 	@Select("SELECT * FROM StyleFeedbackComment WHERE boardId = ${id} ORDER BY regdate DESC")
 	List<StyleFeedbackComment> getComment(@Param("id") int id);
 
-	@Insert("INSERT INTO StyleFeedbackComment(writerId, content, boardId) (#{writerId}, #{content}, ${boardId})")
+	@Insert("INSERT INTO StyleFeedbackComment(writerId, content, boardId) VALUES(#{writerId}, #{content}, ${boardId})")
 	int insert(String writerId, String content, int boardId);
 
 }
