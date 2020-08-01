@@ -1,6 +1,7 @@
 package com.moa.web.service;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
@@ -14,6 +15,9 @@ import com.github.scribejava.core.model.OAuthRequest;
 import com.github.scribejava.core.model.Response;
 import com.github.scribejava.core.model.Verb;
 import com.github.scribejava.core.oauth.OAuth20Service;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.moa.web.controller.api.member.NaverLoginApi;
 
 @Service
@@ -60,6 +64,8 @@ public class NaverLoginBO {
 
 			/* Scribe에서 제공하는 AccessToken 획득 기능으로 네아로 Access Token을 획득 */
 			OAuth2AccessToken accessToken = oauthService.getAccessToken(code);
+			
+			System.out.println("naver accessToken : " + accessToken);
 			return accessToken;
 		}
 		return null;
@@ -81,7 +87,7 @@ public class NaverLoginBO {
 	}
 
 	/* Access Token을 이용하여 네이버 사용자 프로필 API를 호출 */
-	public String getUserProfile(OAuth2AccessToken oauthToken) throws IOException {
+	public HashMap<String, Object> getUserProfile(OAuth2AccessToken oauthToken) throws IOException {
 
 		OAuth20Service oauthService = new ServiceBuilder().apiKey(CLIENT_ID).apiSecret(CLIENT_SECRET)
 				.callback(REDIRECT_URI).build(NaverLoginApi.instance());
@@ -89,7 +95,29 @@ public class NaverLoginBO {
 		OAuthRequest request = new OAuthRequest(Verb.GET, PROFILE_API_URL, oauthService);
 		oauthService.signRequest(oauthToken, request);
 		Response response = request.send();
-		return response.getBody();
+		
+//		------------------------
+		
+		HashMap<String, Object> userInfo = new HashMap<>();
+
+		String result = response.getBody();
+		System.out.println("naver response body : " + result);
+		
+		JsonParser parser = new JsonParser();
+		JsonElement element = parser.parse(result);
+
+		JsonObject properties = element.getAsJsonObject().get("response").getAsJsonObject();
+
+		String nickname = properties.getAsJsonObject().get("nickname").getAsString();
+		String email = properties.getAsJsonObject().get("email").getAsString();
+		
+		System.out.println("nickname :" + nickname);
+		System.out.println("email :" + email);
+
+		userInfo.put("nickname", nickname);
+		userInfo.put("email", email);
+
+		return userInfo;
 	}
 
 }

@@ -110,7 +110,7 @@ public class MemberService {
 
 			String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 			String email = kakao_account.getAsJsonObject().get("email").getAsString();
-
+			
 			userInfo.put("nickname", nickname);
 			userInfo.put("email", email);
 
@@ -147,5 +147,5 @@ public class MemberService {
 			e.printStackTrace();
 		}
 	}
-
+	
 }
