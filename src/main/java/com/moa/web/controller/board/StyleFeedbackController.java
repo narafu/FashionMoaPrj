@@ -193,6 +193,28 @@ public class StyleFeedbackController {
 			@RequestParam("img") MultipartFile mFile,
 			Model model){
 		
+		// 파일 경로
+		String path = req.getServletContext().getRealPath("/upload/");
+		
+		File file = new File(path);
+	    if (!file.exists()) /* 존재하지 않다면 false */
+	    	file.mkdir(); /* file1 폴더를 만들어줌 */
+		
+		
+//		System.out.println("mFile : " + mFile);
+	    
+	    String fileName = mFile.getOriginalFilename();	
+	    
+		try {
+			mFile.transferTo(new File(path + fileName));
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		int id = sf.getId();
 		String img = "/upload/" + mFile.getOriginalFilename();
 		
