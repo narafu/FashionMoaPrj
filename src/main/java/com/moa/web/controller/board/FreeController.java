@@ -19,7 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.moa.web.entity.FreeBoard;
 import com.moa.web.service.FreeBoardService;
-import com.moa.web.service.NaverLoginBO;
+import com.moa.web.service.NaverLoginService;
 import com.moa.web.view.FreeBoardView;
 
 @Controller
@@ -30,7 +30,7 @@ public class FreeController {
 	@Autowired
 	private FreeBoardService fbdService;
 	private FreeBoard freeBoard;
-	private NaverLoginBO naverLoginBO;
+	private NaverLoginService naverLoginBO;
 	
 	@GetMapping("/list")
 	public String list(@RequestParam(name = "p", defaultValue = "1") int page,

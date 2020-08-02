@@ -50,7 +50,6 @@
 						<li class="login"><a href="">Login</a></li>
 					</c:when>
 					<c:otherwise>
-						<li><a href="/member/mypage">MyPage</a></li>
 						<li><a href="/member/logout">Logout</a></li>
 					</c:otherwise>
 				</c:choose>

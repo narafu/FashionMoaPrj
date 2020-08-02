@@ -21,7 +21,7 @@ import com.google.gson.JsonParser;
 import com.moa.web.controller.api.member.NaverLoginApi;
 
 @Service
-public class NaverLoginBO {
+public class NaverLoginService {
 
 	/* 인증 요청문을 구성하는 파라미터 */
 	// client_id: 애플리케이션 등록 후 발급받은 클라이언트 아이디
