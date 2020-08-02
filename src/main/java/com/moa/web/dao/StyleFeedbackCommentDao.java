@@ -2,6 +2,7 @@ package com.moa.web.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -17,5 +18,8 @@ public interface StyleFeedbackCommentDao {
 
 	@Insert("INSERT INTO StyleFeedbackComment(writerId, content, boardId) VALUES(#{writerId}, #{content}, ${boardId})")
 	int insert(String writerId, String content, int boardId);
+
+	@Delete("DELETE FROM StyleFeedbackComment WHERE id = ${id}")
+	int delete(int id);
 
 }

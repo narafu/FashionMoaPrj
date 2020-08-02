@@ -48,5 +48,10 @@ public class StyleFeedbackService {
 
 		return sfDao.getCount(field, query);
 	}
+
+	public int hitUpdate(int id) {
+
+		return sfDao.hitUpdate(id);
+	}
 	
 }

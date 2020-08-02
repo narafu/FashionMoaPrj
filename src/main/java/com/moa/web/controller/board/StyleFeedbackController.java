@@ -64,6 +64,8 @@ public class StyleFeedbackController {
 			Model model) {
 		
 		sf = sfService.get(id);
+		sfService.hitUpdate(id);
+		
 		
 		List<StyleFeedbackComment> comments = sfCmtService.getComment(id);
 		
@@ -155,11 +157,23 @@ public class StyleFeedbackController {
 	
 	/* delete 페이지 */
 	@GetMapping("delete")
-	public String delete(@RequestParam("id")int id) {
+	public String delete(@RequestParam("id") int id) {
 		
 		sfService.delete(id);
 		
 		return "redirect:list";
+	}
+	
+	/* 댓글 delete 페이지 */
+	@GetMapping("cmtDelete")
+	public String cmtDelete(
+			@RequestParam("cmtId") int cmtId,
+			@RequestParam("boardId") int boardId) {
+		
+		System.out.println("cmtId : " + cmtId);
+		sfCmtService.delete(cmtId);
+		
+		return "redirect:" + boardId;
 	}
 	
 	/* edit 페이지 */

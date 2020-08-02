@@ -18,6 +18,9 @@ public interface StyleFeedbackDao {
 	@Select("SELECT * FROM StyleFeedback WHERE ${field} LIKE '%${query}%' ORDER BY regdate DESC LIMIT #{size} OFFSET ${offset}")
 	List<StyleFeedbackView> getList(@Param("offset")int offset, @Param("size")int size, String query, String field);
 	
+	@Update("UPDATE StyleFeedback SET hit=hit+1 WHERE id = #{id}")
+	int hitUpdate(@Param("id") int id);
+	
 	@Select("SELECT * FROM StyleFeedback WHERE id = #{id}")
 	StyleFeedback get(@Param("id") int id);
 	

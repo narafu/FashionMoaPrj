@@ -26,6 +26,12 @@ public class StyleFeedbackCommentService {
 		return sfCmtDao.insert(writerId, content, boardId);
 	}
 
+	public int delete(int id) {
+
+		return sfCmtDao.delete(id);
+		
+	}
+
 
 
 	

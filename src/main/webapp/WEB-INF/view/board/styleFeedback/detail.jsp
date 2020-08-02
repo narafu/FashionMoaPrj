@@ -21,7 +21,7 @@
 				<span class="feedback__writer__date"> <fmt:parseDate
 						var="date" value="${d.regdate}" pattern="yyyy-MM-dd HH:mm" /> <fmt:formatDate
 						value="${date}" pattern="yyyy-MM-dd HH:mm" />
-				</span> <span class="feedback__writer__count"> 조회수: ${d.hit } </span> <span
+				</span> <span class="feedback__writer__count"> 조회수: ${d.hit +1} </span> <span
 					class="feedback__writer__modified"> <a
 					href="edit?id=${d.id }">수정</a>
 				</span> <span class="feedback__writer__delete"> <a
@@ -113,20 +113,24 @@
 				</div>
 				<div class="comment-list">
 					<c:forEach var="cmt" items="${comment }">
-						<div class="comment">
-							<div class="comment-info">
-								<div class="icon"></div>
-								<div class="writer">${cmt.writerId }</div>
-								<div class="report"></div>
-								<div class="content">${cmt.content }</div>
-								<div class="regdate">
-									<fmt:parseDate var="date" value="${cmt.regdate}"
-										pattern="yyyy-MM-dd HH:mm:ss" />
-									<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm" />
+						<form action="cmtDelete" method="get">
+							<div class="comment">
+								<div class="comment-info">
+									<div class="icon"></div>
+									<div class="writer">${cmt.writerId }</div>
+									<div class="report"></div>
+									<div class="content">${cmt.content }</div>
+									<div class="regdate">
+										<fmt:parseDate var="date" value="${cmt.regdate}"
+											pattern="yyyy-MM-dd HH:mm:ss" />
+										<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm" />
+									</div>
+									<input type="hidden" name="boardId" value="${d.id }">
+									<input type="hidden" name="cmtId" value="${cmt.id }">
+									<button type="submit" value="삭제" class="delete"><i class="fas fa-trash"></i></button>
 								</div>
-								<div class="delete">삭제</div>
 							</div>
-						</div>
+						</form>
 					</c:forEach>
 				</div>
 				<form action="${d.id }" method="post">
@@ -136,7 +140,7 @@
 							name="writerId" /> <input type="hidden" value="${d.id }"
 							name="id" /> <input type="hidden" value="${regdate }"
 							name="regdate" />
-						<button class="member__register__comment">등록</button>
+						<button class="member__register__comment"><i class="fas fa-paper-plane"></i></button>
 					</div>
 				</form>
 			</div>
