@@ -35,12 +35,26 @@ public class StyleFeedbackController {
 //		sf = sfService.get(id);
 		List<StyleFeedbackComment> comments = sfCmtService.getComment(id);
 		
-		System.out.println("id" + id);
-		
+//		System.out.println("id" + id);
+//		System.out.println(comments);
 //		model.addAttribute("d", sf);
-		model.addAttribute("comment", comments);
+		model.addAttribute("cmt", comments);
 		
 		return sf; 
+	}
+	
+	@PostMapping("{id}")
+	public String detail(
+			@PathVariable("id") int boardId,
+			@RequestParam("writerId") String writerId,
+			@RequestParam("content") String content,
+			Model model) {
+		
+		System.out.printf("boardId : %d, writerId : %s, content : %s\n", boardId, writerId, content);
+		
+		sfCmtService.insert(writerId, content, boardId);
+		
+		return "redirect:"+boardId;
 	}
 	
 }

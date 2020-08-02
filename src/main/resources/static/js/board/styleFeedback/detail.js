@@ -6,27 +6,57 @@ $(()=> {
 	button.click((e)=>{
 		e.preventDefault();
 		
+		let pathName = $(location).attr("pathname");	// /board/styleFeedback/73 
+		console.log(pathName);	// /board/styleFeedback/73
+
+		let id = pathName.substring(21, 23);
+		console.log(id);
+		
+		let cmtReg = $(".feedback__member");
+		console.log(cmtReg);
+		let content = cmtReg.find("input[name=content]").val();	// 입력한 댓글 content 값
+		console.log(content);
+		let writerId = cmtReg.find("input[name=writerId]").val();	// 입력한 댓글 writerId 값
+		console.log(writerId);
+		
+		$.ajax({
+			url : `/api/board/styleFeedback/${id}`,
+			type : "POST",
+			data : {
+				"id" : id,
+				"writerId" : writerId,
+				"content" : content
+			},
+			datatype : "JSON",
+			success : (cmt)=>{
+//				alert("성공!");
+				cmtReg.find("input[name=content]").val("");
+			}
+		});
+		
 		$.ajax({
 			url : `/api/board/styleFeedback/${id}`,
 			type : "GET",
 			data : {
-				"id" : id
+				"id" : id,
+//				"writerId" : writerId,
+//				"content" : content
 			},
 			datatype : "JSON",
 			success : (cmt)=>{
-				console.log(id);
+				console.log(`${cmt.writerId}`);
 				cmtList.append(`
-					<div class="comment-info">
-						<div class="icon"></div>
-						<div class="writer">${cmt.writerId }</div>
-						<div class="report">신고</div>
-						<div class="content">${cmt.content }</div>
-						<div class="regdate">
-							${cmt.regdate}
-//							<fmt:parseDate var="date" value="${cmt.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
-//							<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm" />
+					<div class="comment">
+						<div class="comment-info">
+							<div class="icon"></div>
+							<div class="writer">${cmt.writerId }</div>
+							<div class="report">신고</div> 
+							<div class="content">${cmt.content }</div>
+							<div class="regdate">
+								${cmt.regdate}
+							</div>
+							<div class="delete">삭제</div>
 						</div>
-						<div class="delete">삭제</div>
 					</div>
 				`);
 			}
