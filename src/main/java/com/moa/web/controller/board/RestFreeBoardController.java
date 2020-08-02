@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.moa.web.entity.FreeBoardComment;
@@ -44,7 +46,6 @@ public class RestFreeBoardController {
 		return result;
 	}
 	
-	
 	@PostMapping("/editCmt")
 	public Map<String,Object> editCmt(@RequestBody FreeBoardComment freeBoardCmt)throws Exception {		
 		
@@ -60,6 +61,21 @@ public class RestFreeBoardController {
 		}
 		
 		return result;
+	}
+	
+	@RequestMapping(value = "/deleteCmt", method = {RequestMethod.GET, RequestMethod.POST})
+	public Map<String, Object> deleteReply(@RequestParam("cid") int cid,FreeBoardComment freeBoardCmt) throws Exception {
+		System.out.println("삭제중");
+	Map<String, Object> result = new HashMap<>();
+	try {
+		fbdCmtService.deleteCmt(freeBoardCmt);
+	result.put("status", "OK");
+
+	} catch (Exception e) {
+	e.printStackTrace();
+	result.put("status", "False");
+	}
+	return result;
 	}
 	
 }
