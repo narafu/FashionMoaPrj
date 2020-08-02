@@ -71,6 +71,7 @@
 						<input class="feedback__member__comment" type="text" name="content" />
 						<input type="hidden" value="정태다" name="writerId"/>
 						<input type="hidden" value="${d.id }" name="id"/>
+						<input type="hidden" value="${regdate }" name="regdate"/>
 						<button class="member__register__comment">등록</button>
 					</div>
 				</form>

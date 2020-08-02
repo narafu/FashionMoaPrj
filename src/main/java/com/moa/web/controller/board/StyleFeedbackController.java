@@ -67,6 +67,12 @@ public class StyleFeedbackController {
 		
 		List<StyleFeedbackComment> comments = sfCmtService.getComment(id);
 		
+		SimpleDateFormat temp = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		Date time = new Date();
+		String regdate = temp.format(time);
+
+		model.addAttribute("regdate", regdate);
+		
 //		System.out.println(comments);
 		model.addAttribute("comment", comments);
 		
