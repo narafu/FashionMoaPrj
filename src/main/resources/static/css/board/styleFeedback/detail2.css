@@ -34,10 +34,6 @@
   box-sizing: border-box;
 }
 
-#main{
-	padding-bottom: 50px;
-}
-
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -100,7 +96,6 @@ p {
   border: 1px solid var(--color-dark-white);
   margin: auto;
   color: black;
-  box-shadow: 2px 2px 8px 2px var(--color-dark-grey);
 }
 
 .feedback__title {
@@ -108,9 +103,6 @@ p {
   justify-content: center;
   border-bottom: 1px solid var(--color-dark-white);
   padding: 12px;
-  background-color: var(--color-blue);
-  margin-top: unset;
-  color: var(--color-light-white);
 }
 
 .feedback__writer__container {
@@ -179,11 +171,6 @@ p {
 .comment-list{
 	height: 450px;
 	overflow: auto;
-	-ms-overflow-style: none;
-}
-
-	.comment-list::-webkit-scrollbar {
-		display:none;
 }
 
 .comment{
@@ -197,12 +184,12 @@ p {
     flex-wrap: wrap;
 }
 
-/* 	.comment-info .icon{ */
-/* 	    overflow: hidden; */
-/* 	    width: 20px; */
-/* 	    height: 20px; */
-/* 	    margin-right: 5px; */
-/* 	} */
+	.comment-info .icon{
+	    overflow: hidden;
+	    width: 20px;
+	    height: 20px;
+	    margin-right: 5px;
+	}
 
 	.comment-info .writer{
 	    --display: block;
@@ -232,97 +219,13 @@ p {
 	    border: 1px dotted black;
 	}
 .feedback__member__comment {
-	width: 360px;
-	height: 55px;
+  width: 360px;
+  height: 55px;
 }
 
 .member__register__comment {
-	width: 50px;
-	height: 55px;
-	background-color: var(- -color-blue);
-	color: var(- -color-light-white);
-}
-
-/* Slideshow container */
-.slideshow-container {
-	max-width: 95px;
-	height: 95px;
-	position: relative;
-	margin: 25px 8px 8px 8px;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-	cursor: pointer;
-	position: absolute;
-	width: auto;
-	top: 0px;
-	height: 100%;
-	padding: 7px;
-	color: white;
-	font-weight: bold;
-	font-size: 18px;
-	transition: 0.6s ease;
-	border-radius: 0 3px 3px 0;
-	user-select: none;
-	display: flex;
-	align-items: center;
-}
-
-/* Position the "next button" to the right */
-.next {
-	right: 0;
-	border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-	background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Fading animation */
-.fade {
-	-webkit-animation-name: fade;
-	-webkit-animation-duration: 1.5s;
-	animation-name: fade;
-	animation-duration: 1.5s;
-	height: inherit;
-}
-
-@-webkit-keyframes fade {
-	from { 
-		opacity: 0.4;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes fade {
-	from { 
-		opacity:0.4;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-.feedback__clothes a:nth-child(1) {
-	position: relative;
-	top: 16px;
-}
-
-.mySlides {
-	display: none;
-}
-
-.item {
-	height: 95px;
-	vertical-align: middle;
-	cursor: pointer;
-}
-
-.feedback__clothes img{
-	width: 100%;
-	height: 100%;
+  width: 50px;
+  height: 55px;
+  background-color: var(--color-blue);
+  color: var(--color-light-white);
 }

@@ -1,3 +1,123 @@
+'use strict';
+let slideIndex = 1;
+showSlides1(slideIndex);
+showSlides2(slideIndex);
+showSlides3(slideIndex);
+showSlides4(slideIndex);
+showSlides5(slideIndex);
+
+function plusSlides1(n) {
+  showSlides1((slideIndex += n));
+}
+function plusSlides2(n) {
+  showSlides2((slideIndex += n));
+}
+function plusSlides3(n) {
+  showSlides3((slideIndex += n));
+}
+function plusSlides4(n) {
+  showSlides4((slideIndex += n));
+}
+function plusSlides5(n) {
+  showSlides5((slideIndex += n));
+}
+
+function currentSlide1(n) {
+  showSlides1((slideIndex = n));
+}
+function currentSlide2(n) {
+  showSlides2((slideIndex = n));
+}
+function currentSlide3(n) {
+  showSlides3((slideIndex = n));
+}
+function currentSlide4(n) {
+  showSlides4((slideIndex = n));
+}
+function currentSlide5(n) {
+  showSlides5((slideIndex = n));
+}
+
+function showSlides1(n) {
+  let i;
+  const slides = document.querySelectorAll('.mySlides1');
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+  slides[slideIndex - 1].style.display = 'block';
+}
+
+function showSlides2(n) {
+  let i;
+  const slides = document.querySelectorAll('.mySlides2');
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+  slides[slideIndex - 1].style.display = 'block';
+}
+
+function showSlides3(n) {
+  let i;
+  const slides = document.querySelectorAll('.mySlides3');
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+  slides[slideIndex - 1].style.display = 'block';
+}
+
+function showSlides4(n) {
+  let i;
+  const slides = document.querySelectorAll('.mySlides4');
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+  slides[slideIndex - 1].style.display = 'block';
+}
+
+function showSlides5(n) {
+  let i;
+  const slides = document.querySelectorAll('.mySlides5');
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+  slides[slideIndex - 1].style.display = 'block';
+}
+
 $(()=> {
 	
 	let button = $(".member__register__comment");	// 댓글 등록 버튼
@@ -68,6 +188,3 @@ $(()=> {
 	});
 	
 });
-
-
-
