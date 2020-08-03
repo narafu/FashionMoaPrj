@@ -8,10 +8,9 @@
 <script type="text/javascript"
     src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {
-		var nickname = ${result}.response.nickname;
-		$("#nickname").val(nickname);
-	  });
+<%-- var sessionUId = "<%=session.getAttribute("userId") %>"
+console.log('sessionUId'); --%>
+
 </script>
 
 <main id="board-main">
@@ -26,11 +25,15 @@
 							<td colspan="3"><input class="title-input" type="text"
 								name="title" placeholder="제목을 입력하세요" /></td>
 						</tr>
-
+						
+						<tr class="border-bottom-bdbdbd text-center">
+							<td class="writer">작성자</td>
+							<td class="w180 h30">${sessionScope.userId}</td>
+							<td><input type="hidden" id=email name="email" value="${sessionScope.userId}">
+							</td>
+						</tr>
 						<tr class="text-center">
 							<td class="w180 h30">
-							<input type="hidden" id=nickname name="nickname">
-								</td>
 							<td class="w180 h30">${regdate}</td>
 						</tr>
 						<tr><th>첨부파일</th>

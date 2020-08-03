@@ -29,7 +29,7 @@ public interface FreeBoardDao {
 	public FreeBoardView detail(int bno);
 
 	// 게시글 작성
-	@Insert("INSERT INTO FreeBoard(title,content,hit,likes,file,nickname) VALUES(#{title},#{content},#{hit},#{likes},#{file},#{nickname})")
+	@Insert("INSERT INTO FreeBoard(title,content,hit,likes,file,email) VALUES(#{title},#{content},#{hit},#{likes},#{file},#{email})")
 	public void reg(FreeBoard freeBoard);
 
 	// 게시글 수정

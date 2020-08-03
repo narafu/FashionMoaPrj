@@ -5,6 +5,7 @@ import java.util.Date;
 public class FreeBoardComment {
 	private int cid;
 	private String nickname;
+	private String email;
 	private String content;
 	private Date regdate;
 	private int bid;
@@ -44,11 +45,21 @@ public class FreeBoardComment {
 		this.regdate = regdate;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
-		return "FreeBoardComment [cid=" + cid + ", nickname=" + nickname + ", content=" + content + ", regdate="
-				+ regdate + ", bid=" + bid + "]";
+		return "FreeBoardComment [cid=" + cid + ", nickname=" + nickname + ", email=" + email + ", content=" + content
+				+ ", regdate=" + regdate + ", bid=" + bid + "]";
 	}
+
+
 	
 	
 	
