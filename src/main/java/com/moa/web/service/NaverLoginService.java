@@ -91,7 +91,7 @@ public class NaverLoginService {
 
 		OAuth20Service oauthService = new ServiceBuilder().apiKey(CLIENT_ID).apiSecret(CLIENT_SECRET)
 				.callback(REDIRECT_URI).build(NaverLoginApi.instance());
-
+		
 		OAuthRequest request = new OAuthRequest(Verb.GET, PROFILE_API_URL, oauthService);
 		oauthService.signRequest(oauthToken, request);
 		Response response = request.send();
