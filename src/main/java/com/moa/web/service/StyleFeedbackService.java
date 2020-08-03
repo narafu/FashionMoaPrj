@@ -15,32 +15,31 @@ public class StyleFeedbackService {
 	@Autowired
 	private StyleFeedbackDao sfDao;
 
-	public List<StyleFeedbackView> getList(int page, String query, String field){
-		
-		int offset = (page-1)*9;
-		int size = 9;
-		
+	public List<StyleFeedbackView> getList(int page, String query, String field) {
+
+		int offset = (page - 1) * 10;
+		int size = 10;
+
 		return sfDao.getList(offset, size, query, field);
 	}
-	
+
 	public StyleFeedback get(int id) {
-		
+
 		return sfDao.get(id);
 	}
-	
+
 	public int insert(String title, String writerId, String content, String img) {
-		
+
 		return sfDao.insert(title, writerId, content, img);
 	}
-	
+
 	public int delete(int id) {
-		
+
 		return sfDao.delete(id);
 	}
 
 	public int edit(int id, String title, String content, String img) {
 
-		
 		return sfDao.edit(id, title, content, img);
 	}
 
@@ -53,11 +52,11 @@ public class StyleFeedbackService {
 
 		return sfDao.hitUpdate(id);
 	}
-	
+
 	public List<StyleFeedbackView> getStyleFeedbackMain() {
 		int size = 12;
-		
+
 		return sfDao.getStyleFeedbackMain(size);
 	}
-	
+
 }

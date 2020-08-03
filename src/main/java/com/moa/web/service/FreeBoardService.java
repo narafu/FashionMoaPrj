@@ -15,16 +15,16 @@ public class FreeBoardService {
 
 	@Autowired
 	private FreeBoardDao fbdDao;
-	
+
 	public List<FreeBoardView> getList(int page, String query, String field) {
-		int offset = (page-1)*10;
-		int size=10;
-		
-		return fbdDao.getList(offset,size,query,field);
+		int offset = (page - 1) * 10;
+		int size = 10;
+
+		return fbdDao.getList(offset, size, query, field);
 	}
 
 	public int getNoticeCount(String field, String query) {
-		return fbdDao.getBoardCount(field,query);
+		return fbdDao.getBoardCount(field, query);
 	}
 
 	public Object detail(int id) {
@@ -34,7 +34,7 @@ public class FreeBoardService {
 	public void edit(FreeBoard freeBoard) {
 		fbdDao.edit(freeBoard);
 	}
-	
+
 	public void reg(FreeBoard freeBoard) {
 		fbdDao.reg(freeBoard);
 	}
