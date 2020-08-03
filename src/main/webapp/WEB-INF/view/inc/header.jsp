@@ -55,12 +55,7 @@
 						<li><a href="/member/logout">Logout</a></li>
 					</c:otherwise>
 				</c:choose>
-				<ul class="flex-center">
-					<li><a href="/member/mycloset/list">MyPage</a></li>
-					<li class="btn-login"><a href="/member/login">Login</a></li>
-					<li class="btn-logout"><a href="/member/logout"
-						onclick="return confirm('로그아웃 하시겠습니까?');">Logout</a></li>
-				</ul>
+			</ul>
 		</nav>
 	</div>
 	<div class="login-container"></div>

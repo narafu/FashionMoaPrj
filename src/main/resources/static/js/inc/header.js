@@ -1,11 +1,10 @@
-<<<<<<< HEAD
 $(document).ready(function () {
 
 	$(".member-menu .login").click(function (e) {
 
 		e.preventDefault();
 
-		$.ajax({
+		$.ajax({ 
 			type: "get",
 			url: "/member/login/naver",
 			success: function (naverAuthUrl) {
@@ -47,18 +46,17 @@ $(document).ready(function () {
 	});
 
 });
-=======
-$(window).load(function() {
-		
-	var nickname = ${result}.response.nickname;
-		
-	if(nickname == null){
-	console.log("닉네임 null,로그인 필요");
-	$(".btn-logout").hide();
 
-		}else{
-	console.log("로그인 완료");
-	$(".btn-login").hide();
-			}
- });
->>>>>>> refs/remotes/origin/0731_donggi
+//$(window).load(function() {
+//		
+//	var nickname = ${result}.response.nickname;
+//		
+//	if(nickname == null){
+//	console.log("닉네임 null,로그인 필요");
+//	$(".btn-logout").hide();
+//
+//		}else{
+//	console.log("로그인 완료");
+//	$(".btn-login").hide();
+//			}
+// });
