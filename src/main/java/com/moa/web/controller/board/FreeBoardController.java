@@ -60,7 +60,7 @@ public class FreeBoardController {
 	}
 	
 	  @RequestMapping(value="/detail/{id}",method={RequestMethod.GET, RequestMethod.POST}) 
-	    private String boardDetail(@PathVariable("id") int id, Model model) throws Exception{
+	    private String boardDetail(@PathVariable("id") int id,FreeBoard freeboard, Model model) throws Exception{
 			
 			//List<BoardCmt> cmt= null;
 			
@@ -69,6 +69,7 @@ public class FreeBoardController {
 	        model.addAttribute("fbdCmt", new FreeBoardComment());
 	       
 	        //model.addAttribute("cmt", cmt);
+	        fbdService.hit(id);
 	        return "board.free.detail";
 	    }
 /*

@@ -14,11 +14,11 @@
 $(function() {
 	var email = $("#email").val();
 	var docnick = $(".writer-name").text();
-	
+	var userid = "${userId}";
 	/*$("#email").val(email);*/
+	console.log('유저아이디='+userid);
 	console.log('현재접속자 이메일='+email);
 	console.log('게시글작성자 이메일='+docnick);
-	
 	if(docnick!=email){
 		console.log("이메일 불일치!");
 		$(".btn-edit").hide();
@@ -37,6 +37,8 @@ function showReplyList(){
 console.log('댓글리스트');	
 var url = "${pageContext.request.contextPath}/restBoard/cmtList";
 var paramData = {"bid" : "${detail.id}"};
+var detailemail = "${detail.email}";	
+var userId = "${userId}";
 
 $.ajax({
     type: 'POST',
@@ -46,32 +48,38 @@ $.ajax({
     success: function(result) {
        	var htmls = "";
 	if(result.length < 1){
-		htmls.append("등록된 댓글이 없습니다.");
-	} else {
-                $(result).each(function(){
-                 htmls += '<div class="media text-muted pt-3" id="cid' + this.cid + '">';
-                 htmls += '<svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder:32x32">';
-                 htmls += '<title>Placeholder</title>';
-                 htmls += '<rect width="100%" height="100%" fill="#007bff"></rect>';
-                 htmls += '<text x="50%" fill="#007bff" dy=".3em">32x32</text>';
-                 htmls += '</svg>';
-                 htmls += '<p class="media-body pb-3 mb-0 small lh-125 border-bottom horder-gray">';
-                 htmls += '<span class="d-block">';
-                 htmls += '<strong class="text-gray-dark">' + this.email + '</strong>';
-                 htmls += '<span style="padding-left: 7px; padding-right: 10px; font-size: 9pt">';
-                 htmls += '<a href="javascript:void(0)" onClick="fn_editCmt(' + this.cid + ', \'' + this.email + '\', \'' + this.content + '\' )" style="padding-right:5px">수정</a>';
-                 htmls += '<a href="javascript:void(0)" onClick="fn_deleteCmt(' + this.cid + ')" >삭제</a>';
-                 htmls += '</span>';
-                 htmls += '</span>';
-                 htmls += this.content;
-                 htmls += '</p>';
-                 htmls += '</div>';
-            });	//each end
-	}
+		htmls.append('등록된 댓글이 없습니다.');
+		
+	}else{
+		
+		 $(result).each(function(){
+             htmls += '<div class="media text-muted pt-3" id="cid' + this.cid + '">';
+             htmls += '<svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder:32x32">';
+             htmls += '<title>Placeholder</title>';
+             htmls += '<rect width="100%" height="100%" fill="#007bff"></rect>';
+             htmls += '<text x="50%" fill="#007bff" dy=".3em">32x32</text>';
+             htmls += '</svg>';
+             htmls += '<p class="media-body pb-3 mb-0 small lh-125 border-bottom horder-gray">';
+             htmls += '<span class="d-block">';
+             htmls += '<strong class="text-gray-dark">' + this.email + '</strong>';
+             htmls += '<span style="padding-left: 7px; padding-right: 10px; font-size: 9pt">';
+
+             if(this.email==userId){
+                 console.log(this.email+userId);
+             htmls += '<a href="javascript:void(0)" class="btn-cmtEdit" onClick="fn_editCmt(' + this.cid + ', \'' + this.email + '\', \'' + this.content + '\' )" style="padding-right:5px">수정</a>';
+             htmls += '<a href="javascript:void(0)" class="btn-cmtDelete" onClick="fn_deleteCmt(' + this.cid + ')" >삭제</a>';
+             }
+             htmls += '</span>';
+             htmls += '</span>';
+             htmls += this.content;
+             htmls += '</p>';
+             htmls += '</div>';
+        });	//each end
+		}
 	$("#replyList").html(htmls);
     }	   // Ajax success end
 });	// Ajax end
-}//cmtList
+};//cmtList
 
 
 });//script
@@ -83,7 +91,11 @@ function showReplyList(){
 	console.log('댓글리스트');	
 	var url = "${pageContext.request.contextPath}/restBoard/cmtList";
 	var paramData = {"bid" : "${detail.id}"};
-
+	var detailemail = "${detail.email}";	
+	var userId = "${userId}";
+	var frdcmt = "${frdcmt}"
+		console.log(frdcmt);
+	
 	$.ajax({
 	    type: 'POST',
 	    url: url,
@@ -92,28 +104,32 @@ function showReplyList(){
 	    success: function(result) {
 	       	var htmls = "";
 		if(result.length < 1){
-			htmls.append("등록된 댓글이 없습니다.");
-		} else {
-	                $(result).each(function(){
-	                 htmls += '<div class="media text-muted pt-3" id="cid' + this.cid + '">';
-	                 htmls += '<svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder:32x32">';
-	                 htmls += '<title>Placeholder</title>';
-	                 htmls += '<rect width="100%" height="100%" fill="#007bff"></rect>';
-	                 htmls += '<text x="50%" fill="#007bff" dy=".3em">32x32</text>';
-	                 htmls += '</svg>';
-	                 htmls += '<p class="media-body pb-3 mb-0 small lh-125 border-bottom horder-gray">';
-	                 htmls += '<span class="d-block">';
-	                 htmls += '<strong class="text-gray-dark">' + this.email + '</strong>';
-	                 htmls += '<span style="padding-left: 7px; padding-right: 10px; font-size: 9pt">';
-	                 htmls += '<a href="javascript:void(0)" onClick="fn_editCmt(' + this.cid + ', \'' + this.email + '\', \'' + this.content + '\' )" style="padding-right:5px">수정</a>';
-	                 htmls += '<a href="javascript:void(0)" onClick="fn_deleteCmt(' + this.cid + ')" >삭제</a>';
-	                 htmls += '</span>';
-	                 htmls += '</span>';
-	                 htmls += this.content;
-	                 htmls += '</p>';
-	                 htmls += '</div>';
-	            });	//each end
-		}
+			htmls.append('등록된 댓글이 없습니다.');
+			
+		}else{
+			 $(result).each(function(){
+	             htmls += '<div class="media text-muted pt-3" id="cid' + this.cid + '">';
+	             htmls += '<svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder:32x32">';
+	             htmls += '<title>Placeholder</title>';
+	             htmls += '<rect width="100%" height="100%" fill="#007bff"></rect>';
+	             htmls += '<text x="50%" fill="#007bff" dy=".3em">32x32</text>';
+	             htmls += '</svg>';
+	             htmls += '<p class="media-body pb-3 mb-0 small lh-125 border-bottom horder-gray">';
+	             htmls += '<span class="d-block">';
+	             htmls += '<strong class="text-gray-dark">' + this.email + '</strong>';
+	             htmls += '<span style="padding-left: 7px; padding-right: 10px; font-size: 9pt">';
+	             if(this.email==userId){
+	                 htmls += '<a href="javascript:void(0)" class="btn-cmtEdit" onClick="fn_editCmt(' + this.cid + ', \'' + this.email + '\', \'' + this.content + '\' )" style="padding-right:5px">수정</a>';
+	                 htmls += '<a href="javascript:void(0)" class="btn-cmtDelete" onClick="fn_deleteCmt(' + this.cid + ')" >삭제</a>';
+	                 }
+	             htmls += '</span>';
+	             htmls += '</span>';
+	             htmls += this.content;
+	             htmls += '</p>';
+	             htmls += '</div>';
+	             
+	        });	//each end
+			}
 		$("#replyList").html(htmls);
 	    }	   // Ajax success end
 	});	// Ajax end
@@ -220,7 +236,6 @@ $.ajax({
 });
 
 }//delete
-
 </script>
 	<section class="detail">
 
@@ -302,11 +317,20 @@ $.ajax({
 
 					<div class="col-sm-2">
 
-						<form:input path="email" class="form-control" var="email"
-							id="email" value="${sessionScope.userId }" placeholder="댓글 작성자"></form:input>
-
-						<button type="button" class="btn btn-sm btn-primary"
+						<form:hidden path="email" class="form-control" var="email"
+							id="email" value="${sessionScope.userId }" placeholder="댓글 작성자"></form:hidden>
+					<c:choose>
+						<c:when test="${userId eq null}">
+							<button type="button" class="btn btn-sm btn-primary"
+							style="width: 100%; margin-top: 10px" onClick="alert('로그인 후 이용할 수 있습니다.'); return false;">저 장</button>
+						</c:when>
+						
+						<c:otherwise>
+							<button type="button" class="btn btn-sm btn-primary"
 							id="insertCmt" style="width: 100%; margin-top: 10px">저 장</button>
+						</c:otherwise>
+					</c:choose>
+					
 					</div>
 				</div>
 			</form:form>
@@ -317,6 +341,20 @@ $.ajax({
 			style="padding-top: 10px">
 			<h6 class="border-bottom pb-2 mb-0">Reply list</h6>
 			<div id="replyList"></div>
+	<%-- 		
+           <div class="media text-muted pt-3 hidden" id="cid' + this.cid + '">
+	         <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder:32x32">
+	     		<title>Placeholder</title>
+	            <rect width="100%" height="100%" fill="#007bff"></rect>
+	                 <p class="media-body pb-3 mb-0 small lh-125 border-bottom horder-gray">
+	               <span class="d-block">
+	              <strong class="text-gray-dark">${detail.email}</strong>
+	                <span style="padding-left: 7px; padding-right: 10px; font-size: 9pt">
+	               </span>
+	                 </span>
+	               ${detail.content} ${detail.email}
+	                 </p>
+              </div> --%>
 		</div>
 	</section>
 

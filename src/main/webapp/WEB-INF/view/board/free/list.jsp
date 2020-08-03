@@ -116,7 +116,16 @@
 					<section class="write">
 					<h1 class="hidden">글쓰기</h1>
 					<div>
-						<a class="context-write" href="reg">글쓰기</a>
+						
+					<c:choose>
+						<c:when test="${userId eq null}">
+							<a class="context-write" onclick="alert('로그인 후 이용할 수 있습니다.')";>글쓰기</a>
+						</c:when>
+						<c:otherwise>
+							<a class="context-write" href="reg">글쓰기</a>
+						</c:otherwise>
+					</c:choose>
+						
 					</div>
 				</section>
 				</div>

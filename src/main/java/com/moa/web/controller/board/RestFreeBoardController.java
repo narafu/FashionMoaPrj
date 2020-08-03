@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,7 @@ public class RestFreeBoardController {
 	@PostMapping("/cmtList")
 	public List<FreeBoardComment> cmtList(int bid) throws Exception{
 		System.out.println("리스트 출력!");
+		
 		return fbdCmtService.cmtList(bid);
 	}
 	
@@ -42,7 +44,6 @@ public class RestFreeBoardController {
 			e.printStackTrace();
 			result.put("status", "False");
 		}
-		
 		return result;
 	}
 	

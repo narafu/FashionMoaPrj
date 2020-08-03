@@ -12,7 +12,7 @@
 
 <header id="header">
 	<h1 class="hidden">header</h1>
-	<div class="container flex-between">
+	<div class="container flex-column">
 		<div class="title-main">
 			<a href="/home">FashionMoa</a>
 		</div>

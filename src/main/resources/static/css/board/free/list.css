@@ -12,6 +12,10 @@
   justify-content: center;
 }
 
+span{
+	display:inline-block;	
+}
+
 /* Container */
 .board-container {
   position: absolute;
@@ -144,6 +148,8 @@
   color: orange;
   font-weight: bold;
 }
+
+
 
 .context-write {
   color: black;
