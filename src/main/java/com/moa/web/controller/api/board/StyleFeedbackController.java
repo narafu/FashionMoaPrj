@@ -30,6 +30,7 @@ public class StyleFeedbackController {
 	@GetMapping("{id}")
 	public StyleFeedback detail(
 			@PathVariable("id") int id,
+			@RequestParam("cmtId") int cmtId,
 			Model model) {
 		
 //		sf = sfService.get(id);
