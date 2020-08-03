@@ -54,23 +54,22 @@
 <%-- 						<a href="${n.id }"> --%>
 							<div class="title">
 								<div class=title-content>
-									<span>제목 : </span>
 									<!-- 						<span style="margin: 0px 10px;">/</span> -->
-									<span>${n.title }</span>
+									<span class="img-title">${n.title }</span>
 								</div>
 								<span class="content">${n.content }</span>
 							</div>
 <!-- 						</a> -->
 						<div class="channel-info">
 							<div>
-								<span>작성자 :</span> <span>${n.writerId }</span>
+								<span class="info-writer">작성자 : </span> <span class="info-writer"> ${n.writerId }</span>
 							</div>
 							<div>
-								<span>조회수 :</span> <span>${n.hit }</span>
+								<span class="info-hit">조회수 :</span> <span class="info-hit">${n.hit }</span>
 							</div>
 							<div>
-								<span>작성일 :</span> 
-								<span>
+								<span class="info-date">작성일 :</span> 
+								<span class="info-date">
 									<fmt:parseDate var="date" value="${n.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
 									<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm" />
 								</span>

@@ -3,51 +3,64 @@
 @import url(/css/inc/style.css);
 @charset "UTF-8";
 
-#board-main{
-	position:relative;
-	display:flex;
-	font-size:14px;
-	min-height:90vh;
-	height:100%;
-	color:black;
-	justify-content:center;
-	align-items:center;
+#board-main {
+  position: relative;
+  display: flex;
+  font-size: 14px;
+  min-height: 90vh;
+  height: 100%;
+  color: black;
+  justify-content: center;
+  align-items: center;
 }
 
-.board-container{
-	position:relative;
-	display:flex;
-	width:85%;
-	height:100%;
-	border-top:solid 1px black;
-	border-bottom:solid 1px black;
-	--background:#979797;
-	justify-content:center;
+.board-container {
+  position: relative;
+  display: flex;
+  min-width: 1080px;
+  height: 100%;
+  border-top: solid 1px black;
+  justify-content: center;
 }
 
-.board-container form{
-	position:relative;
-	margin-left:7%;
-	width:100%;
-	height:70vh;
-	}
-	.post-table{
-	--position:relative;
-	width:90%;
-	}
-	.post-table tbody tr{
-	margin-top:20px;
-	}
-.content-area{
-	--position:relative;
-	width:100%;
-	min-height:500px;
-	resize:none;
+.board-container form {
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.post-table {
+  width: 90%;
+}
+.post-table tbody tr {
+  margin-top: 20px;
+}
+.content-area {
+  --position: relative;
+  width: 100%;
+  min-height: 500px;
+  resize: none;
 }
 
-.post-btn{
-	position:inherit;	
-	display:flex;
-	justify-content:flex-end;
-	margin:10px 10% 0 0;
+.btn-input {
+  margin-top: 15px;
+  margin-right: 5px;
+  outline: none;
+  border: 1px solid lightblue;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 15px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  border: 1px solid lightblue;
+  background-color: transparent;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: normal;
 }

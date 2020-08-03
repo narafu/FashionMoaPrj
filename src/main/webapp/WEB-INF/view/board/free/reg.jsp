@@ -46,7 +46,7 @@ console.log('sessionUId'); --%>
 					</tbody>
 				</table>
 			<div class="post-btn">
-				<input type="submit" onclick="return confirm('등록 하겠습니까?');" value="등록" /> <a href="list">취소</a>
+				<input class="btn-input" type="submit" onclick="return confirm('등록 하겠습니까?');" value="등록" /> <a class="btn-cancel" href="list">취소</a>
 			</div>
 		</form>
 	</section>

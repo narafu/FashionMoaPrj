@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.moa.web.entity.Cloth;
 import com.moa.web.entity.StyleFeedback;
 import com.moa.web.entity.StyleFeedbackComment;
+import com.moa.web.service.MyClothService;
 import com.moa.web.service.StyleFeedbackCommentService;
 import com.moa.web.service.StyleFeedbackService;
 import com.moa.web.view.StyleFeedbackView;
@@ -33,6 +35,9 @@ public class StyleFeedbackController {
 	
 	@Autowired
 	private StyleFeedbackCommentService sfCmtService;
+	
+	@Autowired
+	private	MyClothService cService;
 	
 	private StyleFeedback sf;
 	private StyleFeedbackComment sfCmt;
@@ -63,22 +68,35 @@ public class StyleFeedbackController {
 			@PathVariable("id") int id,
 			Model model) {
 		
+
+		// detail 페이지
 		sf = sfService.get(id);
 		sfService.hitUpdate(id);
+		model.addAttribute("d", sf);
 		
-		
-		List<StyleFeedbackComment> comments = sfCmtService.getComment(id);
-		
+		// regdate
 		SimpleDateFormat temp = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		Date time = new Date();
 		String regdate = temp.format(time);
-
 		model.addAttribute("regdate", regdate);
-		
-//		System.out.println(comments);
+
+		// 댓글 조회
+		List<StyleFeedbackComment> comments = sfCmtService.getComment(id);
 		model.addAttribute("comment", comments);
 		
-		model.addAttribute("d", sf);
+		// 옷장 조회
+		String uid = sf.getWriterId();
+		List<Cloth> outerList = cService.getOuterList(uid);
+		model.addAttribute("outer", outerList);
+		List<Cloth> topList = cService.getTopList(uid);
+		model.addAttribute("top", topList);
+		List<Cloth> bottomList = cService.getBottomList(uid);
+		model.addAttribute("bottom", bottomList);
+		List<Cloth> shoeList = cService.getShoeList(uid);
+		model.addAttribute("shoe", shoeList);
+		List<Cloth> etcList = cService.getEtcList(uid);
+		model.addAttribute("etc", etcList);
+		
 		
 		return "board.styleFeedback.detail";
 	}

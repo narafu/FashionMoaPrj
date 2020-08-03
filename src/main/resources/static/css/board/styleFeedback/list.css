@@ -107,7 +107,7 @@ a {
 }
 
 .channel-info {
-  width: 200px;
+  width: 215px;
   height: 100px;
   display: flex;
   flex-direction: column;
@@ -122,6 +122,12 @@ a {
 
 .channel-info > div > span:nth-child(1) {
   color: burlywood;
+}
+
+.info-writer,
+.info-hit,
+.info-date {
+  font-size: 14px;
 }
 
 .channel-box {
@@ -165,7 +171,7 @@ a {
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   white-space: normal;
   word-break: break-all;
@@ -199,6 +205,19 @@ a {
   display: flex;
 }
 
+.img-title {
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  word-break: break-all;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
 .board-channel .like-header {
   width: 50%;
 }
@@ -215,7 +234,7 @@ a {
 
 .board-channel .title > span {
   --padding-left: 15px;
-  font-size: 1.5em;
+  font-size: 15px;
   color: #bbbbbb;
 }
 

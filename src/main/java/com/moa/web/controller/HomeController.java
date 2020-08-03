@@ -21,9 +21,9 @@ public class HomeController {
 	@RequestMapping("")
 	public String list(Model model) {
 
-//		List<FashionLook> fashionLookList = mainService.getFashionLook();
+		List<FashionLook> fashionLookList = mainService.getFashionLook();
 		List<StyleFeedbackView> styleFeedBackList = mainService.getStyleFeedback();
-//		model.addAttribute("fashionLookList", fashionLookList);
+		model.addAttribute("fashionLookList", fashionLookList);
 		model.addAttribute("styleFeedBackList", styleFeedBackList);
 
 		return "home";
