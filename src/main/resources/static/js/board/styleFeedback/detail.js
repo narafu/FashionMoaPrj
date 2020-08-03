@@ -140,6 +140,8 @@ $(()=> {
 		console.log(writerId);
 		let regdate = cmtReg.find("input[name=regdate]").val();	// 입력한 댓글 regdate 값
 		console.log(regdate);
+		let cmtId = $(".comment").find("input[name=cmtId]").val();	// 댓글의 id 값
+		console.log(cmtId);
 		
 		// 댓글 등록 ajax
 		$.ajax({
@@ -163,24 +165,27 @@ $(()=> {
 			data : {
 				"id" : id,
 				"writerId" : writerId,
-				"content" : content
+				"content" : content,
+				"cmtId" : cmtId
 			},
 			datatype : "JSON",
 			success : ()=>{
 				// prepend 첫 번째 자식으로 추가
 				cmtList.prepend(`
-					<div class="comment">
-						<div class="comment-info">
-							<div class="icon"></div>
-							<div class="writer">${writerId }</div>
-							<div class="report">신고</div> 
-							<div class="content">${content }</div>
-							<div class="regdate">
-								${regdate}
+					<form action="cmtDelete" method="get">
+						<div class="comment">
+							<div class="comment-info">
+								<div class="icon"></div>
+								<div class="writer">${writerId }</div>
+								<div class="report"></div>
+								<div class="content">${content }</div>
+								<div class="regdate">${regdate}</div>
+								<input type="hidden" name="boardId" value="${id}">
+								<input type="hidden" name="cmtId" value="${cmtId }">
+								<button type="submit" value="삭제" class="delete"><i class="fas fa-trash"></i></button>
 							</div>
-							<div class="delete">삭제</div>
 						</div>
-					</div>
+					</form>
 				`);
 			}
 		});
