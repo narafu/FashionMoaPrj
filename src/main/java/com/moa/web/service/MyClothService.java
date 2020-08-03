@@ -39,4 +39,29 @@ public class MyClothService {
 		return clothDao.getCount(uid);
 	}
 
+	public List<Cloth> getOuterList(String uid) {
+
+		return clothDao.getOuterList(uid);
+	}
+	
+	public List<Cloth> getTopList(String uid) {
+
+		return clothDao.getTopList(uid);
+	}
+	
+	public List<Cloth> getBottomList(String uid) {
+
+		return clothDao.getBottomList(uid);
+	}
+	
+	public List<Cloth> getShoeList(String uid) {
+
+		return clothDao.getShoeList(uid);
+	}
+	
+	public List<Cloth> getEtcList(String uid) {
+
+		return clothDao.getEtcList(uid);
+	}
+
 }

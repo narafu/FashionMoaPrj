@@ -40,67 +40,47 @@
 				<div class="feedback__clothes">
 					<span><a href="#">My Wardrobe</a></span>
 					<div class="slideshow-container">
-						<div class="mySlides1 fade">
-							<img src="/images/detail/outer/outer1.jpg" style="width: 100%;" />
-						</div>
-						<div class="mySlides1 fade">
-							<img src="/images/detail/outer/outer2.jpg" style="width: 100%;" />
-						</div>
-						<div class="mySlides1 fade">
-							<img src="/images/detail/outer/outer3.jpg" style="width: 100%;" />
-						</div>
-						<a class="prev" onclick="plusSlides1(-1)">&#10094;</a> <a
-							class="next" onclick="plusSlides1(1)">&#10095;</a>
+						<c:forEach var="outer" items="${outers }">
+							<div class="mySlides1 fade">
+								<img src="${outer.img }" style="width: 100%;" />
+							</div>
+						</c:forEach>
+						<a class="prev" onclick="plusSlides1(-1)">&#10094;</a> 
+						<a class="next" onclick="plusSlides1(1)">&#10095;</a>
 					</div>
 					<div class="slideshow-container">
-						<div class="mySlides2 fade">
-							<img src="/images/detail/top/top1.jpg" style="width: 100%;" />
-						</div>
-						<div class="mySlides2 fade">
-							<img src="/images/detail/top/top2.jpg" style="width: 100%;" />
-						</div>
-						<div class="mySlides2 fade">
-							<img src="/images/detail/top/top3.jpg" style="width: 100%;" />
-						</div>
-						<div class="mySlides2 fade">
-							<img src="/images/detail/top/top4.jpg" style="width: 100%;" />
-						</div>
+						<c:forEach var="top" items="${tops }">
+							<div class="mySlides2 fade">
+								<img src="${top.img }" style="width: 100%;" />
+							</div>
+						</c:forEach>
 						<a class="prev" onclick="plusSlides2(-1)">&#10094;</a> <a
 							class="next" onclick="plusSlides2(1)">&#10095;</a>
 					</div>
 					<div class="slideshow-container">
-						<div class="mySlides3 fade">
-							<img src="/images/detail/pants/pants1.jpg" style="width: 100%;" />
-						</div>
-						<div class="mySlides3 fade">
-							<img src="/images/detail/pants/pants2.jpg" style="width: 100%;" />
-						</div>
+						<c:forEach var="bottom" items="${bottoms }">
+							<div class="mySlides3 fade">
+								<img src="${bottom.img }" style="width: 100%;" />
+							</div>
+						</c:forEach>
 						<a class="prev" onclick="plusSlides3(-1)">&#10094;</a> <a
 							class="next" onclick="plusSlides3(1)">&#10095;</a>
 					</div>
 					<div class="slideshow-container">
-						<div class="mySlides4 fade">
-							<img src="/images/detail/shoes/shoes1.jpg" style="width: 100%;" />
-						</div>
-						<div class="mySlides4 fade">
-							<img src="/images/detail/shoes/shoes2.jpg" style="width: 100%;" />
-						</div>
-						<div class="mySlides4 fade">
-							<img src="/images/detail/shoes/shoes3.jpg" style="width: 100%;" />
-						</div>
+						<c:forEach var="shoe" items="${shoes }">
+							<div class="mySlides4 fade">
+								<img src="${shoe.img }" style="width: 100%;" />
+							</div>
+						</c:forEach>
 						<a class="prev" onclick="plusSlides4(-1)">&#10094;</a> <a
 							class="next" onclick="plusSlides4(1)">&#10095;</a>
 					</div>
 					<div class="slideshow-container">
-						<div class="mySlides5 fade">
-							<img src="/images/detail/watch/watch1.jpg" style="width: 100%;" />
-						</div>
-						<div class="mySlides5 fade">
-							<img src="/images/detail/watch/watch2.jpg" style="width: 100%;" />
-						</div>
-						<div class="mySlides5 fade">
-							<img src="/images/detail/watch/watch3.jpg" style="width: 100%;" />
-						</div>
+						<c:forEach var="etc" items="${etc }">
+							<div class="mySlides5 fade">
+								<img src="${etc.img }" style="width: 100%;" />
+							</div>
+						</c:forEach>
 						<a class="prev" onclick="plusSlides5(-1)">&#10094;</a> <a
 							class="next" onclick="plusSlides5(1)">&#10095;</a>
 					</div>

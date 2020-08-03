@@ -30,5 +30,22 @@ public interface MyClothDao {
 			"			join (select memberUid, count(*) cntShoes from Shoes WHERE memberUid = #{uid}) D on A.memberUid=D.memberUid\r\n" + 
 			"				join (select memberUid, count(*) cntEtc from Etc WHERE memberUid = #{uid}) E on A.memberUid=E.memberUid;")
 	public CntCloth getCount(@Param("uid") String uid);
+	
+	@Select("SELECT * FROM Outers WHERE memberUid = #{uid} ORDER BY regdate DESC")
+	public List<Cloth> getOuterList(@Param("uid") String uid);
+	
+	@Select("SELECT * FROM Tops WHERE memberUid = #{uid} ORDER BY regdate DESC")
+	public List<Cloth> getTopList(@Param("uid") String uid);
+	
+	@Select("SELECT * FROM Bottoms WHERE memberUid = #{uid} ORDER BY regdate DESC")
+	public List<Cloth> getBottomList(@Param("uid") String uid);
+	
+	@Select("SELECT * FROM Shoes WHERE memberUid = #{uid} ORDER BY regdate DESC")
+	public List<Cloth> getShoeList(@Param("uid") String uid);
+	
+	@Select("SELECT * FROM Etc WHERE memberUid = #{uid} ORDER BY regdate DESC")
+	public List<Cloth> getEtcList(@Param("uid") String uid);
+	
+	
 
 }
