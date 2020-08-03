@@ -13,7 +13,7 @@ import com.moa.web.entity.CntCloth;
 public class MyClothService {
 
 	@Autowired
-	MyClothDao clothDao;
+	private MyClothDao clothDao;
 
 	public List<Cloth> getClothList(String uid, String category, int page) {
 

@@ -26,98 +26,83 @@ import com.moa.web.view.FreeBoardView;
 @RequestMapping("/board/free")
 public class FreeController {
 
-	
 	@Autowired
 	private FreeBoardService fbdService;
 	private FreeBoard freeBoard;
 	private NaverLoginService naverLoginBO;
-	
+
 	@GetMapping("/list")
 	public String list(@RequestParam(name = "p", defaultValue = "1") int page,
 			@RequestParam(name = "q", defaultValue = "") String query,
 			@RequestParam(name = "f", defaultValue = "title") String field, Model model
-			//,Object count
-			)
-			throws ClassNotFoundException, SQLException {
-		
+	// ,Object count
+	) throws ClassNotFoundException, SQLException {
+
 		int count = 0;
-		List<FreeBoardView> list = fbdService.getList(page,query,field);
-		count = fbdService.getNoticeCount(field,query);
-		
+		List<FreeBoardView> list = fbdService.getList(page, query, field);
+		count = fbdService.getNoticeCount(field, query);
+
 		model.addAttribute("list", list);
 		model.addAttribute("count", count);
-		//model.addAttribute("count", count);
-	
+		// model.addAttribute("count", count);
+
 		return "board.free.list";
 	}
-	
-	  @GetMapping("/detail/{id}") 
-	    private String boardDetail(@PathVariable int id, Model model) throws Exception{
-			
-			//List<BoardCmt> cmt= null;
-			
-	        model.addAttribute("detail", fbdService.detail(id));
-	        model.addAttribute("r", freeBoard);
-	        //model.addAttribute("cmt", cmt);
-	        return "board.free.detail";
-	    }
+
+	@GetMapping("/detail/{id}")
+	private String boardDetail(@PathVariable int id, Model model) throws Exception {
+
+		// List<BoardCmt> cmt= null;
+
+		model.addAttribute("detail", fbdService.detail(id));
+		model.addAttribute("r", freeBoard);
+		// model.addAttribute("cmt", cmt);
+		return "board.free.detail";
+	}
 
 	@GetMapping("/reg")
 	public String reg() {
 
 		return "board.free.reg";
 	}
-	
-	
 
 	@PostMapping("/reg")
-	public String reg(FreeBoard freeBoard, MultipartFile[] file, HttpServletRequest request, Principal principal
-			,Model model)
-			throws IOException {
-		
-	
+	public String reg(FreeBoard freeBoard, MultipartFile[] file, HttpServletRequest request, Principal principal,
+			Model model) throws IOException {
+
 		fbdService.reg(freeBoard);
-		//model.addAttribute("r", freeBoard);
+		// model.addAttribute("r", freeBoard);
 		System.out.println(freeBoard);
 
 		return "redirect:list";
 	}
-	
-	
-    @GetMapping("/delete/{id}")
-    private String delete(FreeBoard freeBoard) throws Exception{
-        
-        fbdService.delete(freeBoard);
-        
-        return "redirect:/board/free/list";
-    }
 
-
-/*	
 	@GetMapping("/delete/{id}")
-	public String delete(HttpServletRequest request) {
-		logger.info("delete()");
-		
-		FreeBoardDao dao = sqlSession.getMapper(FreeBoardDao.class);
-		dao.delete(Integer.parseInt(request.getParameter("id")));
-		
-		return "redirect:list";
+	private String delete(FreeBoard freeBoard) throws Exception {
+
+		fbdService.delete(freeBoard);
+
+		return "redirect:/board/free/list";
 	}
-	*/
-	
-	
-	
+
 	/*
-	@GetMapping("/delete/{id}")
-	public String delete(@PathVariable int id, Model model) throws Exception{
-		
-		//FreeBoard bd=null;
-		//List<BoardCmt> cmt= null;
-		
-		model.addAttribute("r", freeBoard);
-        model.addAttribute("delete", fbdService.delete(id));
-		return "redirect:/list";
-	}
-	*/
+	 * @GetMapping("/delete/{id}") public String delete(HttpServletRequest request)
+	 * { logger.info("delete()");
+	 * 
+	 * FreeBoardDao dao = sqlSession.getMapper(FreeBoardDao.class);
+	 * dao.delete(Integer.parseInt(request.getParameter("id")));
+	 * 
+	 * return "redirect:list"; }
+	 */
+
+	/*
+	 * @GetMapping("/delete/{id}") public String delete(@PathVariable int id, Model
+	 * model) throws Exception{
+	 * 
+	 * //FreeBoard bd=null; //List<BoardCmt> cmt= null;
+	 * 
+	 * model.addAttribute("r", freeBoard); model.addAttribute("delete",
+	 * fbdService.delete(id)); return "redirect:/list"; }
+	 */
 
 }

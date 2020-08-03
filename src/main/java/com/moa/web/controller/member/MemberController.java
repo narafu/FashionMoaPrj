@@ -81,10 +81,9 @@ public class MemberController {
 	@RequestMapping("/member/logout")
 	public String logout(HttpSession session) {
 
-		if (session.getAttribute("access_Token")==null) {
+		if (session.getAttribute("access_Token") == null) {
 			session.removeAttribute("oauthToken");
-		}
-		else {
+		} else {
 			kakaoLoginService.kakaoLogout((String) session.getAttribute("access_Token"));
 			session.removeAttribute("access_Token");
 		}
