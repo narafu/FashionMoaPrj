@@ -18,11 +18,10 @@
 				<span class="feedback__writer">ID: ${d.writerId }</span>
 			</div>
 			<div class="feedback__writer__container">
-				<span class="feedback__writer__date"> 
-				<fmt:parseDate var="date" value="${d.regdate}" pattern="yyyy-MM-dd HH:mm" /> 
-				<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm" />
-				</span> 
-				<span class="feedback__writer__count"> 조회수: ${d.hit +1} </span> 
+				<span class="feedback__writer__date"> <fmt:parseDate
+						var="date" value="${d.regdate}" pattern="yyyy-MM-dd HH:mm" /> <fmt:formatDate
+						value="${date}" pattern="yyyy-MM-dd HH:mm" />
+				</span> <span class="feedback__writer__count"> 조회수: ${d.hit +1} </span> 
 				<c:choose>
 					<c:when test="${userId eq d.writerId }">
 						<span class="feedback__writer__modified"> <a href="edit?id=${d.id }">수정</a></span>
@@ -38,7 +37,7 @@
 				<div class="feedback__style">
 					<h3>Style</h3>
 					<div class="feedback__style__img">
-						<img src="${d.img }" alt="feedback" style="height: 100%;" />
+						<img src="${d.img }" alt="feedback" style="height: 100%;"/>
 					</div>
 				</div>
 				<div class="feedback__clothes">
@@ -109,11 +108,9 @@
 											pattern="yyyy-MM-dd HH:mm:ss" />
 										<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm" />
 									</div>
-									<input type="hidden" name="boardId" value="${d.id }"> <input
-										type="hidden" name="cmtId" value="${cmt.id }">
-									<button type="submit" value="삭제" class="delete">
-										<i class="fas fa-trash"></i>
-									</button>
+									<input type="hidden" name="boardId" value="${d.id }">
+									<input type="hidden" name="cmtId" value="${cmt.id }">
+									<button type="submit" value="삭제" class="delete"><i class="fas fa-trash"></i></button>
 								</div>
 							</div>
 						</form>
@@ -122,19 +119,16 @@
 				<form action="${d.id }" method="post">
 					<div class="feedback__member">
 						<input class="feedback__member__comment" type="text"
-							name="content" /> <input type="hidden"
-							value="${sessionScope.userId }" name="writerId" /> <input
-							type="hidden" value="${d.id }" name="id" /> <input type="hidden"
-							value="${regdate }" name="regdate" />
-						<button class="member__register__comment">
-							<i class="fas fa-paper-plane"></i>
-						</button>
+							name="content" /> <input type="hidden" value="${sessionScope.userId }"
+							name="writerId" /> <input type="hidden" value="${d.id }"
+							name="id" /> <input type="hidden" value="${regdate }"
+							name="regdate" />
+						<button class="member__register__comment"><i class="fas fa-paper-plane"></i></button>
 					</div>
 				</form>
 			</div>
 		</div>
 	</section>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="/js/board/styleFeedback/detail.js"></script>
 </main>
