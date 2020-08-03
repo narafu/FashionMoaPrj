@@ -16,7 +16,7 @@
 	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.2.js"
 	charset="utf-8"></script>
 <link href='<tiles:getAsString name="css"/>' type="text/css" rel="stylesheet" />
-<title>Moa</title>
+<title>Fashion Moa - 국내 원탑 패션 커뮤니티 </title>
 </head>
 
 <body>

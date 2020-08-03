@@ -187,7 +187,7 @@ p {
   width: 100%;
   height: 200px;
   cursor: pointer;
-  border-radius: 0 0 4px 4px;
+  border-radius: 4px;
 }
 
 .recommend__content {
@@ -197,7 +197,7 @@ p {
   position: absolute;
   bottom: 0px;
   width: 100%;
-  border-radius: 0 0 4px 4px;
+  border-radius: 4px;
   padding: 3px;
   opacity: 0.9;
 }
