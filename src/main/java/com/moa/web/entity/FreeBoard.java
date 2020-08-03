@@ -9,6 +9,7 @@ public class FreeBoard {
 	   private int hit;
 	   private Date regdate;
 	   private String file;
+	   private String email;
 	   private String nickname;
 	   private int likes;
 	  
@@ -17,17 +18,29 @@ public class FreeBoard {
 		// TODO Auto-generated constructor stub
 	}
 	   
-	 public FreeBoard( int id, String title, String content,String nickname, Date regdate, int hit, int likes, String file ) {
+	 public FreeBoard( int id, String title, String content,String nickname,String email, Date regdate, int hit, int likes, String file ) {
 		this.id=id;
 		this.title=title;
 		this.content=content;
 		this.nickname=nickname;
+		this.email=email;
 		this.regdate=regdate;
 		this.hit=hit;
 		this.likes=likes;
 		this.file=file;
 	 }
-
+	 
+	 public FreeBoard( int id, String title, String content,String email, Date regdate, int hit, int likes, String file ) {
+		this.id=id;
+		this.title=title;
+		this.content=content;
+		this.nickname=email;
+		this.regdate=regdate;
+		this.hit=hit;
+		this.likes=likes;
+		this.file=file;
+	 }
+	 
 	public int getId() {
 		return id;
 	}
@@ -76,11 +89,21 @@ public class FreeBoard {
 	public void setLikes(int likes) {
 		this.likes = likes;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
 		return "FreeBoard [id=" + id + ", title=" + title + ", content=" + content + ", hit=" + hit + ", regdate="
-				+ regdate + ", file=" + file + ", nickname=" + nickname + ", likes=" + likes + "]";
+				+ regdate + ", file=" + file + ", email=" + email + ", nickname=" + nickname + ", likes=" + likes + "]";
 	}
-	   
+	
+
 	   
 }

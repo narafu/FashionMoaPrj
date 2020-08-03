@@ -55,7 +55,7 @@
 							<tr>
 								<td>${brd.id }</td>
 								<td class="title"><a href="detail/${brd.id}">${brd.title }</a><span style="color:red;">&nbsp;&nbsp; [${brd.cmtCount }]</span></td>
-								<td>${brd.nickname }</td>
+								<td>${brd.email }</td>
 								<td>${brd.hit }</td>
 								<td><fmt:formatDate value="${brd.regdate}" pattern="yyyy-MM-dd HH:mm" /></td>
 							</tr>

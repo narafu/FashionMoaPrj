@@ -15,7 +15,7 @@ import com.moa.web.entity.FreeBoardComment;
 public interface FreeBoardCommentDao {
 	
 	//댓글 작성
-	@Insert("INSERT INTO FreeBoardComment (nickname,content,boardId) VALUES(#{nickname},#{content},#{bid})")
+	@Insert("INSERT INTO FreeBoardComment (email,content,boardId) VALUES(#{email},#{content},#{bid})")
 	public int insertCmt(FreeBoardComment fbdCmt);
 
 	//댓글 수정
