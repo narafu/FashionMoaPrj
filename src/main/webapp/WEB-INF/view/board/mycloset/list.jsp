@@ -10,7 +10,7 @@
     <span id="uid" class="hidden">${userId}</span>
 
     <nav class="cloth-menu flex-center">
-        <h1 class="hidden">cloth-menu</h1>
+        <!-- <h1 class="hidden">cloth-menu</h1> -->
         <ul>
             <div class="top-menu flex-center">
                 <li class="card cloth flex-center">
