@@ -49,18 +49,17 @@
 			<ul>
 				<c:choose>
 					<c:when test="${userId eq null}">
-						<li class="login"><a href="">Login</a>
+						<li class="login">
+							<a>Login</a>
 							<div class="login-form">
-								<div>
-									<i class="fas fa-times fa"></i>
-								</div>
 								<div class="login-title">
 									<span>Fashion</span>
 									<span>Moa</span>
 								</div>
 								<div>
 									<div id="naver_id_login" style="text-align: center">
-										<a href="${naverAuthUrl}"> <img src="/images/naver_login.png" />
+										<a href="${naverAuthUrl}">
+											<img src="/images/naver_login.png" />
 										</a>
 									</div>
 									<div id="kakao_id_login" style="text-align: center">

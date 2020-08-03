@@ -54,4 +54,10 @@ public class StyleFeedbackService {
 		return sfDao.hitUpdate(id);
 	}
 	
+	public List<StyleFeedbackView> getStyleFeedbackMain() {
+		int size = 12;
+		
+		return sfDao.getStyleFeedbackMain(size);
+	}
+	
 }

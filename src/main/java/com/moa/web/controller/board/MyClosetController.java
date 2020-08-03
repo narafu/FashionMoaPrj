@@ -25,7 +25,7 @@ import com.moa.web.service.MyClothService;
 public class MyClosetController {
 
 	@Autowired
-	MyClothService clothService;
+	private MyClothService clothService;
 
 	@GetMapping("list")
 	public String list(HttpSession session, Model model) {

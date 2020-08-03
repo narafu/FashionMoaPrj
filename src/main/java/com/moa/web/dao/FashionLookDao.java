@@ -6,15 +6,20 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
 import com.moa.web.entity.FashionLook;
-import com.moa.web.view.StyleFeedbackView;
 
 @Mapper
-public interface MainDao {
+public interface FashionLookDao {
 
-	@Select("SELECT * FROM StyleFeedback ORDER BY regdate DESC LIMIT ${size}")
-	public List<StyleFeedbackView> getStyleFeedback(int size);
+
+	@Select("SELECT * FROM FashionLook LIMIT ${size}")
+	List<FashionLook> getList(int size);
+	
+	@Select("SELECT * FROM FashionLook WHERE id = ${id}")
+	FashionLook getDetail(int id);
 
 	@Select("SELECT * FROM FashionLook ORDER BY regdate DESC LIMIT ${size}")
-	public List<FashionLook> getFashionLook(int size);
+	List<FashionLook> getFashionLookMain(int size);
+	
+
 
 }

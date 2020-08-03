@@ -6,7 +6,6 @@
 <!-- 폰트 어썸 (아이콘) -->
 <script src="https://kit.fontawesome.com/096073a2a8.js" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="/css/main.css" />
 <main id="main">
   <section id="lookbook">
     <div class="section__container">

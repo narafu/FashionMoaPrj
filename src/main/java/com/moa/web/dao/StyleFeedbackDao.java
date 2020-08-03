@@ -35,6 +35,9 @@ public interface StyleFeedbackDao {
 
 	@Select("SELECT COUNT(id) count FROM (SELECT S.* FROM (SELECT *FROM StyleFeedback WHERE ${field} LIKE '%${query}%' ORDER BY regdate DESC) S) S2")
 	int getCount(String field, String query);
+
+	@Select("SELECT * FROM StyleFeedback ORDER BY regdate DESC LIMIT ${size}")
+	List<StyleFeedbackView> getStyleFeedbackMain(int size);
 	
 	
 }
