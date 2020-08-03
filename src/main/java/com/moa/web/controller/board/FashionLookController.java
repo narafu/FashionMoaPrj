@@ -5,13 +5,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/board/introlook")
-public class IntroLookController {
+@RequestMapping("/board/fashionlook")
+public class FashionLookController {
 
 	@GetMapping("/list")
 	public String list() {
+		
 
-		return "board.introlook.list";
+		return "board.fashionlook.list";
 	}
 	
 

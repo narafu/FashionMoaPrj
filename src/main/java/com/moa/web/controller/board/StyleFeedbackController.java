@@ -20,9 +20,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.moa.web.entity.StyleFeedback;
 import com.moa.web.entity.StyleFeedbackComment;
-import com.moa.web.entity.StyleFeedbackView;
 import com.moa.web.service.StyleFeedbackCommentService;
 import com.moa.web.service.StyleFeedbackService;
+import com.moa.web.view.StyleFeedbackView;
 
 @Controller
 @RequestMapping("/board/styleFeedback/")

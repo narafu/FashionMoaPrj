@@ -20,16 +20,22 @@ img{
 }
 
 /*** hidden context  ****/
-.casual-context,.street-context,.vintage-context,.avantgarde-context,.classic-context,.dandy-context,.maximalism-context,.minimalism-context,.normcore-context{
+.casual-context,.street-context,
+.vintage-context,.avantgarde-context,
+.classic-context,
+.dandy-context,
+.maximalism-context,
+.minimalism-context,
+.normcore-context{
 	  display: none;
     width: 80%;
     min-width:1024px;
-    height: 100%;
     z-index: 10;
     position: absolute;
     color: black;
     background-color: white;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    padding: 10px;
 }
 
 	.detail-context-container{
@@ -59,8 +65,10 @@ img{
 /*****  Thumb nail ******/
 .thumbnail-wrapper {
   width: 60%;
-   overflow: hidden;
+  overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  transform: translateX(60px);
+}
 }
 
 .thumbnail-wrapper:hover {

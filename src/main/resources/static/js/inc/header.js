@@ -1,4 +1,3 @@
-$(document).ready(function () {
 
 	$(".member-menu .login").click(function (e) {
 
@@ -30,7 +29,9 @@ $(document).ready(function () {
 				</div>
 			</div>`);
 
-				let loginContainerTop = (($("main").height() - $(".login-form").outerHeight()) / 2 + $(window).scrollTop()) - 50 + "px"
+/*				let loginContainerTop = (($("main").height() - $(".login-form").outerHeight()) / 2 + $(window).scrollTop()) - 50 + "px"
+				let loginContainerLeft = (($("main").width() - $(".login-form").outerWidth()) / 2 + $(window).scrollLeft()) + "px"
+*/				let loginContainerTop = (($("main").height() - $(".login-form").outerHeight()) / 2 + $(window).scrollTop()) + "px"
 				let loginContainerLeft = (($("main").width() - $(".login-form").outerWidth()) / 2 + $(window).scrollLeft()) + "px"
 				$(".login-form").css("top", loginContainerTop);
 				$(".login-form").css("left", loginContainerLeft);
@@ -45,18 +46,3 @@ $(document).ready(function () {
 		$(".login-form").remove();
 	});
 
-});
-
-//$(window).load(function() {
-//		
-//	var nickname = ${result}.response.nickname;
-//		
-//	if(nickname == null){
-//	console.log("닉네임 null,로그인 필요");
-//	$(".btn-logout").hide();
-//
-//		}else{
-//	console.log("로그인 완료");
-//	$(".btn-login").hide();
-//			}
-// });

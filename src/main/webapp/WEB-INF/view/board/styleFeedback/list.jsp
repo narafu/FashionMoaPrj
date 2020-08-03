@@ -41,12 +41,12 @@
 					<div class="channel-content flex-between">
 <%-- 						<a href="${n.id }"> --%>
 							<div class="title">
-								<div>
+								<div class=title-content>
 									<span>제목 : </span>
 									<!-- 						<span style="margin: 0px 10px;">/</span> -->
 									<span>${n.title }</span>
 								</div>
-								<span>${n.content }</span>
+								<span class="content">${n.content }</span>
 							</div>
 <!-- 						</a> -->
 						<div class="channel-info">

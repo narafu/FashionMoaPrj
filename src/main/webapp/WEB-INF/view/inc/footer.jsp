@@ -4,15 +4,7 @@
 <footer id="footer">
 	<h1 class="hidden">footer</h1>
 	<div class="flex-evenly">
-		<nav class="footer-menu">
-			<h1 class="hidden">footer-menu</h1>
-			<ul class="flex-evenly">
-				<li><a href="">menu</a></li>
-				<li><a href="">menu</a></li>
-				<li><a href="">menu</a></li>
-				<li><a href="">menu</a></li>
-			</ul>
-		</nav>
+      <h2>Copyright.2020 FashionMoa - All rights reserved</h2>
 		<nav class="sns-menu">
 			<h1 class="hidden">sns-menu</h1>
 			<ul class="flex-evenly">
