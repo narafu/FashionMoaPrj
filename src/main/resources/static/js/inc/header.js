@@ -1,8 +1,6 @@
 
 $(".member-menu .login").click(function (e) {
 
-	e.preventDefault();
-
 	$(".login-form").toggle();
 
 	$.ajax({
