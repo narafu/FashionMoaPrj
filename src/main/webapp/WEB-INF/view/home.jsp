@@ -21,12 +21,12 @@
       <span><a href="#">더보기 &#10095;</a></span>
     </div>
     <div class="content__container">
-      <c:forEach var="list" items="${fashionLookList}">
+      <c:forEach var="list1" items="${fashionLookList}">
         <div class="content">
-          <img src="${list.img}" />
+          <img src="${list1.img}" />
           <span class="recommend__content">
-            <a href="/board/fashionlook/${list.id}"><i class="far fa-heart like"></i></a>
-            <a href="/board/fashionlook/${list.id}"><i class="far fa-comment"></i></a>
+            <a href="/board/fashionlook/${list1.id}"><i class="far fa-heart like"></i></a>
+            <a href="/board/fashionlook/${list1.id}"><i class="far fa-comment"></i></a>
           </span>
         </div>
       </c:forEach>
@@ -38,12 +38,12 @@
       <span><a href="#">더보기 &#10095;</a></span>
     </div>
     <div class="content__container">
-      <c:forEach var="list" items="${styleFeedBackList}">
+      <c:forEach var="list2" items="${styleFeedBackList}">
         <div class="content">
-          <img src="${list.img}" />
+          <img src="${list2.img}" />
           <span class="recommend__content">
-            <a href="/board/styleFeedback/${list.id}"><i class="far fa-heart like"></i></a>
-            <a href="/board/styleFeedback/${list.id}"><i class="far fa-comment"></i></a>
+            <a href="/board/styleFeedback/${list2.id}"><i class="far fa-heart like"></i></a>
+            <a href="/board/styleFeedback/${list2.id}"><i class="far fa-comment"></i></a>
           </span>
         </div>
       </c:forEach>
