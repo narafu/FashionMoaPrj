@@ -1,26 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<main>
 
-<%-- 	<div class="login-container">
-		<div class="login-form">
-			<div class="login-title">
-				<span>Fashion</span>
-				<span>Moa</span>
-			</div>
-			<div>
-				<div id="naver_id_login" style="text-align: center">
-					<a href="${url}"> <img src="/images/naver_login.png" />
-					</a>
-				</div>
-				<div id="kakao_id_login" style="text-align: center">
-					<a href="https://kauth.kakao.com/oauth/authorize?client_id=8558c78e78ed8ede0d79e788ed66f359&redirect_uri=http://localhost:8080/member/login&response_type=code">
-						<img src="/images/kakao_login.png" />
-					</a>
-				</div>
-			</div>
-		</div>
-	</div> --%>
+<!-- 폰트 어썸 (아이콘) -->
+<script src="https://kit.fontawesome.com/096073a2a8.js" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="/css/main.css" />
+<main id="main">
+  <section id="lookbook">
+    <div class="section__container">
+      <div class="lookbook__new">
+        <img class="lookbook__img" src="/images/main/img1.jpg" alt="newlookbook" />
+      </div>
+    </div>
+  </section>
+  <section id="recommend">
+    <div class="recommend__list section__container">
+      <h3><a href="#">FashionLook</a></h3>
+      <span><a href="#">더보기 &#10095;</a></span>
+    </div>
+    <div class="content__container">
+      <c:forEach var="list" items="${fashionLookList}">
+        <div class="content">
+          <img src="${list.img}" />
+          <span class="recommend__content">
+            <a href="/board/fashionlook/${list.id}"><i class="far fa-heart like"></i></a>
+            <a href="/board/fashionlook/${list.id}"><i class="far fa-comment"></i></a>
+          </span>
+        </div>
+      </c:forEach>
+    </div>
+  </section>
+  <section id="feedback">
+    <div class="feedback__list section__container">
+      <h3><a href="#">Feedback</a></h3>
+      <span><a href="#">더보기 &#10095;</a></span>
+    </div>
+    <div class="content__container">
+      <c:forEach var="list" items="${styleFeedBackList}">
+        <div class="content">
+          <img src="${list.img}" />
+          <span class="recommend__content">
+            <a href="/board/styleFeedback/${list.id}"><i class="far fa-heart like"></i></a>
+            <a href="/board/styleFeedback/${list.id}"><i class="far fa-comment"></i></a>
+          </span>
+        </div>
+      </c:forEach>
+    </div>
+  </section>
 </main>

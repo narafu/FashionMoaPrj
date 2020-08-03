@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
 import com.moa.web.entity.StyleFeedback;
-import com.moa.web.entity.StyleFeedbackView;
+import com.moa.web.view.StyleFeedbackView;
 
 @Mapper
 public interface StyleFeedbackDao {

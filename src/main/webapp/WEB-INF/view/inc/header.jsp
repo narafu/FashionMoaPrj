@@ -14,12 +14,12 @@
 	<h1 class="hidden">header</h1>
 	<div class="container flex-between">
 		<div class="title-main">
-			<a href="/home">Moa</a>
+			<a href="/home">FashionMoa</a>
 		</div>
 		<nav class="header-menu">
 			<h1 class="hidden">header-menu</h1>
 			<ul class="flex-evenly">
-				<li class="flex-center"><a href="/board/introlook/list"> <span
+				<li class="flex-center"><a href="/board/fashionlook/list"> <span
 						class="text">Fashion<br />Look
 					</span>
 				</a></li>

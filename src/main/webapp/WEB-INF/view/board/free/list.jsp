@@ -7,7 +7,7 @@
 <main id="board-main">
 	<section class="board-container">
 		<div class="board-header">
-			<div>
+			<div class="board-title">
 				<h1 >자유게시판</h1>
 			</div>
 			<div class="search">

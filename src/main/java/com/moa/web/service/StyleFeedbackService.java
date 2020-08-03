@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.moa.web.dao.StyleFeedbackDao;
 import com.moa.web.entity.StyleFeedback;
-import com.moa.web.entity.StyleFeedbackView;
+import com.moa.web.view.StyleFeedbackView;
 
 @Service
 public class StyleFeedbackService {

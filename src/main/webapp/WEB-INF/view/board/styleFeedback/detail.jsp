@@ -34,7 +34,7 @@
 				<div class="feedback__style">
 					<h3>Style</h3>
 					<div class="feedback__style__img">
-						<img src="${d.img }" alt="feedback" />
+						<img src="${d.img }" alt="feedback" style="height: 100%;"/>
 					</div>
 				</div>
 				<div class="feedback__clothes">

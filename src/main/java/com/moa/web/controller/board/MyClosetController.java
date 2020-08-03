@@ -70,7 +70,6 @@ public class MyClosetController {
 				e.printStackTrace();
 			}
 
-//			String uid = principal.getName(); /* 사용자가 입력한 아이디를 받아옴!! */
 			String img = "/upload/" + fileName;
 
 			clothService.regClothList(uid, category, img);

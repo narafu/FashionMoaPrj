@@ -1,23 +1,18 @@
 package com.moa.web.entity;
 
-public class StyleFeedback {
-	
+import java.util.Date;
+
+public class FashionLook {
+
 	private int id;
 	private String title;
 	private String writerId;
 	private String content;
-	private String regdate;
+	private Date regdate;
 	private int hit;
 	private String img;
-	
-	public StyleFeedback(
-			int id, 
-			String title, 
-			String writerId, 
-			String content,
-			String regdate,
-			int hit,
-			String img) {
+
+	public FashionLook(int id, String title, String writerId, String content, String regdate, int hit, String img) {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -53,11 +48,11 @@ public class StyleFeedback {
 		this.content = content;
 	}
 
-	public String getRegdate() {
+	public Date getRegdate() {
 		return regdate;
 	}
 
-	public void setRegdate(String regdate) {
+	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
 
@@ -82,5 +77,5 @@ public class StyleFeedback {
 		return "StyleFeedback [id=" + id + ", title=" + title + ", writerId=" + writerId + ", content=" + content
 				+ ", regdate=" + regdate + ", hit=" + hit + ", img=" + img + "]";
 	}
-	
+
 }
