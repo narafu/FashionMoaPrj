@@ -28,7 +28,6 @@ public class FreeBoardService {
 	}
 
 	public Object detail(int id) {
-		
 		return fbdDao.detail(id);
 	}
 
@@ -44,6 +43,8 @@ public class FreeBoardService {
 		fbdDao.delete(freeBoard);
 	}
 
-
+	public int hit(int id) {
+		return fbdDao.hit(id);
+	}
 
 }

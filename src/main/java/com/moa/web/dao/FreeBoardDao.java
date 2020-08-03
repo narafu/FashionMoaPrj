@@ -27,7 +27,10 @@ public interface FreeBoardDao {
 	// 게시글 상세
 	@Select("SELECT * FROM FreeBoardView WHERE id=#{id}")
 	public FreeBoardView detail(int bno);
-
+	
+	@Update("UPDATE FreeBoard SET hit=hit+1 WHERE id=#{id}")
+	public int hit(int id);
+	
 	// 게시글 작성
 	@Insert("INSERT INTO FreeBoard(title,content,hit,likes,file,email) VALUES(#{title},#{content},#{hit},#{likes},#{file},#{email})")
 	public void reg(FreeBoard freeBoard);
