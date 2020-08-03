@@ -46,7 +46,7 @@
     <section class="detail-cloth">
         <h1 class="hidden">detail-cloth</h1>
         <div class="detail cloth">
-            <div class="flex-between" style="margin-top: -3px;">
+            <div class="flex-between" style="margin-top: -6px;">
                 <div class="sub-title">Outers</div>
                 <div class="exit">
                     <i class="fas fa-times fa-2x"></i>
@@ -69,7 +69,7 @@
         <h1 class="hidden">detail-register</h1>
         <form action="reg" method="POST" enctype="multipart/form-data">
             <div class="detail register">
-                <div class="flex-between" style="margin-top: -3px;">
+                <div class="flex-between" style="margin-top: -6px;">
                     <div class="sub-title">register</div>
                     <div class="category">
                         <label for="">Outers</label>

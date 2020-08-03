@@ -54,6 +54,7 @@ public class MemberController {
 
 		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
 		String naverAuthUrl = naverLoginService.getAuthorizationUrl(session);
+		model.addAttribute("naverAuthUrl", naverAuthUrl);
 
 		/* 생성한 인증 URL을 View로 전달 */
 		return naverAuthUrl;

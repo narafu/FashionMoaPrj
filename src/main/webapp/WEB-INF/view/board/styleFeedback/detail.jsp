@@ -43,7 +43,7 @@
 				<div class="feedback__clothes">
 					<span><a href="#">My Wardrobe</a></span>
 					<div class="slideshow-container">
-						<c:forEach var="outer" items="${outers }">
+						<c:forEach var="outer" items="${outer }">
 							<div class="mySlides1 fade">
 								<img src="${outer.img }" style="width: 100%;" />
 							</div>
@@ -52,7 +52,7 @@
 							class="next" onclick="plusSlides1(1)">&#10095;</a>
 					</div>
 					<div class="slideshow-container">
-						<c:forEach var="top" items="${tops }">
+						<c:forEach var="top" items="${top }">
 							<div class="mySlides2 fade">
 								<img src="${top.img }" style="width: 100%;" />
 							</div>
@@ -61,7 +61,7 @@
 							class="next" onclick="plusSlides2(1)">&#10095;</a>
 					</div>
 					<div class="slideshow-container">
-						<c:forEach var="bottom" items="${bottoms }">
+						<c:forEach var="bottom" items="${bottom }">
 							<div class="mySlides3 fade">
 								<img src="${bottom.img }" style="width: 100%;" />
 							</div>
@@ -70,7 +70,7 @@
 							class="next" onclick="plusSlides3(1)">&#10095;</a>
 					</div>
 					<div class="slideshow-container">
-						<c:forEach var="shoe" items="${shoes }">
+						<c:forEach var="shoe" items="${shoe }">
 							<div class="mySlides4 fade">
 								<img src="${shoe.img }" style="width: 100%;" />
 							</div>
