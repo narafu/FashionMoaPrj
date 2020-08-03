@@ -23,9 +23,21 @@
 					<input type="text" name="q" placeholder="검색어를 입력하세요">
 					<input type="submit" value="&#xf002">
 				</div>
-           		<div class="btn-reg">
-					<a href="reg">Write</a>
-				</div>
+           		<c:choose>
+					<c:when test="${userId eq null}">
+						<div class="btn-reg">
+							<span onclick="alert('로그인 후 이용할 수 있습니다.')";><a href="">Write</a></span>
+						</div>
+					</c:when>
+					<c:otherwise>
+						<div class="btn-reg">
+							<a href="reg">Write</a>
+						</div>
+					</c:otherwise>
+				</c:choose>
+<!--            		<div class="btn-reg"> -->
+<!-- 					<a href="reg">Write</a> -->
+<!-- 				</div> -->
 			</div>
 		</form>
 		

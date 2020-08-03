@@ -136,7 +136,7 @@
 				<form action="${d.id }" method="post">
 					<div class="feedback__member">
 						<input class="feedback__member__comment" type="text"
-							name="content" /> <input type="hidden" value="정태다"
+							name="content" /> <input type="hidden" value="${sessionScope.userId }"
 							name="writerId" /> <input type="hidden" value="${d.id }"
 							name="id" /> <input type="hidden" value="${regdate }"
 							name="regdate" />

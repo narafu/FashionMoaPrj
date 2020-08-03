@@ -16,7 +16,7 @@
 						</tr>
 						<tr>
 							<td>작성자</td>
-							<td><input type="hidden" name="writerId" value="정태다">input [value]바꿔</td>
+							<td><input type="hidden" name="writerId" value="${sessionScope.userId}">${sessionScope.userId}</td>
 						</tr>
 						<tr>
 							<td>작성일</td>

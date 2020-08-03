@@ -107,19 +107,16 @@ public class FreeBoardController {
 				
 		path += files.getOriginalFilename();
 		System.out.println("파일네임붙은 경로"+path);
-		
 		FileOutputStream os = new FileOutputStream(path);
 		InputStream is = files.getInputStream();
 		byte[] buf = new byte[1024];
 		int len = 1024;
 		while ((len = is.read(buf)) != -1)
 			os.write(buf, 0, len);
-		
 		is.close();
 		os.close();
 		*/
-
-		
+	
 		for(int i = 0; i<files.length; i++) {
 		
 			if(files[i].getOriginalFilename().equals("")) {
@@ -149,6 +146,7 @@ public class FreeBoardController {
 		}
 		
 		fbdService.reg(freeBoard);
+		System.out.println(freeBoard);
 		return "redirect:list";
 		}
 		
