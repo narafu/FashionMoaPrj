@@ -12,8 +12,19 @@ public class FashionLook {
 	private int hit;
 	private String img;
 
-	public FashionLook(int id, String title, String writerId, String content, String regdate, int hit, String img) {
+	public FashionLook() {
 		// TODO Auto-generated constructor stub
+	}
+
+	public FashionLook(int id, String title, String writerId, String content, Date regdate, int hit, String img) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.writerId = writerId;
+		this.content = content;
+		this.regdate = regdate;
+		this.hit = hit;
+		this.img = img;
 	}
 
 	public int getId() {
@@ -74,7 +85,7 @@ public class FashionLook {
 
 	@Override
 	public String toString() {
-		return "StyleFeedback [id=" + id + ", title=" + title + ", writerId=" + writerId + ", content=" + content
+		return "FashionLook [id=" + id + ", title=" + title + ", writerId=" + writerId + ", content=" + content
 				+ ", regdate=" + regdate + ", hit=" + hit + ", img=" + img + "]";
 	}
 
