@@ -2,6 +2,10 @@
 @import url(/css/inc/layout.css);
 @import url(/css/inc/style.css);
 
+main {
+    margin: 50px;
+}
+
 a {
   color: black;
 }

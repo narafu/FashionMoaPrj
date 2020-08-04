@@ -45,7 +45,7 @@ public class MemberController {
 			session.setAttribute("access_Token", access_Token);
 		}
 
-		return "home";
+		return "redirect:/home";
 	}
 
 	@ResponseBody
@@ -76,7 +76,7 @@ public class MemberController {
 			session.setAttribute("oauthToken", oauthToken);
 		}
 
-		return "home";
+		return "redirect:/home";
 	}
 
 	@RequestMapping("/member/logout")
@@ -93,7 +93,7 @@ public class MemberController {
 		session.removeAttribute("nickname");
 		session.invalidate();
 
-		return "home";
+		return "redirect:/home";
 	}
 
 }

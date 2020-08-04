@@ -302,7 +302,7 @@
 						pattern="yyyy-MM-dd HH:mm" />
 				</div>
 				<div>작성자 : ${detail.email }</div>
-				<%-- <div class="writer-name">${detail.email}</div> --%>
+				<div class="writer-name hidden">${detail.email}</div>
 			</div>
 			<div class="meta-info">
 				<div class="hit">조회수 ${detail.hit }</div>
@@ -330,9 +330,11 @@
 
 		<div class="btn-box">
 			<div class="btn-box_box">
-				<a class="btn-text btn-cancel btn-hover" href="../list">이전 목록</a> <a
+				<a class="btn-text btn-cancel btn-hover" href="../list">이전 목록</a>
+				<a
 					class="btn-text btn-default btn-edit btn-hover"
-					href="../edit/${detail.id }">수정</a> <a
+					href="../edit/${detail.id }">수정</a>
+				<a
 					class="btn-text btn-default btn-delete btn-hover"
 					onclick="return confirm('정말 삭제 하겠습니까?');"
 					href="../delete/${detail.id }">삭제</a>

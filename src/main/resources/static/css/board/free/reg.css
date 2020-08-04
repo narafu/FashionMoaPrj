@@ -21,6 +21,16 @@
   height: 100%;
   border-top: solid 1px black;
   justify-content: center;
+  border: none;
+}
+
+main {
+	margin: 50px;
+}
+
+textarea {
+    margin: 20px 0px;
+  	padding: 20px;
 }
 
 .board-container form {
@@ -37,6 +47,8 @@
 }
 .post-table tbody tr {
   margin-top: 20px;
+  line-height: 40px;
+  font-size: 16px;
 }
 .content-area {
   --position: relative;
@@ -63,4 +75,10 @@
   padding: 15px;
   font-size: 15px;
   font-weight: normal;
+}
+
+.title-input {
+    height: 30px;
+    padding: 10px;
+    width: 100%;
 }
