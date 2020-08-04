@@ -6,7 +6,7 @@
 <section class="mycloset">
     <h1 class="hidden">mycloset</h1>
     
-    <div class="title">My Closet</div>
+    <!-- <div class="title">My Closet</div> -->
     <span id="uid" class="hidden">${userId}</span>
 
     <nav class="cloth-menu flex-center">

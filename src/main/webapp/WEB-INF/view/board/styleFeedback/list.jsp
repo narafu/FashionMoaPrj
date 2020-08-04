@@ -83,7 +83,7 @@
 		<div>
 			<c:set var="page" value="${(empty param.p)?1:param.p }" />
 			<c:set var="startNum" value="${page-(page-1)%5 }" />
-			<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/9), '.')}" />
+			<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/10), '.')}" />
 		
 			<div class="page-num">
 				<c:forEach var="i" begin="0" end="${lastNum }">
