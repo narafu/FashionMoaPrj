@@ -21,9 +21,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </div>
   </section>
   <section id="recommend">
-    <div class="recommend__list section__container">
+    <div class="recommend__list section__container" style="color: black; border-bottom: solid; padding-top: 20px;">
       <h3><a href="#">FashionLook</a></h3>
-      <span><a href="/board/fashionlook/list">더보기 &#10095;</a></span>
+      <span><a href="/board/fashionlook/list" style="color: black;">더보기 &#10095;</a></span>
     </div>
     <div class="content__container">
       <c:forEach var="list1" items="${fashionLookList}">
@@ -36,9 +36,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
     </div>
   </section>
   <section id="feedback">
-    <div class="feedback__list section__container">
+    <div class="feedback__list section__container" style="color: black; border-bottom: solid; padding-top: 20px;">
       <h3><a href="#">Feedback</a></h3>
-      <span><a href="/board/styleFeedback/list">더보기 &#10095;</a></span>
+      <span><a href="/board/styleFeedback/list" style="color: black;">더보기 &#10095;</a></span>
     </div>
     <div class="content__container">
       <c:forEach var="list2" items="${styleFeedBackList}">

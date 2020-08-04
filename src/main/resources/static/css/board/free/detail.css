@@ -123,8 +123,9 @@ input::placeholder {
 
 .detail-regdate, .writer-name, .hit, .comment, .love {
 	/* border: 1px solid black; */
-	display: inline-block;
+	/* display: inline-block; */
 	/* box-sizing: border-box; */
+    text-align: right;
 	background: url(../../../images/bg-title-sp.png) no-repeat left center;
 	padding-left: 7px;
 }
@@ -545,6 +546,13 @@ position: relative;
 	display:flex;
 	margin-top:10px;
 	margin-bottom:10px;
+}
+
+.media-body {
+	line-height: 30px;
+    font-size: 15px;
+    padding: 10px;
+    padding-left: 30px;
 }
 
 .d-block{
