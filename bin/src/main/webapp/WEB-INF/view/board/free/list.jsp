@@ -6,9 +6,8 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <main id="board-main">
 	<section class="board-container">
-
 		<div class="board-header">
-			<div>
+			<div class="board-title">
 				<h1 >자유게시판</h1>
 			</div>
 			<div class="search">
@@ -55,31 +54,27 @@
 
 							<tr>
 								<td>${brd.id }</td>
-								<td class="title"><a href="detail/${brd.id}">${brd.title }</a><span style="color:red;">&nbsp;&nbsp;[${brd.cmtCount }]</span></td>
-								<td>${brd.nickname }</td>
+								<td class="title"><a href="detail/${brd.id}">${brd.title }</a><span style="color:red;">&nbsp;&nbsp; [${brd.cmtCount }]</span></td>
+								<td>${brd.email }</td>
 								<td>${brd.hit }</td>
 								<td><fmt:formatDate value="${brd.regdate}" pattern="yyyy-MM-dd HH:mm" /></td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
+<!--------------------------- 하단 부분 ---------------------->
 
-				<section class="write">
-					<h1 class="hidden">글쓰기</h1>
-					<div>
-						<a href="reg">글쓰기</a>
-					</div>
-				</section>
 			</form>
 
 <c:set var="page" value="${ (empty param.p) ? 1:param.p }" />
 	<c:set var="startNum" value="${page-(page-1)%5 }" />
 	<c:set var="lastNum" value="${fn:substringBefore(Math.ceil(count/10),'.')}" />
 
+<div class="under-box">
 	<div class="indexer-box">
 		<h1 class="hidden">현재 페이지</h1>
 		<div>
-			<span class="index-num">${(empty param.p)? 1:param.p}</span>/${lastNum }
+			<span class="index-num"><b>${(empty param.p)? 1:param.p}</b></span> / ${lastNum }
 			pages
 		</div>
 	</div>
@@ -118,6 +113,24 @@
 		</div>
 
 	</div>
+					<section class="write">
+					<h1 class="hidden">글쓰기</h1>
+					<div>
+						
+					<c:choose>
+						<c:when test="${userId eq null}">
+							<a class="context-write" onclick="alert('로그인 후 이용할 수 있습니다.')";>글쓰기</a>
+						</c:when>
+						<c:otherwise>
+							<a class="context-write" href="reg">글쓰기</a>
+						</c:otherwise>
+					</c:choose>
+						
+					</div>
+				</section>
+				</div>
+				
+				
 		</div>
 		</section>
 		

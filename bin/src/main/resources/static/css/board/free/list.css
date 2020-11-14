@@ -1,106 +1,194 @@
 @import url(/css/inc/reset.css);
+
 @import url(/css/inc/layout.css);
+
 @import url(/css/inc/style.css);
+
 @charset "UTF-8";
 
-#board-main{
-	display:flex;
+#board-main {
+	display: flex;
 	font-family: Arial, Helvetica, sans-serif;
-	min-height:90vh;
-	height:100%;
-	color:black;
-	justify-content:center;
+	min-height: 90vh;
+	height: 100%;
+	color: black;
+	justify-content: center;
+}
+
+main {
+	margin: 50px;
+}
+
+
+
+span {
+	display: inline-block;
 }
 
 /* Container */
-.board-container{
-	
-	position:absolute;
-	width:80%;
-	min-height:90vh;
-	height:95%;
-	margin-top:20px;
-	justify-content:center;
-	algin-items:center;
-	
-}	
-	.board-header{
-		position:relative;
-		width:100%;
-		height:20px;
-		display:flex;
-		--background:red;
-		justify-content:space-between;
-		margin-bottom:12px;
-	}
-
-	.board-body{
-		position:relative;
-		display:flex;
-		width:100%;
-		height:100%;
-		justify-content:center;	
-	}
-	
-	.list{
-		position:relavite;
-		width:100%;
-
-	}
-	
-		.list .table{
-			border-spacing: 5px 10px;
-			border-top:1px solid #979797;
-			border-bottom:1px solid #979797;
-			position:relavite;
-			min-width:1024px;
-			width:100%;
-			height:100%;
-			padding:20px;
-			margin-bottom:12px;
-			text-align:center;
-		}
-	
-			.list .table .thead{
-				font-size:15px;
-				border-bottom:1px solid #979797;
-			}
-			
-			.list .table tbody{
-		    	font-size:14px;	
-		    	text-align:center;
-			}
-			
-			
-			.list .table tbody:before {
-		    content:"@";
-		    display:block;
-		    line-height:10px;
-		    text-indent:-99999px;	
-			}
-			
-			.list .table .col-date{
-			width:180px;}	
-			.list .table .col-num{
-			width:50px;}
-			.list .table .col-text{
-			width:120px;}	
-						
-.write{
-	right:0;
+.board-container {
+	position: absolute;
+	min-width: 1080px;
+	min-height: 90vh;
+	height: 95%;
+	margin-top: 20px;
+	justify-content: center;
 }
 
-.pager-box{
-	display:flex;
-	right:0;
-}	
+.board-header {
+	position: relative;
+	width: 100%;
+	height: 20px;
+	display: flex; -
+	-background: red;
+	justify-content: space-between;
+	margin-bottom: 12px;
+}
 
-.pager{
-	display:flex;
+.board-title {
+	padding: 10px;
+	position: relative;
+	top: -48px;
+	font-size: 30px;
+}
+
+.board-body {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+}
+
+.list {
+	position: relavite;
+	width: 100%;
+}
+
+.list .table {
+	border-spacing: 5px 10px;
+	border-top: 1px solid #979797;
+	border-bottom: 1px solid #979797;
+	position: relavite;
+	min-width: 1024px;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	margin-bottom: 12px;
+	text-align: center;
+}
+
+.list .table .thead {
+	font-size: 15px;
+	border-bottom: 1px solid #979797;
+}
+
+.list .table .thead th {
+	text-align: center;
+}
+
+.list .table tbody:nth-child(2) {
+	text-align: left;
+}
+
+.list .table tbody {
+	font-size: 14px;
+	text-align: center;
+}
+
+.list .table tbody tr {
+	height: 35px;
+}
+
+.list .table tbody td {
+	text-align: center;
+}
+
+.list .table tbody:before {
+	content: '@';
+	display: block;
+	line-height: 10px;
+	text-indent: -99999px;
+}
+
+.list .table .col-date {
+	width: 180px;
+}
+
+.list .table .col-num {
+	width: 50px;
+}
+
+.list .table .col-text {
+	width: 120px;
+}
+
+.write {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 20px;
+	font-size: 24px;
+}
+
+.indexer-box {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.indexer-box div {
+	display: flex;
+	margin-bottom: 12px;
+}
+
+.pager-box {
+	display: flex;
+	justify-content: flex-end;
+	right: 0;
+}
+
+.pager {
+	display: flex;
 	margin: 0 10px 0 10px;
-	
-}	
-.pager-item{
+}
+
+.pager-item {
 	margin: 0 10px 0 10px;
-}						
-				
+}
+
+.under-box {
+	font-weight: 100;
+}
+
+.orange {
+	color: orange;
+	font-weight: bold;
+}
+
+.context-write {
+	color: black;
+	border: 1px solid #007bff;
+	border-radius: 18px 10px;
+	padding: 8px;
+	font-size: 18px;
+}
+
+.search-button {
+	height: 27.5px;
+	padding: 4px;
+	cursor: pointer;
+	outline: none;
+	border: 1px solid black;
+	background: transparent;
+	padding: 4px;
+}
+
+select {
+	height: 27.5px;
+}
+
+.search-text {
+	border: none;
+	height: 27.5px;
+	margin: 0px 10px;
+	padding: 0px 10px;
+}

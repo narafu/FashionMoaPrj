@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <main id="main">
 	<h1 class="hidden">main</h1>
@@ -15,11 +16,15 @@
 						</tr>
 						<tr>
 							<td>작성자</td>
-							<td><input type="hidden" name="writerId" value="3">input [value]바꿔</td>
+							<td><input type="hidden" name="writerId" value="${sessionScope.userId}">${sessionScope.userId}</td>
 						</tr>
 						<tr>
 							<td>작성일</td>
-							<td>${regdate}</td>
+							<td>
+<%-- 								${regdate} --%>
+								<fmt:parseDate var="date" value="${regdate}" pattern="yyyy-MM-dd HH:mm" />
+								<fmt:formatDate value="${date}" pattern="yyyy-MM-dd HH:mm" />
+							</td>
 						</tr>
 					</thead>
 					<tbody>

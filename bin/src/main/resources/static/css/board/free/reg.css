@@ -3,46 +3,82 @@
 @import url(/css/inc/style.css);
 @charset "UTF-8";
 
-#board-main{
-	display:flex;
-	font-size:14px;
-	min-height:90vh;
-	height:100%;
-	color:black;
-	justify-content:center;
-	--align-items:center;
+#board-main {
+  position: relative;
+  display: flex;
+  font-size: 14px;
+  min-height: 90vh;
+  height: 100%;
+  color: black;
+  justify-content: center;
+  align-items: center;
 }
 
-.board-post{
-	position:absolute;
-	width:100%;
-	min-width:1024px;
-	margin:0px auto 0px auto;
-}
-	.board-post form{
-	position:relative;
-	display:flex;
-	justify-content:center;
-	}
-
-.board-container{
-	position:relative;
-	display:flex;
-	width:80%;
-	height:90%;
-	background:#979797;
-	justify-content:center;
-	margin-top:10%;
-	--align-items:center;
+.board-container {
+  position: relative;
+  display: flex;
+  min-width: 1080px;
+  height: 100%;
+  border-top: solid 1px black;
+  justify-content: center;
+  border: none;
 }
 
-	.post-table{
-	position:relative;
-	width:90%;
-	}
-.content-area{
-	position:relative;
-	width:100%;
-	min-height:500px;
-	resize:none;
+main {
+	margin: 50px;
+}
+
+textarea {
+    margin: 20px 0px;
+  	padding: 20px;
+}
+
+.board-container form {
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.post-table {
+  width: 90%;
+}
+.post-table tbody tr {
+  margin-top: 20px;
+  line-height: 40px;
+  font-size: 16px;
+}
+.content-area {
+  --position: relative;
+  width: 100%;
+  min-height: 500px;
+  resize: none;
+}
+
+.btn-input {
+  margin-top: 15px;
+  margin-right: 5px;
+  outline: none;
+  border: 1px solid lightblue;
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 15px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  border: 1px solid lightblue;
+  background-color: transparent;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.title-input {
+    height: 30px;
+    padding: 10px;
+    width: 100%;
 }

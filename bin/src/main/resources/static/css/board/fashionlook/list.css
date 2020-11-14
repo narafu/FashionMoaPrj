@@ -1,0 +1,146 @@
+@import url(/css/inc/reset.css);
+
+@import url(/css/inc/layout.css);
+
+@import url(/css/inc/style.css);
+
+.board-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	row-gap: 30px;
+	column-gap: 30px;
+	place-items: center;
+	width: 90%;
+	height: 80%;
+	margin: auto;
+}
+
+.thumbnail-wrapper {
+	max-width: 300px;
+	max-height: 300px;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+main {
+	margin: 40px;
+}
+
+/* 
+*** board list ***
+
+.board-container {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    column-gap: 20px;
+    row-gap: 40px;
+    margin: 0px auto 30px auto;
+    padding: 10px;
+    font-size: 14px;
+}
+
+** hidden context  ***
+.casual-context,.street-context,
+.vintage-context,.avantgarde-context,
+.classic-context,
+.dandy-context,
+.maximalism-context,
+.minimalism-context,
+.normcore-context{
+	  display: none;
+    width: 80%;
+    min-width:1024px;
+    z-index: 10;
+    position: absolute;
+    color: black;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    padding: 10px;
+}
+
+	.detail-context-container{
+	display:block;
+	
+	}
+	
+	* 본문 내용 *
+	.detail-context-container .context{
+	text-align:center;
+	
+	}
+		.title-container{
+		display:flex;
+		padding-left:10px;
+		justify-content: space-between;
+		align-items:center;
+		
+		}
+			.title-container .sub-title{
+				font-size:30px;
+			}
+.context img{
+	width:80%;
+}
+
+****  Thumb nail *****
+.thumbnail-wrapper {
+  width: 60%;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transform: translateX(60px);
+  color: black;
+}
+}
+
+.thumbnail-wrapper:hover {
+ opacity:60%;
+ cursor: pointer;
+}
+
+.thumbnail {
+  position: relative;
+  padding-top: 100%;
+  overflow: hidden;
+}
+
+.thumbnail-centered {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate(50%, 50%);
+}
+
+.fa-times {
+    margin: 10px 20px;
+    right:20px;
+}
+.thumbnail-img {
+  max-width: 100%;
+  height: 박스의 height와 같아야 한다.
+  transform: translate(-50%, -50%);
+}
+
+.fashion-detail .detail-context-container {
+	color: black;
+    width: 750px;
+    height: 500px;
+}
+
+.detail-container .fashion-context .context {
+	width: 100%;
+}
+
+.detail-container .fashion-context .context img {
+	width: 100%;
+	height: auto;
+}
+
+.detail-container .fashion-context .content {
+	font-size: 20px;
+} */
